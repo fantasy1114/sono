@@ -1,0 +1,16 @@
+{
+  "listItems": [
+    {
+      "url": "page-blank",
+      "name": "Blank Page",
+      "icon": "pages",
+      "category": "Blank Page"
+    },
+    {
+      "url": "page-collapse",
+      "name": "Page Collapse",
+      "icon": "pages",
+      "category": "Collapse Page"
+    }
+  ]
+}

@@ -1,0 +1,42 @@
+/*----------------------------------------
+    Footer
+------------------------------------------*/
+
+.page-footer {
+   &.footer-fixed {
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+   }
+   .container {
+      padding: 0 15px;
+   }
+   .footer-copyright {
+      background-color: transparent;
+   }
+}
+#world-map-markers {
+   height: 300px;
+}
+#polar-chart-holder {
+   padding-top: 20px;
+}
+
+.footer-light {
+   background-color: $white;
+   &.page-footer {
+      border-top: 1px solid #d2d2d2 !important;
+   }
+   .footer-copyright {
+      color: $off-black;
+   }
+}
+.footer-dark {
+   background: color("blue-grey", "darken-3");
+   .footer-copyright {
+      color: rgba(255, 255, 255, 0.8);
+   }
+   .footer-copyright a {
+      color: $white;
+   }
+}

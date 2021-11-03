@@ -1,0 +1,116 @@
+{{-- layout --}}
+@extends('layouts.contentLayoutMaster')
+
+{{-- page title --}}
+@section('title','Managers list')
+
+<!-- Changed by Yuris to support Materialize CSS -->
+
+{{-- vendors styles --}}
+@section('vendor-style')
+<link rel="stylesheet" type="text/css" href="{{asset('vendors/data-tables/css/jquery.dataTables.min.css')}}">
+<link rel="stylesheet" type="text/css"
+  href="{{asset('vendors/data-tables/extensions/responsive/css/responsive.dataTables.min.css')}}">
+@endsection
+
+{{-- page styles --}}
+@section('page-style')
+<link rel="stylesheet" type="text/css" href="{{asset('css/pages/page-users.css')}}">
+@endsection
+
+{{-- page content --}}
+@section('content')
+
+    @if(Session::has('success_message'))
+    <a name="info_button" class="waves-effect waves-light btn green" onclick="this.parentNode.removeChild(this);">
+      <i class="material-icons left">done</i>{!! session('success_message') !!}</a>
+    @endif
+
+<!-- users list start -->
+<section class="users-list-wrapper section @if(Auth::user()->is_superuser == 0) {{'d-none'}} @endif">
+    <!-- Header Starts -->
+    <div class="row valign-wrapper mb-1 mt-1">
+        <div class="col s9 m9 l9 left-align">
+            <h5 class="white-text">{{ trans('managers.model_plural') }}</h5>
+        </div>
+        <div class="col s3 m3 l3 right-align">
+            <a href="{{ route('managers.manager.create') }}" class="btn-floating btn waves-effect waves-light red">
+                <i class="material-icons" title="{{ trans('managers.create') }}">add</i>
+            </a>
+        </div>
+    </div>
+  <!-- TABLE -->
+  <div class="users-list-table">
+    <div class="card">
+      <div class="card-content">
+        @if(count($managers) == 0)
+            <div class="panel-body text-center">
+                <h4>{{ trans('managers.none_available') }}</h4>
+            </div>
+        @else
+        <div class="panel-body panel-body-with-table">
+        <!-- datatable start -->
+        <div class="responsive-table">
+          <table id="users-list-datatable" class="table striped">
+            <thead>
+              <tr>
+                            <th>{{ trans('managers.name') }}</th>
+                            <th>{{ trans('managers.email') }}</th>
+                            <th>{{ trans('managers.organisation_id') }}</th>
+                            <th>{{ trans('managers.is_superuser') }}</th>
+                            <th>{{ trans('managers.is_active') }}</th>
+
+                <th></th>
+                <th></th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody>
+            @foreach($managers as $manager)
+              <tr>
+                            <td>{{ $manager->name }}</td>
+                            <td>{{ $manager->email }}</td>
+                            <td>{{ optional($manager->Organisation)->Organisation_Name }}</td>
+                            <td>{{ ($manager->is_superuser) ? 'Yes' : 'No' }}</td>
+                            <td>{{ ($manager->is_active) ? 'Yes' : 'No' }}</td>
+                            <form method="POST" action="{!! route('managers.manager.destroy', $manager->id) !!}" accept-charset="UTF-8">
+                              <td class="">
+                                <a class="btn-flat" href="{{ route('managers.manager.show', $manager->id ) }}"><i class="material-icons dark-blue-text">remove_red_eye</i></a>
+                              </td>
+                              <td>
+                                <a class="btn-flat" href="{{ route('managers.manager.edit', $manager->id ) }}"><i class="material-icons green-text">edit</i></a>
+                              </td>
+                              <td>
+                                <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                                <input name="_method" value="DELETE" type="hidden">
+                                <button type="submit" class="btn-flat" title="{{ trans('managers.delete') }}" onclick="return confirm(&quot;{{ trans('managers.confirm_delete') }}&quot;)">
+                                    <i class="material-icons red-text">delete_forever</i>
+                                </button>
+                              </td>
+                    <!-- <a href="" onclick="return confirm(&quot;{{ trans('managers.confirm_delete') }}&quot;)"><i class="material-icons red-text">delete_forever</i></a> -->
+                    </form>
+                {{-- </td> --}}
+              </tr>
+            @endforeach
+            </tbody>
+          </table>
+        </div>
+        <!-- datatable ends -->
+        </div>
+        @endif
+    </div>
+  </div>
+</section>
+<!-- users list ends -->
+@endsection
+
+{{-- vendor scripts --}}
+@section('vendor-script')
+<script src="{{asset('vendors/data-tables/js/jquery.dataTables.min.js')}}"></script>
+<script src="{{asset('vendors/data-tables/extensions/responsive/js/dataTables.responsive.min.js')}}"></script>
+@endsection
+
+{{-- page script --}}
+@section('page-script')
+<script src="{{asset('js/scripts/page-users.js')}}"></script>
+@endsection

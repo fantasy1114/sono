@@ -1,0 +1,32 @@
+[
+    {
+        "model-name": "Employee",
+        "resource-file": "employees.json",
+        "table-name": "Employees"
+    },
+    {
+        "model-name": "Worksite",
+        "resource-file": "worksites.json",
+        "table-name": "Worksites"
+    },
+    {
+        "model-name": "Key",
+        "resource-file": "keys.json",
+        "table-name": "Keys"
+    },
+    {
+        "model-name": "Registry",
+        "resource-file": "registries.json",
+        "table-name": "Registry"
+    },
+    {
+        "model-name": "Manager",
+        "resource-file": "users.json",
+        "table-name": "users"
+    },
+    {
+        "model-name": "Device",
+        "resource-file": "devices.json",
+        "table-name": "devices"
+    }
+]

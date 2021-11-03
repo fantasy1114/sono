@@ -1,0 +1,100 @@
+{{-- layout --}}
+@extends('layouts.contentLayoutMaster')
+
+{{-- page title --}}
+@section('title','Event Log')
+
+{{-- Changed by Yuris to support Materialize CSS --}}
+
+{{-- vendors styles --}}
+@section('vendor-style')
+@endsection
+
+{{-- page styles --}}
+@section('page-style')
+<link rel="stylesheet" type="text/css" href="{{asset('fonts/fontawesome/css/all.css')}}">
+@endsection
+
+{{-- page content --}}
+@section('content')
+
+@if(Session::has('success_message'))
+    <a name="info_button" class="waves-effect waves-light btn green" onclick="this.parentNode.removeChild(this);">
+      <i class="material-icons left">done</i>{!! session('success_message') !!}</a>
+    @endif
+
+
+<!-- users list start -->
+<section class="users-list-wrapper section">
+    <!-- Header Starts -->
+    <div class="row valign-wrapper mb-1 mt-1">
+        <div class="col s9 m9 l9 left-align">
+            <h5 class="white-text">{{ trans('locale.Event Log') }}</h5>
+            <p>{!! auth()->user()->renderOrgName() !!}</p>
+        </div>
+        <div class="col s3 m3 l3 right-align">
+            <!--<a href="{{ route('registries.registry.create') }}" class="btn-floating btn waves-effect waves-light red disabled">
+                <i class="material-icons" title="{{ trans('registries.create') }}">add</i> 
+            </a>-->
+        </div>
+    </div>
+  <!-- TABLE -->
+  <div class="users-list-table">
+    <div class="card">
+      <div class="card-content">
+        @if(count($registries) == 0)
+            <div class="panel-body text-center">
+                <h4>{{ trans('registries.none_available') }}</h4>
+            </div>
+        @else
+        <div class="card-content">
+        <!-- datatable start -->
+        <div class="responsive-table">
+          <table class="table striped">
+            <thead>
+              <tr>
+                <th>@sortablelink('Key_Name', trans('registries.Key'))</th>
+                <th>@sortablelink('Employee_Name', trans('registries.Employee'))</th>
+                <th>@sortablelink('Worksite_Name', trans('registries.Worksite'))</th>
+                <th>@sortablelink('Action', trans('registries.Event'))</th>
+                <th>@sortablelink('Action_Time', trans('registries.Event Time and Date'))</th>
+                <th>@sortablelink('Battery_State', trans('registries.Battery, V'))</th>
+                <th>@sortablelink('Signal_Level', trans('registries.Signal Strength'))</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody>
+            @foreach($registries as $registry)
+              <tr>
+                <td><a class="" href="{{ route('registries.registry.show', $registry->Registry_ID ) }}">{{ $registry->Key_Name }}</a></td>
+                <td>{{ $registry->Employee_Name }}</td>
+                <td>{{ $registry->Worksite_Name }}</td>
+                <td>{{ $registry->Action == 0 ? 'Arrived' : 'Left' }}</td>
+                <td>{{ $registry->Action_Time }}</td>
+                <td>{{ $registry->Battery_State }}</td>
+                <td>{{ $registry->Signal_Level }}</td>
+              </tr>
+            @endforeach
+            </tbody>
+          </table>
+        </div>
+        {!! $registries->appends(\Request::except('page'))->render() !!}
+
+        <!-- datatable ends -->
+        </div>
+        @endif
+    </div>
+  </div>
+</section>
+
+<!-- users list ends -->
+@endsection
+
+{{-- vendor scripts --}}
+@section('vendor-script')
+
+@endsection
+
+{{-- page script --}}
+@section('page-script')
+@endsection

@@ -1,0 +1,106 @@
+/*----------------------------------------
+    Forms
+------------------------------------------*/
+
+.input-field div.error {
+    position: relative;
+    top: 0rem;
+    left: 0rem;
+    font-size: 0.8rem;
+    color: #FF4081;
+    transform: translateY(0%);
+}
+
+.input-field label.active {
+    width: 100%;
+}
+
+.left-alert input[type=text]+label:after,
+.left-alert input[type=password]+label:after,
+.left-alert input[type=email]+label:after,
+.left-alert input[type=url]+label:after,
+.left-alert input[type=time]+label:after,
+.left-alert input[type=date]+label:after,
+.left-alert input[type=datetime-local]+label:after,
+.left-alert input[type=tel]+label:after,
+.left-alert input[type=number]+label:after,
+.left-alert input[type=search]+label:after,
+.left-alert textarea.materialize-textarea+label:after {
+    left: 0px;
+}
+
+.right-alert input[type=text]+label:after,
+.right-alert input[type=password]+label:after,
+.right-alert input[type=email]+label:after,
+.right-alert input[type=url]+label:after,
+.right-alert input[type=time]+label:after,
+.right-alert input[type=date]+label:after,
+.right-alert input[type=datetime-local]+label:after,
+.right-alert input[type=tel]+label:after,
+.right-alert input[type=number]+label:after,
+.right-alert input[type=search]+label:after,
+.right-alert textarea.materialize-textarea+label:after {
+    right: 70px;
+}
+
+// select2 with icon
+.select2-icons{
+  +.select2-container--default{
+    .select2-selection__rendered,
+    .select2-selection__choice{
+      display: flex !important;
+      align-items: center;
+      padding-bottom: 5px !important;
+      i{
+          margin-right: 1rem;
+      }
+    }
+  }
+}
+.select2-results{
+  .select2-results__option{
+    i{
+      top: 7px;
+      position: relative;
+      margin-right: 1rem;
+    }
+  }
+}
+// select advance programmatically button
+.btn-toolbar{
+  display: flex;
+  flex-wrap: wrap;
+  .btn-group-sm{
+    display: flex;
+    margin-bottom: .5rem;
+    .btn{
+      height: 28px;
+      line-height: 0;
+      padding: 0 1rem;
+      margin-right: 1rem;
+    }
+  }
+}
+
+// select2 size 
+// large size
+.select2-selection {
+  &.select-lg{
+    min-height: calc(1.4em + 1.334rem + 3.7px)!important;
+    font-size: 1.2rem;
+    margin-bottom: 0!important;
+    .select2-selection__rendered{
+      line-height: 28px;
+    }
+  }
+} 
+// small size
+.select2-selection {
+  &.select-sm{
+    min-height: calc(1.1em + .94rem + 3.7px)!important;
+    padding: 0 .2rem;
+    font-size: .75rem;
+    margin-bottom: 0!important;
+    line-height: 1.5;
+  }
+} 

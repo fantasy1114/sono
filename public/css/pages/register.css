@@ -1,0 +1,21 @@
+/*----------------------------------------
+    register Page
+------------------------------------------*/
+
+.register-bg {
+  background-image: url(/images/flat-bg.jpg?548eb8f3fbc4e1b774f1cb484c0d3c0a);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#register-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+#register-page .card-panel.border-radius-6.register-card {
+  margin-left: 0 !important;
+}
+

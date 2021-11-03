@@ -1,0 +1,18 @@
+// ==========================================================================
+// Materialize theme variables
+// Extended from : theme-components/variables.scss
+// ==========================================================================
+//
+// Table of Contents:
+//
+//  1. Colors
+//  2. Sidenav
+
+// Colors
+$body-bg: #f2f4f8;
+$breadcrumbs-bg: transparent;
+
+//Sidenav
+$sidenav-active-text-color: $white;
+$sidenav-active-box-shadow: 3px 3px 20px 0 rgba(255, 110, 64, 0.5);
+$sidenav-active-bg: linear-gradient(45deg, #8e24aa, #ff6e40);

@@ -1,0 +1,116 @@
+{{-- layout --}}
+@extends('layouts.contentLayoutMaster')
+
+{{-- page title --}}
+@section('title','Keys list')
+
+<!-- Changed by Yuris to support Materialize CSS -->
+
+{{-- vendors styles --}}
+@section('vendor-style')
+<link rel="stylesheet" type="text/css" href="{{asset('vendors/data-tables/css/jquery.dataTables.min.css')}}">
+<link rel="stylesheet" type="text/css"
+  href="{{asset('vendors/data-tables/extensions/responsive/css/responsive.dataTables.min.css')}}">
+@endsection
+
+{{-- page styles --}}
+@section('page-style')
+<link rel="stylesheet" type="text/css" href="{{asset('css/pages/page-users.css')}}">
+@endsection
+
+{{-- page content --}}
+@section('content')
+
+@if(Session::has('success_message'))
+  <a name="info_button" class="waves-effect waves-light btn green" onclick="this.parentNode.removeChild(this);">
+    <i class="material-icons left">done</i>{!! session('success_message') !!}</a>
+  @endif
+
+<!-- users list start -->
+<section class="users-list-wrapper section">
+    <!-- Header Starts -->
+    <div class="row valign-wrapper mb-1 mt-1">
+        <div class="col s9 m9 l9 left-align">
+            <h5 class="white-text">{{ trans('keys.model_plural') }}</h5>
+            <p>{!! auth()->user()->renderOrgName() !!}</p>
+        </div>
+        <div class="col s3 m3 l3 right-align">
+            <a href="{{ route('keys.key.create') }}" class="btn-floating btn waves-effect waves-light red">
+                <i class="material-icons" title="{{ trans('keys.create') }}">add</i>
+            </a>
+        </div>
+    </div>
+  <!-- TABLE -->
+  <div class="users-list-table">
+    <div class="card">
+      <div class="card-content">
+        @if(count($keys) == 0)
+            <div class="panel-body text-center">
+                <h4>{{ trans('keys.none_available') }}</h4>
+            </div>
+        @else
+        <div class="panel-body panel-body-with-table">
+        <!-- datatable start -->
+        <div class="responsive-table">
+          <table id="users-list-datatable" class="table striped">
+            <thead>
+              <tr>
+                                            <th>{{ trans('keys.Key_Name') }}</th>
+                            <th>{{ trans('keys.Employee_ID') }}</th>
+                            <th>{{ trans('keys.Is_Active') }}</th>
+
+                <th></th>
+              </tr>
+            </thead>
+            <tbody>
+            @foreach($keys as $key)
+              <tr>
+                                            <td>{{ $key->Key_Name }}</td>
+                            <td>{{ optional($key->Employee)->Employee_Name }}</td>
+                            <td>{{ ($key->Is_Active) ? 'Yes' : 'No' }}</td>
+
+                <td class="right-align">
+                    <form method="POST" action="{!! route('keys.key.destroy', $key->Key_ID) !!}" accept-charset="UTF-8">
+                    <a class="btn-flat" href="{{ route('keys.key.show', $key->Key_ID ) }}"><i class="material-icons dark-blue-text">remove_red_eye</i></a>
+                    <a class="btn-flat" href="{{ route('keys.key.edit', $key->Key_ID ) }}"><i class="material-icons green-text">edit</i></a>
+                    <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                    <input name="_method" value="DELETE" type="hidden">
+                    <button type="submit" class="btn-flat" title="{{ trans('keys.delete') }}" onclick="return confirm(&quot;{{ trans('keys.confirm_delete') }}&quot;)">
+                        <i class="material-icons red-text">delete_forever</i>
+                    </button>
+                    <!-- <a href="" onclick="return confirm(&quot;{{ trans('keys.confirm_delete') }}&quot;)"><i class="material-icons red-text">delete_forever</i></a> -->
+                    </form>
+                </td>
+              </tr>
+            @endforeach
+            </tbody>
+          </table>
+        </div>
+        <!-- datatable ends -->
+        </div>
+        @endif
+    </div>
+  </div>
+</section>
+
+<div class="card-localization border rounded mt-3 p-2">
+  <h5 class="mb-1">Title</h5>
+  <p class="card-text" data-i18n="key">
+      Cake sesame snaps cupcake gingerbread danish I love gingerbread. Apple pie pie jujubes chupa chups muffin
+      halvah lollipop. Chocolate cake oat cake tiramisu marzipan sugar plum. Donut sweet pie oat cake dragée
+      fruitcake cotton candy lemon drops.
+  </p>
+</div>
+<!-- users list ends -->
+@endsection
+
+{{-- vendor scripts --}}
+@section('vendor-script')
+<script src="{{asset('vendors/data-tables/js/jquery.dataTables.min.js')}}"></script>
+<script src="{{asset('vendors/data-tables/extensions/responsive/js/dataTables.responsive.min.js')}}"></script>
+@endsection
+
+{{-- page script --}}
+@section('page-script')
+<script src="{{asset('js/scripts/page-users.js')}}"></script>
+@endsection

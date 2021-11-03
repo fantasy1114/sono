@@ -1,0 +1,21 @@
+/*----------------------------------------
+    Login Page
+------------------------------------------*/
+
+.forgot-bg {
+  background-image: url(/images/flat-bg.jpg?548eb8f3fbc4e1b774f1cb484c0d3c0a);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#forgot-password {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+#forgot-password .card-panel.border-radius-6.forgot-card {
+  margin-left: 0 !important;
+}
+

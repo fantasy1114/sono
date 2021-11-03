@@ -1,0 +1,5 @@
+        <div class="mb-5 [% field_type %]">
+                <div class="switch">
+                    <label>No<input name="[% field_name %]" type="checkbox" [% required_field %][% checked_item %]><span class = "lever"></span>Yes</label>
+                </div>
+        </div>

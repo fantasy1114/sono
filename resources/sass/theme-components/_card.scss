@@ -1,0 +1,433 @@
+/*----------------------------------------
+Cards
+------------------------------------------*/
+
+.card {
+   margin: 1rem 0 1rem 0;
+
+   .card-title {
+      margin: 0;
+      font-weight: 400;
+      font-size: 18px;
+   }
+
+   .activator {
+      cursor: pointer;
+   }
+
+   .card-action {
+      overflow: hidden;
+   }
+}
+
+#card-stats {
+   .card-content {
+      text-align: center;
+   }
+
+   .card-stats-title {
+      font-size: 1rem;
+
+      i {
+         font-size: 1.2rem;
+         top: 3px;
+         position: relative;
+      }
+   }
+
+   .card-stats-compare {
+      font-size: 0.85rem;
+
+      i {
+         position: relative;
+         top: 8px;
+      }
+   }
+
+   .card-stats-number {
+      font-size: 1.8rem;
+      line-height: 2rem;
+      margin: 0.8rem 0 0.6rem 0;
+      font-weight: 600;
+   }
+
+   .card {
+      .card-content {
+         padding: 10px 14px;
+      }
+
+      .card-action {
+         padding: 10px 14px;
+         overflow: hidden;
+      }
+   }
+}
+
+// Card Animation
+
+.vertical-align-top {
+   vertical-align: top;
+}
+
+.card-animation-1,
+.image-n-margin {
+   margin-top: -50px;
+   -webkit-transition: 0.3s;
+   /* Safari */
+   transition: 0.5s;
+}
+
+.card-animation-1:hover .image-n-margin {
+   margin-top: -80px;
+   margin-bottom: 30px;
+   transition: 0.5s;
+   cursor: pointer;
+}
+
+/* alert card */
+.card-alert {
+   .card-content {
+      padding: 10px 20px;
+   }
+
+   i {
+      font-size: 20px;
+      position: relative;
+      top: -1px;
+      vertical-align: middle;
+   }
+
+   .alert-circle {
+      display: inline-block;
+      width: 40px;
+      white-space: nowrap;
+      border-radius: 1000px;
+      vertical-align: bottom;
+      position: relative;
+      top: 0;
+      left: -2px;
+   }
+
+   .single-alert {
+      line-height: 42px;
+   }
+
+   button {
+      background: none;
+      border: none;
+      position: absolute;
+      top: 5px;
+      right: 10px;
+      font-size: 20px;
+      color: $white;
+   }
+
+   .card .card-content {
+      padding: 20px 40px 20px 20px;
+   }
+
+   .card-action i {
+      top: 0;
+      margin: 0;
+   }
+}
+
+/* work card */
+
+#work-collections {
+   .collection-header {
+      font-size: 1.14rem;
+      font-weight: 500;
+   }
+
+   p {
+      &.collections-title {
+         font-size: 1rem;
+         padding: 0;
+         margin: 0;
+         font-weight: 500;
+      }
+
+      &.collections-content {
+         font-size: 0.9rem;
+         padding: 0;
+         margin: 0;
+         font-weight: 400;
+      }
+   }
+
+   .collection-item.avatar {
+      height: auto;
+      padding-top: 22px;
+   }
+}
+
+/* flight card */
+
+#flight-card {
+   .flight-card-title {
+      margin: 0;
+      font-weight: 300;
+      color: #fff;
+   }
+
+   .flight-card-date {
+      font-size: 1rem;
+      margin: 0;
+      color: #fff;
+   }
+
+   .flight-state {
+      padding-bottom: 15px;
+   }
+
+   .flight-state-two {
+      border-left: 1px dashed color("grey", "lighten-1");
+   }
+
+   .flight-icon {
+      font-size: 2.2rem;
+      display: block;
+      -webkit-transform: rotate(90deg);
+      -moz-transform: rotate(90deg);
+      -ms-transform: rotate(90deg);
+      -o-transform: rotate(90deg);
+   }
+
+   .card-content-bg {
+      background: url("../../../images/gallery/3.png") no-repeat center center;
+      background-size: cover;
+   }
+
+   .card-content {
+      background: rgba(0, 0, 0, 0.25);
+   }
+
+   .flight-state-wrapper {
+      margin: 0 0 80px 0 !important;
+   }
+
+   .card-header .card-title {
+      padding: 20px;
+   }
+}
+
+/* task card */
+
+#task-card {
+   label {
+      display: block;
+      color: rgba(0, 0, 0, 0.87);
+      height: auto;
+   }
+
+   .task-card-title {
+      margin: 0;
+      color: $white;
+      font-weight: 300;
+   }
+
+   .task-card-date {
+      font-size: 1rem;
+      margin: 0;
+      color: $white;
+   }
+
+   .collection-header {
+      padding: 20px;
+   }
+
+   .task-add {
+      position: absolute;
+      right: 10px;
+      top: 76px;
+   }
+
+   .task-cat {
+      padding: 2px 4px;
+      color: $white;
+      margin-left: 37px;
+      font-weight: 300;
+      font-size: 0.8rem;
+      border-radius: 2px;
+      background-clip: padding-box;
+   }
+}
+
+.task-cat {
+   padding: 2px 4px;
+   color: $white;
+   font-weight: 300;
+   font-size: 0.8rem;
+   border-radius: 2px;
+   background-clip: padding-box;
+}
+
+.collection .collection-item.avatar i.circle {
+   font-size: 28px;
+}
+
+/* profile card */
+#profile-card {
+   .card-image {
+      height: 150px;
+   }
+
+   .card-profile-image {
+      width: 70px;
+      position: absolute;
+      top: 110px;
+      z-index: 1;
+      cursor: pointer;
+   }
+
+   .btn-move-up {
+      position: relative;
+      top: -40px;
+      right: -18px;
+      margin-right: 10px !important;
+   }
+
+   .card-content {
+      .profile-card-i {
+         position: relative;
+         top: 6px;
+         margin-right: 10px;
+      }
+
+      p {
+         font-size: 1rem;
+         margin: 10px 0 12px;
+      }
+   }
+}
+
+.card-move-up .move-up {
+   padding: 20px;
+}
+
+.black-overlay {
+   background-color: rgba(0, 0, 0, 0.42) !important;
+}
+
+.bg-image-1 {
+   background-image: url("../../../images/cards/macbook.png");
+   width: 100%;
+   background-size: cover;
+}
+
+.bg-image-2 {
+   background-image: url("../../../images/cards/iphone.png");
+   width: 100%;
+   background-size: cover;
+}
+
+.bg-image-3 {
+   background-image: url("../../../images/cards/applewatch.png");
+   width: 100%;
+   background-size: cover;
+}
+
+// Social Card
+.icon-background {
+   margin: 8px;
+   height: 50px;
+   width: 50px;
+   padding-top: 11px;
+}
+
+// Profile card
+
+#profile-card {
+   .card-reveal {
+      i.material-icons {
+         position: relative;
+         top: 6px;
+      }
+   }
+}
+
+// User Card
+
+#user-card {
+   .flip-card {
+      max-width: 100%;
+   }
+}
+
+@media screen and (min-width: 1290px) {
+   .icon-background {
+      margin: 1.25rem;
+      height: 3.125rem;
+      width: 3.125rem;
+      padding-top: 0.6875rem;
+      margin-left: 2rem;
+   }
+}
+
+@media screen and (max-width: 1366px) {
+   .icon-background {
+      margin-left: 1.25rem;
+   }
+}
+
+@media screen and (min-width: 1440px) {
+   .icon-background {
+      margin-left: 2rem;
+   }
+}
+
+@media screen and (min-width: 1680px) {
+   .icon-background {
+      margin-left: 2.6875rem;
+   }
+}
+
+@media screen and (min-width: 1024px) and (max-width: 1365px) {
+   .icon-background {
+      margin-left: 0.25rem;
+   }
+}
+
+@media screen and (max-width: 992px) {
+   .icon-background {
+      margin-left: 1.875rem;
+   }
+}
+
+@media screen and (max-width: 786px) {
+   .icon-background {
+      margin-left: 0.9375rem;
+   }
+}
+
+@media screen and (max-width: 540px) {
+   .icon-background {
+      margin-left: 0.625rem;
+   }
+}
+
+
+
+
+// Small Card
+.small-ico-bg {
+   padding: 6px;
+   background-color: #f3f1f1;
+   border-radius: 50%;
+}
+
+// Media Query
+
+@media only screen and (min-device-width: 1024px) and (max-device-width: 1366px) {
+   #cards-extended {
+
+      #gradient-Analytics,
+      #card-with-analytics,
+      #card-panel-type {
+         .card-width {
+            width: 50%;
+         }
+      }
+   }
+}

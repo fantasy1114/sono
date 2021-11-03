@@ -1,0 +1,73 @@
+{
+  "menu": [
+    {
+      "url": "page-blank",
+      "name": "Blank Page",
+      "slug": "page-blank",
+      "icon": "pages",
+      "i18n": "Blank Page"
+    },
+    {
+      "url": "javascript:void(0)",
+      "name": "Menu levels",
+      "activate": "formsTables",
+      "i18n": "Menu levels",
+      "icon": "photo_filter",
+      "slug": "",
+      "dropdown": "1",
+      "submenu": [
+        {
+          "url": "javascript:void(0)",
+          "name": "Second level 1",
+          "slug": "",
+          "i18n": "Second level 1"
+        },
+        {
+          "url": "javascript:void(0)",
+          "name": "Second level 2",
+          "slug": "",
+          "i18n": "Second level 2"
+        },
+        {
+          "url": "javascript:void(0)",
+          "name": "Second level 3",
+          "slug": "",
+          "i18n": "Second level 3",
+          "activate": "thirdDropdown",
+          "icon": "chevron_right",
+          "dropdown": "1",
+          "submenu": [
+            {
+              "url": "javascript:void(0)",
+              "name": "Child 1",
+              "slug": "",
+              "i18n": "Child 1"
+            },
+            {
+              "url": "javascript:void(0)",
+              "name": "Child 2",
+              "slug": "",
+              "i18n": "Child 2"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "url": "https://pixinvent.com/materialize-material-design-admin-template/documentation/",
+      "name": "Documentation",
+      "i18n": "Documentation",
+      "icon": "import_contacts",
+      "slug": "documentation",
+      "newTab": "_blank"
+    },
+    {
+      "url": "https://pixinvent.ticksy.com/",
+      "name": "Support",
+      "icon": "help_outline",
+      "slug": "support",
+      "i18n": "Support",
+      "newTab": "_blank"
+    }
+  ]
+}

@@ -1,0 +1,803 @@
+@import "./components/color-variables";
+@import "./components/color-classes";
+@import "./pages/variables.scss";
+
+body {
+  direction: ltr;
+
+  //main sidenav 
+  .sidenav-main {
+    left: 0;
+    .sidenav {
+      left: 0 !important;
+      right: auto !important;
+    }
+  }
+
+  .navbar {
+    .notification-badge {
+      right: 0;
+    }
+  }
+
+  // dropdown content of whole template
+  .dropdown-content {
+    left: unset;
+    right: 0;
+  }
+
+  // chat sidebar
+  .chat-sidebar {
+    .sidenav {
+      &.right-aligned {
+        left: 0;
+        right: auto;
+      }
+    }
+  }
+
+  // tooltips 
+  .material-tooltip {
+    left: unset;
+  }
+
+  // fix action btn
+  .fixed-action-btn {
+    left: auto !important;
+  }
+
+  // sidenav
+  .sidenav {
+    li.active>.collapsible-header:after {
+      transform: rotate(90deg);
+    }
+  }
+  .sidenav {
+    li>.collapsible-header:after {
+      content: 'keyboard_arrow_left' !important;
+    }
+  }
+  // sidebar left
+  .sidebar-left {
+    float: left !important;
+  }
+
+  // email app sidebar
+  .sidebar {
+    .sidebar-content {
+      .sidebar-menu {
+        margin: 0 0 0 -1.4rem;
+        padding: 0 0 0 1.4rem;
+
+        .app-sidebar {
+          ul {
+            li {
+              margin-right: 20px;
+              margin-left: 0;
+
+              &.active {
+                margin-left: -1.8rem;
+                padding-left: 1.8rem;
+                padding-right: 0;
+                border-top-right-radius: 2rem;
+                border-bottom-right-radius: 2rem;
+                border-top-left-radius: 0;
+                border-bottom-left-radius: 0;
+              }
+            }
+          }
+        }
+      }
+
+      .sidenav-trigger {
+        left: 17px;
+        right: unset;
+      }
+
+      .sidebar-header {
+        .sidebar-details {
+          .media-image {
+            padding-right: 0 !important;
+            padding-left: 1rem !important;
+          }
+        }
+      }
+    }
+  }
+
+  // email apps
+  .app-email {
+    .content-area {
+      .app-wrapper {
+        .app-search {
+          .app-filter {
+            padding-left: 2.75rem;
+            padding-right: 0;
+          }
+
+          .search-icon {
+            left: 15px;
+            right: unset;
+          }
+        }
+
+        .email-header {
+          padding: 1rem 1.5rem 1rem 0;
+
+          .header-checkbox [type="checkbox"] {
+
+            +span:not(.lever):before,
+            &:not(.filled-in)+span:not(.lever):after {
+              margin-left: 1.5rem;
+              margin-right: 0;
+            }
+          }
+        }
+
+        .collection {
+          .collection-item {
+            .user-media {
+              img.avtar {
+                margin-right: 0.75rem !important;
+                margin-left: 0 !important;
+              }
+            }
+          }
+        }
+      }
+
+      &.content-right {
+        float: right;
+      }
+    }
+  }
+
+  // email app content
+  .app-email-content {
+    .content-area {
+      .app-wrapper {
+        .app-search {
+          .app-filter {
+            padding-left: 2.75rem;
+            padding-right: 0;
+          }
+
+          .search-icon {
+            left: 15px;
+            right: unset;
+          }
+        }
+
+        .email-header {
+          .subject {
+            .back-to-mails {
+              margin-right: 1rem;
+              margin-left: 0;
+            }
+          }
+        }
+
+        .email-content {
+          .list-title-area {
+            .user-media {
+              img {
+                margin-right: 1rem;
+                margin-left: 0;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  // modal 
+  .modal {
+    .modal-footer {
+      .btn {
+        i.material-icons {
+          margin-right: 0.5rem;
+          margin-left: 0;
+        }
+      }
+    }
+  }
+
+  // Quill editor 
+  .ql-editor.ql-blank {
+    &::before {
+      right: unset !important;
+    }
+  }
+
+  .ql-editor p,
+  .ql-editor ol,
+  .ql-editor ul,
+  .ql-editor pre,
+  .ql-editor blockquote,
+  .ql-editor h1,
+  .ql-editor h2,
+  .ql-editor h3,
+  .ql-editor h4,
+  .ql-editor h5,
+  .ql-editor h6 {
+    text-align: left;
+  }
+
+  // chat apps
+  .chat-application {
+    .app-chat {
+      .chat-content {
+        .sidebar {
+          .sidebar-search {
+            .search-area {
+              .search-icon {
+                padding: 0.75rem 0.25rem 0.35rem 0.75rem;
+                border-top-right-radius: 0;
+                border-bottom-right-radius: 0;
+                border-top-left-radius: 2rem;
+                border-bottom-left-radius: 2rem;
+                margin-right: 0 !important;
+              }
+
+              // chat search
+              .app-filter {
+                border-top-left-radius: 0;
+                border-bottom-left-radius: 0;
+                border-top-right-radius: 2rem;
+                border-bottom-right-radius: 2rem;
+              }
+            }
+          }
+
+          //sidebar of chat
+          .sidebar-chat {
+            .chat-list {
+
+              .chat-user.active {
+                border-right: 3px solid color("grey", "darken-4");
+                border-left: none;
+              }
+            }
+          }
+        }
+        .sidebar-left{
+          border-right: 1px solid color("grey","lighten-3");
+          border-left: none;
+        }
+        // chat content area
+        .chat-content-area {
+          .chat-area {
+            .chats {
+              .chat {
+                &.chat-right {
+                  .chat-body {
+                    .chat-text:first-child:before {
+                      border-right-color: $primary-color !important;
+                      border-left-color: transparent !important;
+                      transform: rotate(45deg);
+                      transform-origin: 11px -3px;
+                    }
+                  }
+                }
+
+                .chat-body {
+                  .chat-text:first-child:before {
+                    border-left-color: #fff;
+                    transform: rotate(45deg);
+                    border-right-color: transparent;
+                    box-shadow: none;
+                    transform-origin: 6px 16px;
+                  }
+                }
+              }
+            }
+          }
+
+          .chat-footer {
+            .chat-input {
+              .message {
+                margin-right: 1.5rem;
+                margin-left: 0;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  // app todo
+  .app-todo {
+    .content-area {
+      .app-wrapper {
+        .todo-header {
+          padding: 1rem 1.5rem 1rem 0;
+          .select-action,
+					.sort-task,
+					.delete-tasks {
+            margin-left: 1rem;
+            margin-right: 0 !important;
+					}
+          .header-checkbox [type="checkbox"],
+          .header-checkbox [type="checkbox"]:not(.filled-in) {
+
+            +span:not(.lever):before,
+            +span:not(.lever):after {
+              margin-left: 2.65rem;
+              margin-right: 0;
+            }
+          }
+        }
+
+        .collection {
+          .collection-item {
+            padding-left: 0;
+            padding-right: 20px;
+            .todo-move{
+              margin-left: .5rem;
+              margin-right: unset;
+            }
+             [type="checkbox"] + span:not(.lever):before{
+              margin-left: 3px;
+            }
+            .list-content{
+              margin-right: 1rem;
+              margin-left: unset;
+            }
+          }
+        }
+
+        .app-search {
+          .app-filter {
+            padding-left: 2.75rem;
+            padding-right: 0;
+          }
+
+          .search-icon {
+            left: 15px;
+            right: unset;
+          }
+        }
+      }
+    }
+  }
+
+  // app kanban
+  #kanban-wrapper {
+    .kanban-container {
+      .kanban-board {
+        .dropdown {
+          float: right !important;
+        }
+      }
+    }
+  }
+
+  // file manager
+  .app-file-manager-wrapper {
+    .app-file-sidebar-info {
+      right: 32px;
+      left: auto;
+      transform: translateX(110%) !important;
+
+      &.show {
+        transform: translateX(9%) translateY(1px) !important;
+      }
+
+      .card-content {
+        .tab-content {
+          .activity-tab {
+            .widget-timeline {
+              padding-left: 40px !important;
+              padding-right: 0 !important;
+
+              li.timeline-items {
+                &:before {
+                  left: -37px;
+                  right: 0;
+                }
+
+                &.active:not(:last-child) {
+                  &:after {
+                    left: -31px;
+                    right: 0;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
+  }
+  // all app sidebar
+  .email-compose-sidebar,
+  .todo-compose-sidebar,
+  .kanban-sidebar,
+  .contact-compose-sidebar{
+    right: 0;
+    left: auto;
+    transform: translateX(110%);
+    &.show{
+      transform: translateX(0) translateY(1px);
+    }
+    .assignto{
+      .avatar{
+        margin-right: 10px;
+      }
+    }
+  }
+  // app contact
+  .content-area {
+    .app-wrapper {
+      .datatable-search {
+        .app-filter {
+          padding-left: 2.75rem;
+          padding-right: 0;
+        }
+
+        .search-icon {
+          left: 15px;
+          right: unset;
+        }
+      }
+    }
+  }
+  #data-table-contact_wrapper{
+    #data-table-contact{
+      .material-icons{
+        direction: rtl;
+      }
+    }
+    .dataTables_info{
+      margin-right: 4rem;
+    }
+    .dataTables_paginate{
+      margin-left: .8rem;
+    }
+  }
+ 
+
+  // app invoice
+  .invoice-list-wrapper {
+    .responsive-table {
+      .invoice-data-table {
+        .dt-checkboxes-cell {
+          input {
+
+            &:after,
+            &::before {
+              left: 0;
+            }
+          }
+        }
+      }
+
+      .top {
+        .action-filters {
+          .dataTables_filter {
+            padding-right: 30px;
+            padding-left: 0;
+
+            label {
+              .filter-btn {
+                right: 7px;
+                left: auto;
+              }
+
+              input[type="search"] {
+                padding-left: 1.5rem;
+                padding-right: 0;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  // Ecomerce pages
+  #ecommerce-products,
+  #faq,
+  #faq-detail {
+    .categories-collapsible {
+      li.active {
+        i {
+          transform: rotate(264deg);
+        }
+      }
+    }
+  }
+
+  // gallery page
+  .grid figure {
+    float: left;
+
+    &.effect-lily {
+      img {
+        transform: translate3d(-40px, 0, 0);
+      }
+    }
+
+    &.effect-roxy {
+      img {
+        transform: translate3d(-50px, 0, 0);
+      }
+    }
+
+    &.effect-sarah {
+      img {
+        transform: translate3d(-10px, 0, 0);
+      }
+    }
+  }
+
+  // card advance
+  #cards-extended {
+    #card-gradient-chart {
+      .card {
+        text-align: right;
+
+        span.badge {
+          float: left;
+        }
+      }
+    }
+  }
+
+  // carousel
+  .carousel .carousel-item {
+    right: 0;
+    left: unset;
+  }
+
+  // nestable
+  .dd-item>button {
+    float: left;
+  }
+
+  // tour
+  .shepherd-button {
+    margin-right: .5rem;
+  }
+
+  // quill editor
+  .ql-snow {
+    .ql-picker:not(.ql-color-picker):not(.ql-icon-picker) {
+      svg {
+        left: auto;
+      }
+    }
+  }
+
+  // Perfact scrollbar RTL fix
+  .ps__rail-y {
+    right: 0 !important;
+    left: -6px !important;
+
+  }
+
+  // select 2
+  .select2-icons {
+    +.select2-container--default {
+
+      .select2-selection__rendered,
+      .select2-selection__choice {
+        i {
+          margin-left: 1rem;
+        }
+      }
+    }
+  }
+
+  .select2-results {
+    .select2-results__option {
+      i {
+        margin-left: 1rem;
+      }
+    }
+  }
+
+  // horizontal nav dropdown icons
+  #horizontal-nav {
+    .dropdown-menu {
+      span {
+        i {
+          left: 4px;
+          right: unset;
+        }
+      }
+    }
+  }
+  
+  .pagination {
+    li {
+      i {
+        transform: rotate(-180deg);
+      }
+    }
+  }
+// bredcrums
+  #breadcrumbs-wrapper {
+    .breadcrumbs>li+li::before {
+      display: inline-block;
+    }
+  }
+  // dashboard revue chart
+  .dashboard-revenue-wrapper{
+    direction: rtl;
+    span.badge{
+      float: left;
+    }
+  }
+  #user-profile{
+    .star-width{
+      direction: rtl;
+    }
+  }
+  #main .section-data-tables .dataTables_wrapper table.dataTable tbody tr td::before{
+    left: -3px;
+  }
+  .select2-results .select2-results__options .select2-results__option .select2-result-repository .select2-result-repository__avatar{
+    margin-left: 1rem;
+    margin-right:0;
+  }
+  .dropdown-submenu{
+    .dropdownSub-menu{
+      i{
+        transform: rotate(180deg);
+        top: 22px;
+      }
+    }
+  }
+  .categories-collapsible{
+    i{
+      transform: rotate(180deg);
+    }
+  }
+ 
+}
+@-moz-document url-prefix() {
+  body{
+    // horizontal nav dropdown icons
+  #horizontal-nav {
+      .dropdown-menu {
+        span {
+          i {
+            right: -14px;
+            left: unset;
+          }
+        }
+      }
+    }
+  }
+}
+@supports (-ms-ime-align: auto){
+  body{
+    // horizontal nav dropdown icons
+  #horizontal-nav {
+      .dropdown-menu {
+        span {
+          i {
+            right: -14px;
+            left: unset;
+          }
+        }
+      }
+    }
+  }
+}
+@media (min-width: 992px) {
+
+  // for file manager
+  .app-file-manager-wrapper {
+    .content-right {
+      .app-file-area {
+        border-left: 1px solid color("grey", "lighten-2");
+        border-right-color: transparent !important;
+      }
+    }
+  }
+}
+
+@media (max-width:992px) {
+  body {
+    .app-file-manager-wrapper {
+      .sidebar-left {
+        left: -34px;
+        transform: translateX(-110%);
+
+        &.show {
+          transform: translateX(13%) translateY(-1px);
+        }
+      }
+    }
+
+    // chat apps
+    .chat-application {
+      .chat-content-head {
+        .header-details {
+          margin-left: 3rem;
+          margin-right: 0;
+        }
+      }
+
+      .app-sidebar {
+        transform: translateX(-105%);
+      }
+    }
+
+    .sidenav.sidenav-fixed.right-aligned {
+      transform: translateX(-105%);
+    }
+
+    .sidebar {
+      .sidebar-content {
+        .sidebar-menu {
+          .app-sidebar {
+            &#contact-sidenav {
+              padding-left: 25px;
+              padding-right: 1rem;
+              transform: translateX(-100%);
+              right: auto;
+              left: 0;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media(max-width:900px) {
+  body {
+    .sidebar {
+      .sidebar-content {
+        .sidebar-header {
+          left: 30px;
+          right: unset;
+        }
+
+        .sidebar-menu {
+          left: 20px;
+          right: unset;
+
+          .app-sidebar {
+
+            &#email-sidenav,
+            &#todo-sidenav,
+            &#contact-sidenav {
+              padding-left: 25px;
+              padding-right: 1rem;
+              transform: translateX(-100%);
+              right: auto;
+              left: 0;
+            }
+          }
+        }
+      }
+    }
+
+    .sidebar-left,
+    .sidebar-right {
+      float: none !important;
+    }
+  }
+}
+@media screen and (max-width:1106px) and (min-width:993px){
+  #horizontal-nav{
+     ul{
+        li{
+           a{
+              span{
+                i{
+                  left: -4px !important;
+                }
+              }
+           }
+        }
+     }
+  }
+}

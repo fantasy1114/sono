@@ -1,0 +1,15 @@
+// Variables
+
+@import "variables"; //Materialize custom variable file
+@import "../../components/variables"; //Materialize variable file
+
+
+@import "../../theme-components/theme-variables"; //Theme variable file
+@import "theme-variables"; //Theme custom variable file
+
+// Typography
+// Google Fonts
+@import url(https://fonts.googleapis.com/css?family=Muli:300,300i,400,400i,500,600);
+// Font Variables
+$title: 'Muli', sans-serif;
+$content: 'Muli', sans-serif;

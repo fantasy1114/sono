@@ -1,0 +1,3521 @@
+[
+    {
+        "model-name": "Organisation",
+        "resource-file": "C:\\Users\\Yuris\\Projects\\crest\\resources\\laravel-code-generator\\sources\\organisations.json",
+        "table-name": "Organisations",
+        "migrations": [
+            {
+                "name": "2021_01_23_195242_create_organisations_table",
+                "class-name": "CreateOrganisationsTable",
+                "path": "C:\\Users\\Yuris\\Projects\\crest\\database\\migrations\\2021_01_23_195242_create_organisations_table.php",
+                "is-create": true,
+                "is-virtual": true,
+                "is-organized": false,
+                "with-soft-delete": false,
+                "without-timestamps": false,
+                "resource": {
+                    "fields": [
+                        {
+                            "name": "Created_At",
+                            "labels": {
+                                "en": "Created  At",
+                                "ru": "Created  At",
+                                "lv": "Created  At"
+                            },
+                            "html-type": "text",
+                            "css-class": "",
+                            "options": {},
+                            "html-value": null,
+                            "validation": "",
+                            "is-on-index": false,
+                            "is-on-show": true,
+                            "is-on-form": false,
+                            "data-type": "timestamp",
+                            "data-type-params": [],
+                            "data-value": "CURRENT_TIMESTAMP",
+                            "is-index": false,
+                            "is-unique": false,
+                            "is-primary": false,
+                            "comment": null,
+                            "is-nullable": true,
+                            "is-header": false,
+                            "is-unsigned": false,
+                            "is-auto-increment": false,
+                            "is-inline-options": false,
+                            "is-date": false,
+                            "date-format": "j/n/Y g:i A",
+                            "cast-as": "",
+                            "placeholder": {
+                                "en": "Enter created  at here...",
+                                "ru": "Enter created  at here...",
+                                "lv": "Enter created  at here..."
+                            },
+                            "delimiter": "; ",
+                            "range": [],
+                            "foreign-relation": null,
+                            "foreign-constraint": null,
+                            "on-store": null,
+                            "on-update": null,
+                            "api-key": "Created_At",
+                            "is-api-visible": false,
+                            "api-description": {
+                                "en": "The created  at of the model.",
+                                "ru": "The created  at of the model.",
+                                "lv": "The created  at of the model."
+                            }
+                        },
+                        {
+                            "name": "Organisation_ID",
+                            "labels": {
+                                "en": "Organisation",
+                                "ru": "Organisation",
+                                "lv": "Organisation"
+                            },
+                            "html-type": "select",
+                            "css-class": "",
+                            "options": {},
+                            "html-value": null,
+                            "validation": "",
+                            "is-on-index": false,
+                            "is-on-show": false,
+                            "is-on-form": false,
+                            "data-type": "int",
+                            "data-type-params": [],
+                            "data-value": null,
+                            "is-index": true,
+                            "is-unique": false,
+                            "is-primary": true,
+                            "comment": null,
+                            "is-nullable": false,
+                            "is-header": false,
+                            "is-unsigned": true,
+                            "is-auto-increment": true,
+                            "is-inline-options": false,
+                            "is-date": false,
+                            "date-format": "",
+                            "cast-as": "",
+                            "placeholder": {
+                                "en": "Select organisation",
+                                "ru": "Select organisation",
+                                "lv": "Select organisation"
+                            },
+                            "delimiter": "; ",
+                            "range": [],
+                            "foreign-relation": {
+                                "name": "organisation",
+                                "type": "belongsTo",
+                                "params": [
+                                    "App\\Models\\Organisation",
+                                    "Organisation_ID"
+                                ],
+                                "field": "id"
+                            },
+                            "foreign-constraint": null,
+                            "on-store": null,
+                            "on-update": null,
+                            "api-key": "Organisation_ID",
+                            "is-api-visible": true,
+                            "api-description": {
+                                "en": "The organisation of the model.",
+                                "ru": "The organisation of the model.",
+                                "lv": "The organisation of the model."
+                            }
+                        },
+                        {
+                            "name": "Organisation_Name",
+                            "labels": {
+                                "en": "Organisation  Name",
+                                "ru": "Organisation  Name",
+                                "lv": "Organisation  Name"
+                            },
+                            "html-type": "text",
+                            "css-class": "",
+                            "options": {},
+                            "html-value": null,
+                            "validation": "required|string|min:1|max:64",
+                            "is-on-index": true,
+                            "is-on-show": true,
+                            "is-on-form": true,
+                            "data-type": "string",
+                            "data-type-params": [
+                                64
+                            ],
+                            "data-value": null,
+                            "is-index": false,
+                            "is-unique": false,
+                            "is-primary": false,
+                            "comment": null,
+                            "is-nullable": false,
+                            "is-header": false,
+                            "is-unsigned": false,
+                            "is-auto-increment": false,
+                            "is-inline-options": false,
+                            "is-date": false,
+                            "date-format": "",
+                            "cast-as": "",
+                            "placeholder": {
+                                "en": "Enter organisation  name here...",
+                                "ru": "Enter organisation  name here...",
+                                "lv": "Enter organisation  name here..."
+                            },
+                            "delimiter": "; ",
+                            "range": [],
+                            "foreign-relation": null,
+                            "foreign-constraint": null,
+                            "on-store": null,
+                            "on-update": null,
+                            "api-key": "Organisation_Name",
+                            "is-api-visible": true,
+                            "api-description": {
+                                "en": "The organisation  name of the model.",
+                                "ru": "The organisation  name of the model.",
+                                "lv": "The organisation  name of the model."
+                            }
+                        },
+                        {
+                            "name": "Updated_At",
+                            "labels": {
+                                "en": "Updated  At",
+                                "ru": "Updated  At",
+                                "lv": "Updated  At"
+                            },
+                            "html-type": "text",
+                            "css-class": "",
+                            "options": {},
+                            "html-value": null,
+                            "validation": "",
+                            "is-on-index": false,
+                            "is-on-show": true,
+                            "is-on-form": false,
+                            "data-type": "timestamp",
+                            "data-type-params": [],
+                            "data-value": "CURRENT_TIMESTAMP",
+                            "is-index": false,
+                            "is-unique": false,
+                            "is-primary": false,
+                            "comment": null,
+                            "is-nullable": true,
+                            "is-header": false,
+                            "is-unsigned": false,
+                            "is-auto-increment": false,
+                            "is-inline-options": false,
+                            "is-date": false,
+                            "date-format": "j/n/Y g:i A",
+                            "cast-as": "",
+                            "placeholder": {
+                                "en": "Enter updated  at here...",
+                                "ru": "Enter updated  at here...",
+                                "lv": "Enter updated  at here..."
+                            },
+                            "delimiter": "; ",
+                            "range": [],
+                            "foreign-relation": null,
+                            "foreign-constraint": null,
+                            "on-store": null,
+                            "on-update": null,
+                            "api-key": "Updated_At",
+                            "is-api-visible": false,
+                            "api-description": {
+                                "en": "The updated  at of the model.",
+                                "ru": "The updated  at of the model.",
+                                "lv": "The updated  at of the model."
+                            }
+                        }
+                    ],
+                    "relations": [
+                        {
+                            "name": "employees",
+                            "type": "hasMany",
+                            "params": [
+                                "App\\Models\\Employee",
+                                "Organisation_ID",
+                                "Organisation_ID"
+                            ],
+                            "field": "id"
+                        },
+                        {
+                            "name": "manager",
+                            "type": "hasOne",
+                            "params": [
+                                "App\\Models\\Manager",
+                                "Organisation_ID",
+                                "Organisation_ID"
+                            ],
+                            "field": "id"
+                        },
+                        {
+                            "name": "worksite",
+                            "type": "hasOne",
+                            "params": [
+                                "App\\Models\\Worksite",
+                                "Organisation_ID",
+                                "Organisation_ID"
+                            ],
+                            "field": "id"
+                        }
+                    ],
+                    "indexes": [],
+                    "auto-manage-created-and-updated-at": true,
+                    "table-name": "Organisations",
+                    "protection": {
+                        "is-model-protected": false,
+                        "is-controller-protected": false,
+                        "is-api-resource-protected": false,
+                        "is-api-resource-collection-protected": false,
+                        "is-api-documentation-protected": false,
+                        "is-api-documentation-controller-protected": false,
+                        "is-form-request-protected": false,
+                        "is-languages-protected": false,
+                        "is-form-view-protected": false,
+                        "is-index-view-protected": false,
+                        "is-create-view-protected": false,
+                        "is-edit-view-protected": false,
+                        "is-show-view-protected": false
+                    },
+                    "api-documentation": {
+                        "access_token_with_bearer": {
+                            "en": "The access token prefixed with the \"Bearer \" key word.",
+                            "ru": "The access token prefixed with the \"Bearer \" key word.",
+                            "lv": "The access token prefixed with the \"Bearer \" key word."
+                        },
+                        "index_route_description": {
+                            "en": "Retrieve existing organisations.",
+                            "ru": "Retrieve existing organisations.",
+                            "lv": "Retrieve existing organisations."
+                        },
+                        "index_route_response_description": {
+                            "en": "The API's response will be JSON based data. The JSON object will be structured as follow",
+                            "ru": "The API's response will be JSON based data. The JSON object will be structured as follow",
+                            "lv": "The API's response will be JSON based data. The JSON object will be structured as follow"
+                        },
+                        "the_key_is_the_model_property_and_the_value_is_the_model_value": {
+                            "en": "The array's key is the organisation property name where the value is the assigned value to the retrieved organisation.",
+                            "ru": "The array's key is the organisation property name where the value is the assigned value to the retrieved organisation.",
+                            "lv": "The array's key is the organisation property name where the value is the assigned value to the retrieved organisation."
+                        },
+                        "link_to_retrieve_first_page": {
+                            "en": "Link to retrieve first page.",
+                            "ru": "Link to retrieve first page.",
+                            "lv": "Link to retrieve first page."
+                        },
+                        "link_to_retrieve_last_page": {
+                            "en": "Link to retrieve last page.",
+                            "ru": "Link to retrieve last page.",
+                            "lv": "Link to retrieve last page."
+                        },
+                        "link_to_retrieve_previous_page": {
+                            "en": "Link to retrieve previous page.",
+                            "ru": "Link to retrieve previous page.",
+                            "lv": "Link to retrieve previous page."
+                        },
+                        "link_to_retrieve_next_page": {
+                            "en": "Link to retrieve next page.",
+                            "ru": "Link to retrieve next page.",
+                            "lv": "Link to retrieve next page."
+                        },
+                        "the_number_of_current_page": {
+                            "en": "The number of current page.",
+                            "ru": "The number of current page.",
+                            "lv": "The number of current page."
+                        },
+                        "the_index_of_the_first_retrieved_item": {
+                            "en": "The index of first retrieved organisation.",
+                            "ru": "The index of first retrieved organisation.",
+                            "lv": "The index of first retrieved organisation."
+                        },
+                        "the_number_of_the_last_page": {
+                            "en": "The number of the last page.",
+                            "ru": "The number of the last page.",
+                            "lv": "The number of the last page."
+                        },
+                        "the_base_link_to_the_resource": {
+                            "en": "The base link to the api resource.",
+                            "ru": "The base link to the api resource.",
+                            "lv": "The base link to the api resource."
+                        },
+                        "the_number_of_models_per_page": {
+                            "en": "The number of organisations per page.",
+                            "ru": "The number of organisations per page.",
+                            "lv": "The number of organisations per page."
+                        },
+                        "the_index_of_the_last_retrieved_item": {
+                            "en": "The index of last retrieved organisation.",
+                            "ru": "The index of last retrieved organisation.",
+                            "lv": "The index of last retrieved organisation."
+                        },
+                        "the_total_of_available_pages": {
+                            "en": "The total of the available pages.",
+                            "ru": "The total of the available pages.",
+                            "lv": "The total of the available pages."
+                        },
+                        "store_route_description": {
+                            "en": "Create new organisation.",
+                            "ru": "Create new organisation.",
+                            "lv": "Create new organisation."
+                        },
+                        "store_route_response_description": {
+                            "en": "The API's response will be JSON based data. The JSON object will be structured as follow",
+                            "ru": "The API's response will be JSON based data. The JSON object will be structured as follow",
+                            "lv": "The API's response will be JSON based data. The JSON object will be structured as follow"
+                        },
+                        "update_route_description": {
+                            "en": "Update existsing organisation.",
+                            "ru": "Update existsing organisation.",
+                            "lv": "Update existsing organisation."
+                        },
+                        "update_route_response_description": {
+                            "en": "The API's response will be JSON based data. The JSON object will be structured as follow",
+                            "ru": "The API's response will be JSON based data. The JSON object will be structured as follow",
+                            "lv": "The API's response will be JSON based data. The JSON object will be structured as follow"
+                        },
+                        "show_route_description": {
+                            "en": "Retrieve existsing organisation.",
+                            "ru": "Retrieve existsing organisation.",
+                            "lv": "Retrieve existsing organisation."
+                        },
+                        "show_route_response_description": {
+                            "en": "The API's response will be JSON based data. The JSON object will be structured as follow",
+                            "ru": "The API's response will be JSON based data. The JSON object will be structured as follow",
+                            "lv": "The API's response will be JSON based data. The JSON object will be structured as follow"
+                        },
+                        "the_id_of_model_to_retrieve": {
+                            "en": "The unique id of the organisation to retrieve",
+                            "ru": "The unique id of the organisation to retrieve",
+                            "lv": "The unique id of the organisation to retrieve"
+                        },
+                        "destroy_route_description": {
+                            "en": "Delete existsing organisation.",
+                            "ru": "Delete existsing organisation.",
+                            "lv": "Delete existsing organisation."
+                        },
+                        "destroy_route_response_description": {
+                            "en": "The API's response will be JSON based data. The JSON object will be structured as follow",
+                            "ru": "The API's response will be JSON based data. The JSON object will be structured as follow",
+                            "lv": "The API's response will be JSON based data. The JSON object will be structured as follow"
+                        },
+                        "the_id_of_model_to_delete": {
+                            "en": "The id of the organisation to delete.",
+                            "ru": "The id of the organisation to delete.",
+                            "lv": "The id of the organisation to delete."
+                        },
+                        "general_description": {
+                            "en": "Allows you to list, create, edit, show and delete organisations.",
+                            "ru": "Allows you to list, create, edit, show and delete organisations.",
+                            "lv": "Allows you to list, create, edit, show and delete organisations."
+                        },
+                        "indicate_whether_the_request_was_successful_or_not": {
+                            "en": "Indicate whether the request was successful or not.",
+                            "ru": "Indicate whether the request was successful or not.",
+                            "lv": "Indicate whether the request was successful or not."
+                        },
+                        "the_id_of_the_model": {
+                            "en": "The id of the organisation.",
+                            "ru": "The id of the organisation.",
+                            "lv": "The id of the organisation."
+                        },
+                        "this_parameter_must_be_present_in_the_request": {
+                            "en": "This parameter must be present in the request.",
+                            "ru": "This parameter must be present in the request.",
+                            "lv": "This parameter must be present in the request."
+                        },
+                        "the_request_failed_validation": {
+                            "en": "The request failed validation.",
+                            "ru": "The request failed validation.",
+                            "lv": "The request failed validation."
+                        },
+                        "list_of_the_invalid_errors": {
+                            "en": "List of the invalid errors.",
+                            "ru": "List of the invalid errors.",
+                            "lv": "List of the invalid errors."
+                        },
+                        "the_requested_model_does_not_exists": {
+                            "en": "The requested organisation does not exists.",
+                            "ru": "The requested organisation does not exists.",
+                            "lv": "The requested organisation does not exists."
+                        },
+                        "the_user_does_not_have_permission_to_access_the_requested_resource": {
+                            "en": "User does not have permission to access the requested resource.",
+                            "ru": "User does not have permission to access the requested resource.",
+                            "lv": "User does not have permission to access the requested resource."
+                        }
+                    }
+                }
+            }
+        ]
+    },
+    {
+        "model-name": "Manager",
+        "resource-file": "C:\\Users\\Yuris\\Projects\\crest\\resources\\laravel-code-generator\\sources\\managers.json",
+        "table-name": "Managers",
+        "migrations": [
+            {
+                "name": "2021_01_24_130215_create_managers_table",
+                "class-name": "CreateManagersTable",
+                "path": "C:\\Users\\Yuris\\Projects\\crest\\database\\migrations\\2021_01_24_130215_create_managers_table.php",
+                "is-create": true,
+                "is-virtual": true,
+                "is-organized": false,
+                "with-soft-delete": false,
+                "without-timestamps": false,
+                "resource": {
+                    "fields": [
+                        {
+                            "name": "Manager_ID",
+                            "labels": {
+                                "en": "Manager",
+                                "ru": "Manager",
+                                "lv": "Manager"
+                            },
+                            "html-type": "select",
+                            "css-class": "",
+                            "options": {},
+                            "html-value": null,
+                            "validation": "",
+                            "is-on-index": false,
+                            "is-on-show": false,
+                            "is-on-form": false,
+                            "data-type": "int",
+                            "data-type-params": [],
+                            "data-value": null,
+                            "is-index": true,
+                            "is-unique": false,
+                            "is-primary": true,
+                            "comment": null,
+                            "is-nullable": false,
+                            "is-header": false,
+                            "is-unsigned": true,
+                            "is-auto-increment": true,
+                            "is-inline-options": false,
+                            "is-date": false,
+                            "date-format": "",
+                            "cast-as": "",
+                            "placeholder": {
+                                "en": "Enter manager here...",
+                                "ru": "Enter manager here...",
+                                "lv": "Enter manager here..."
+                            },
+                            "delimiter": "; ",
+                            "range": [],
+                            "foreign-relation": {
+                                "name": "manager",
+                                "type": "belongsTo",
+                                "params": [
+                                    "App\\Models\\Manager",
+                                    "Manager_ID"
+                                ],
+                                "field": "Manager_Name"
+                            },
+                            "foreign-constraint": null,
+                            "on-store": null,
+                            "on-update": null,
+                            "api-key": "Manager_ID",
+                            "is-api-visible": true,
+                            "api-description": {
+                                "en": "The manager of the model.",
+                                "ru": "The manager of the model.",
+                                "lv": "The manager of the model."
+                            }
+                        },
+                        {
+                            "name": "Manager_Name",
+                            "labels": {
+                                "en": "Manager  Name",
+                                "ru": "Manager  Name",
+                                "lv": "Manager  Name"
+                            },
+                            "html-type": "text",
+                            "css-class": "",
+                            "options": {},
+                            "html-value": null,
+                            "validation": "required|numeric|string|min:1|max:128",
+                            "is-on-index": true,
+                            "is-on-show": true,
+                            "is-on-form": true,
+                            "data-type": "string",
+                            "data-type-params": [
+                                128
+                            ],
+                            "data-value": null,
+                            "is-index": false,
+                            "is-unique": false,
+                            "is-primary": false,
+                            "comment": null,
+                            "is-nullable": false,
+                            "is-header": false,
+                            "is-unsigned": false,
+                            "is-auto-increment": false,
+                            "is-inline-options": false,
+                            "is-date": false,
+                            "date-format": "",
+                            "cast-as": "",
+                            "placeholder": {
+                                "en": "Enter manager  name here...",
+                                "ru": "Enter manager  name here...",
+                                "lv": "Enter manager  name here..."
+                            },
+                            "delimiter": "; ",
+                            "range": [],
+                            "foreign-relation": null,
+                            "foreign-constraint": null,
+                            "on-store": null,
+                            "on-update": null,
+                            "api-key": "Manager_Name",
+                            "is-api-visible": true,
+                            "api-description": {
+                                "en": "The manager  name of the model.",
+                                "ru": "The manager  name of the model.",
+                                "lv": "The manager  name of the model."
+                            }
+                        },
+                        {
+                            "name": "Manager_Email",
+                            "labels": {
+                                "en": "Manager  Email",
+                                "ru": "Manager  Email",
+                                "lv": "Manager  Email"
+                            },
+                            "html-type": "text",
+                            "css-class": "",
+                            "options": {},
+                            "html-value": null,
+                            "validation": "required|numeric|string|min:1|max:32",
+                            "is-on-index": true,
+                            "is-on-show": true,
+                            "is-on-form": true,
+                            "data-type": "string",
+                            "data-type-params": [
+                                32
+                            ],
+                            "data-value": null,
+                            "is-index": false,
+                            "is-unique": false,
+                            "is-primary": false,
+                            "comment": null,
+                            "is-nullable": false,
+                            "is-header": false,
+                            "is-unsigned": false,
+                            "is-auto-increment": false,
+                            "is-inline-options": false,
+                            "is-date": false,
+                            "date-format": "",
+                            "cast-as": "",
+                            "placeholder": {
+                                "en": "Enter manager  email here...",
+                                "ru": "Enter manager  email here...",
+                                "lv": "Enter manager  email here..."
+                            },
+                            "delimiter": "; ",
+                            "range": [],
+                            "foreign-relation": null,
+                            "foreign-constraint": null,
+                            "on-store": null,
+                            "on-update": null,
+                            "api-key": "Manager_Email",
+                            "is-api-visible": true,
+                            "api-description": {
+                                "en": "The manager  email of the model.",
+                                "ru": "The manager  email of the model.",
+                                "lv": "The manager  email of the model."
+                            }
+                        },
+                        {
+                            "name": "Manager_Phone",
+                            "labels": {
+                                "en": "Manager  Phone",
+                                "ru": "Manager  Phone",
+                                "lv": "Manager  Phone"
+                            },
+                            "html-type": "text",
+                            "css-class": "",
+                            "options": {},
+                            "html-value": null,
+                            "validation": "required|numeric|string|min:1|max:64",
+                            "is-on-index": true,
+                            "is-on-show": true,
+                            "is-on-form": true,
+                            "data-type": "string",
+                            "data-type-params": [
+                                64
+                            ],
+                            "data-value": "",
+                            "is-index": false,
+                            "is-unique": false,
+                            "is-primary": false,
+                            "comment": null,
+                            "is-nullable": false,
+                            "is-header": false,
+                            "is-unsigned": false,
+                            "is-auto-increment": false,
+                            "is-inline-options": false,
+                            "is-date": false,
+                            "date-format": "",
+                            "cast-as": "",
+                            "placeholder": {
+                                "en": "Enter manager  phone here...",
+                                "ru": "Enter manager  phone here...",
+                                "lv": "Enter manager  phone here..."
+                            },
+                            "delimiter": "; ",
+                            "range": [],
+                            "foreign-relation": null,
+                            "foreign-constraint": null,
+                            "on-store": null,
+                            "on-update": null,
+                            "api-key": "Manager_Phone",
+                            "is-api-visible": true,
+                            "api-description": {
+                                "en": "The manager  phone of the model.",
+                                "ru": "The manager  phone of the model.",
+                                "lv": "The manager  phone of the model."
+                            }
+                        },
+                        {
+                            "name": "Manager_Password",
+                            "labels": {
+                                "en": "Manager  Password",
+                                "ru": "Manager  Password",
+                                "lv": "Manager  Password"
+                            },
+                            "html-type": "text",
+                            "css-class": "",
+                            "options": {},
+                            "html-value": null,
+                            "validation": "required|numeric|string|min:1|max:128",
+                            "is-on-index": true,
+                            "is-on-show": true,
+                            "is-on-form": true,
+                            "data-type": "string",
+                            "data-type-params": [
+                                128
+                            ],
+                            "data-value": null,
+                            "is-index": false,
+                            "is-unique": false,
+                            "is-primary": false,
+                            "comment": null,
+                            "is-nullable": false,
+                            "is-header": false,
+                            "is-unsigned": false,
+                            "is-auto-increment": false,
+                            "is-inline-options": false,
+                            "is-date": false,
+                            "date-format": "",
+                            "cast-as": "",
+                            "placeholder": {
+                                "en": "Enter manager  password here...",
+                                "ru": "Enter manager  password here...",
+                                "lv": "Enter manager  password here..."
+                            },
+                            "delimiter": "; ",
+                            "range": [],
+                            "foreign-relation": null,
+                            "foreign-constraint": null,
+                            "on-store": null,
+                            "on-update": null,
+                            "api-key": "Manager_Password",
+                            "is-api-visible": true,
+                            "api-description": {
+                                "en": "The manager  password of the model.",
+                                "ru": "The manager  password of the model.",
+                                "lv": "The manager  password of the model."
+                            }
+                        },
+                        {
+                            "name": "Is_Active",
+                            "labels": {
+                                "en": "Is  Active",
+                                "ru": "Is  Active",
+                                "lv": "Is  Active"
+                            },
+                            "html-type": "checkbox",
+                            "css-class": "",
+                            "options": {
+                                "en": {
+                                    "0": "No",
+                                    "1": "Yes"
+                                },
+                                "ru": {
+                                    "0": "No",
+                                    "1": "Yes"
+                                },
+                                "lv": {
+                                    "0": "No",
+                                    "1": "Yes"
+                                }
+                            },
+                            "html-value": null,
+                            "validation": "boolean|nullable",
+                            "is-on-index": true,
+                            "is-on-show": true,
+                            "is-on-form": true,
+                            "data-type": "bool",
+                            "data-type-params": [],
+                            "data-value": "1",
+                            "is-index": false,
+                            "is-unique": false,
+                            "is-primary": false,
+                            "comment": null,
+                            "is-nullable": true,
+                            "is-header": false,
+                            "is-unsigned": false,
+                            "is-auto-increment": false,
+                            "is-inline-options": false,
+                            "is-date": false,
+                            "date-format": "",
+                            "cast-as": "",
+                            "placeholder": {},
+                            "delimiter": "; ",
+                            "range": [],
+                            "foreign-relation": null,
+                            "foreign-constraint": null,
+                            "on-store": null,
+                            "on-update": null,
+                            "api-key": "Is_Active",
+                            "is-api-visible": true,
+                            "api-description": {
+                                "en": "The is  active of the model.",
+                                "ru": "The is  active of the model.",
+                                "lv": "The is  active of the model."
+                            }
+                        },
+                        {
+                            "name": "Organisation_ID",
+                            "labels": {
+                                "en": "Organisation",
+                                "ru": "Organisation",
+                                "lv": "Organisation"
+                            },
+                            "html-type": "select",
+                            "css-class": "",
+                            "options": {},
+                            "html-value": null,
+                            "validation": "nullable",
+                            "is-on-index": true,
+                            "is-on-show": true,
+                            "is-on-form": true,
+                            "data-type": "int",
+                            "data-type-params": [],
+                            "data-value": null,
+                            "is-index": true,
+                            "is-unique": false,
+                            "is-primary": false,
+                            "comment": null,
+                            "is-nullable": true,
+                            "is-header": false,
+                            "is-unsigned": true,
+                            "is-auto-increment": false,
+                            "is-inline-options": false,
+                            "is-date": false,
+                            "date-format": "",
+                            "cast-as": "",
+                            "placeholder": {
+                                "en": "Select organisation",
+                                "ru": "Select organisation",
+                                "lv": "Select organisation"
+                            },
+                            "delimiter": "; ",
+                            "range": [],
+                            "foreign-relation": {
+                                "name": "Organisation",
+                                "type": "belongsTo",
+                                "params": [
+                                    "App\\Models\\Organisation",
+                                    "Organisation_ID",
+                                    "Organisation_ID"
+                                ],
+                                "field": "Organisation_Name"
+                            },
+                            "foreign-constraint": {
+                                "field": "Organisation_ID",
+                                "references": "organisations",
+                                "on": "Organisation_ID",
+                                "on-delete": "set null",
+                                "on-update": "cascade",
+                                "references-model": "App\\Models\\Organisation",
+                                "is-self-reference": false
+                            },
+                            "on-store": null,
+                            "on-update": null,
+                            "api-key": "Organisation_ID",
+                            "is-api-visible": true,
+                            "api-description": {
+                                "en": "The organisation of the model.",
+                                "ru": "The organisation of the model.",
+                                "lv": "The organisation of the model."
+                            }
+                        },
+                        {
+                            "name": "Created_At",
+                            "labels": {
+                                "en": "Created  At",
+                                "ru": "Created  At",
+                                "lv": "Created  At"
+                            },
+                            "html-type": "text",
+                            "css-class": "",
+                            "options": {},
+                            "html-value": null,
+                            "validation": "",
+                            "is-on-index": false,
+                            "is-on-show": true,
+                            "is-on-form": false,
+                            "data-type": "timestamp",
+                            "data-type-params": [],
+                            "data-value": "CURRENT_TIMESTAMP",
+                            "is-index": false,
+                            "is-unique": false,
+                            "is-primary": false,
+                            "comment": null,
+                            "is-nullable": true,
+                            "is-header": false,
+                            "is-unsigned": false,
+                            "is-auto-increment": false,
+                            "is-inline-options": false,
+                            "is-date": false,
+                            "date-format": "j/n/Y g:i A",
+                            "cast-as": "",
+                            "placeholder": {
+                                "en": "Enter created  at here...",
+                                "ru": "Enter created  at here...",
+                                "lv": "Enter created  at here..."
+                            },
+                            "delimiter": "; ",
+                            "range": [],
+                            "foreign-relation": null,
+                            "foreign-constraint": null,
+                            "on-store": null,
+                            "on-update": null,
+                            "api-key": "Created_At",
+                            "is-api-visible": false,
+                            "api-description": {
+                                "en": "The created  at of the model.",
+                                "ru": "The created  at of the model.",
+                                "lv": "The created  at of the model."
+                            }
+                        },
+                        {
+                            "name": "Updated_At",
+                            "labels": {
+                                "en": "Updated  At",
+                                "ru": "Updated  At",
+                                "lv": "Updated  At"
+                            },
+                            "html-type": "text",
+                            "css-class": "",
+                            "options": {},
+                            "html-value": null,
+                            "validation": "",
+                            "is-on-index": false,
+                            "is-on-show": true,
+                            "is-on-form": false,
+                            "data-type": "timestamp",
+                            "data-type-params": [],
+                            "data-value": "CURRENT_TIMESTAMP",
+                            "is-index": false,
+                            "is-unique": false,
+                            "is-primary": false,
+                            "comment": null,
+                            "is-nullable": true,
+                            "is-header": false,
+                            "is-unsigned": false,
+                            "is-auto-increment": false,
+                            "is-inline-options": false,
+                            "is-date": false,
+                            "date-format": "j/n/Y g:i A",
+                            "cast-as": "",
+                            "placeholder": {
+                                "en": "Enter updated  at here...",
+                                "ru": "Enter updated  at here...",
+                                "lv": "Enter updated  at here..."
+                            },
+                            "delimiter": "; ",
+                            "range": [],
+                            "foreign-relation": null,
+                            "foreign-constraint": null,
+                            "on-store": null,
+                            "on-update": null,
+                            "api-key": "Updated_At",
+                            "is-api-visible": false,
+                            "api-description": {
+                                "en": "The updated  at of the model.",
+                                "ru": "The updated  at of the model.",
+                                "lv": "The updated  at of the model."
+                            }
+                        }
+                    ],
+                    "relations": [],
+                    "indexes": [],
+                    "auto-manage-created-and-updated-at": true,
+                    "table-name": "Managers",
+                    "protection": {
+                        "is-model-protected": false,
+                        "is-controller-protected": false,
+                        "is-api-resource-protected": false,
+                        "is-api-resource-collection-protected": false,
+                        "is-api-documentation-protected": false,
+                        "is-api-documentation-controller-protected": false,
+                        "is-form-request-protected": false,
+                        "is-languages-protected": false,
+                        "is-form-view-protected": false,
+                        "is-index-view-protected": false,
+                        "is-create-view-protected": false,
+                        "is-edit-view-protected": false,
+                        "is-show-view-protected": false
+                    },
+                    "api-documentation": {
+                        "access_token_with_bearer": {
+                            "en": "The access token prefixed with the \"Bearer \" key word.",
+                            "ru": "The access token prefixed with the \"Bearer \" key word.",
+                            "lv": "The access token prefixed with the \"Bearer \" key word."
+                        },
+                        "index_route_description": {
+                            "en": "Retrieve existing managers.",
+                            "ru": "Retrieve existing managers.",
+                            "lv": "Retrieve existing managers."
+                        },
+                        "index_route_response_description": {
+                            "en": "The API's response will be JSON based data. The JSON object will be structured as follow",
+                            "ru": "The API's response will be JSON based data. The JSON object will be structured as follow",
+                            "lv": "The API's response will be JSON based data. The JSON object will be structured as follow"
+                        },
+                        "the_key_is_the_model_property_and_the_value_is_the_model_value": {
+                            "en": "The array's key is the manager property name where the value is the assigned value to the retrieved manager.",
+                            "ru": "The array's key is the manager property name where the value is the assigned value to the retrieved manager.",
+                            "lv": "The array's key is the manager property name where the value is the assigned value to the retrieved manager."
+                        },
+                        "link_to_retrieve_first_page": {
+                            "en": "Link to retrieve first page.",
+                            "ru": "Link to retrieve first page.",
+                            "lv": "Link to retrieve first page."
+                        },
+                        "link_to_retrieve_last_page": {
+                            "en": "Link to retrieve last page.",
+                            "ru": "Link to retrieve last page.",
+                            "lv": "Link to retrieve last page."
+                        },
+                        "link_to_retrieve_previous_page": {
+                            "en": "Link to retrieve previous page.",
+                            "ru": "Link to retrieve previous page.",
+                            "lv": "Link to retrieve previous page."
+                        },
+                        "link_to_retrieve_next_page": {
+                            "en": "Link to retrieve next page.",
+                            "ru": "Link to retrieve next page.",
+                            "lv": "Link to retrieve next page."
+                        },
+                        "the_number_of_current_page": {
+                            "en": "The number of current page.",
+                            "ru": "The number of current page.",
+                            "lv": "The number of current page."
+                        },
+                        "the_index_of_the_first_retrieved_item": {
+                            "en": "The index of first retrieved manager.",
+                            "ru": "The index of first retrieved manager.",
+                            "lv": "The index of first retrieved manager."
+                        },
+                        "the_number_of_the_last_page": {
+                            "en": "The number of the last page.",
+                            "ru": "The number of the last page.",
+                            "lv": "The number of the last page."
+                        },
+                        "the_base_link_to_the_resource": {
+                            "en": "The base link to the api resource.",
+                            "ru": "The base link to the api resource.",
+                            "lv": "The base link to the api resource."
+                        },
+                        "the_number_of_models_per_page": {
+                            "en": "The number of managers per page.",
+                            "ru": "The number of managers per page.",
+                            "lv": "The number of managers per page."
+                        },
+                        "the_index_of_the_last_retrieved_item": {
+                            "en": "The index of last retrieved manager.",
+                            "ru": "The index of last retrieved manager.",
+                            "lv": "The index of last retrieved manager."
+                        },
+                        "the_total_of_available_pages": {
+                            "en": "The total of the available pages.",
+                            "ru": "The total of the available pages.",
+                            "lv": "The total of the available pages."
+                        },
+                        "store_route_description": {
+                            "en": "Create new manager.",
+                            "ru": "Create new manager.",
+                            "lv": "Create new manager."
+                        },
+                        "store_route_response_description": {
+                            "en": "The API's response will be JSON based data. The JSON object will be structured as follow",
+                            "ru": "The API's response will be JSON based data. The JSON object will be structured as follow",
+                            "lv": "The API's response will be JSON based data. The JSON object will be structured as follow"
+                        },
+                        "update_route_description": {
+                            "en": "Update existsing manager.",
+                            "ru": "Update existsing manager.",
+                            "lv": "Update existsing manager."
+                        },
+                        "update_route_response_description": {
+                            "en": "The API's response will be JSON based data. The JSON object will be structured as follow",
+                            "ru": "The API's response will be JSON based data. The JSON object will be structured as follow",
+                            "lv": "The API's response will be JSON based data. The JSON object will be structured as follow"
+                        },
+                        "show_route_description": {
+                            "en": "Retrieve existsing manager.",
+                            "ru": "Retrieve existsing manager.",
+                            "lv": "Retrieve existsing manager."
+                        },
+                        "show_route_response_description": {
+                            "en": "The API's response will be JSON based data. The JSON object will be structured as follow",
+                            "ru": "The API's response will be JSON based data. The JSON object will be structured as follow",
+                            "lv": "The API's response will be JSON based data. The JSON object will be structured as follow"
+                        },
+                        "the_id_of_model_to_retrieve": {
+                            "en": "The unique id of the manager to retrieve",
+                            "ru": "The unique id of the manager to retrieve",
+                            "lv": "The unique id of the manager to retrieve"
+                        },
+                        "destroy_route_description": {
+                            "en": "Delete existsing manager.",
+                            "ru": "Delete existsing manager.",
+                            "lv": "Delete existsing manager."
+                        },
+                        "destroy_route_response_description": {
+                            "en": "The API's response will be JSON based data. The JSON object will be structured as follow",
+                            "ru": "The API's response will be JSON based data. The JSON object will be structured as follow",
+                            "lv": "The API's response will be JSON based data. The JSON object will be structured as follow"
+                        },
+                        "the_id_of_model_to_delete": {
+                            "en": "The id of the manager to delete.",
+                            "ru": "The id of the manager to delete.",
+                            "lv": "The id of the manager to delete."
+                        },
+                        "general_description": {
+                            "en": "Allows you to list, create, edit, show and delete managers.",
+                            "ru": "Allows you to list, create, edit, show and delete managers.",
+                            "lv": "Allows you to list, create, edit, show and delete managers."
+                        },
+                        "indicate_whether_the_request_was_successful_or_not": {
+                            "en": "Indicate whether the request was successful or not.",
+                            "ru": "Indicate whether the request was successful or not.",
+                            "lv": "Indicate whether the request was successful or not."
+                        },
+                        "the_id_of_the_model": {
+                            "en": "The id of the manager.",
+                            "ru": "The id of the manager.",
+                            "lv": "The id of the manager."
+                        },
+                        "this_parameter_must_be_present_in_the_request": {
+                            "en": "This parameter must be present in the request.",
+                            "ru": "This parameter must be present in the request.",
+                            "lv": "This parameter must be present in the request."
+                        },
+                        "the_request_failed_validation": {
+                            "en": "The request failed validation.",
+                            "ru": "The request failed validation.",
+                            "lv": "The request failed validation."
+                        },
+                        "list_of_the_invalid_errors": {
+                            "en": "List of the invalid errors.",
+                            "ru": "List of the invalid errors.",
+                            "lv": "List of the invalid errors."
+                        },
+                        "the_requested_model_does_not_exists": {
+                            "en": "The requested manager does not exists.",
+                            "ru": "The requested manager does not exists.",
+                            "lv": "The requested manager does not exists."
+                        },
+                        "the_user_does_not_have_permission_to_access_the_requested_resource": {
+                            "en": "User does not have permission to access the requested resource.",
+                            "ru": "User does not have permission to access the requested resource.",
+                            "lv": "User does not have permission to access the requested resource."
+                        }
+                    }
+                }
+            }
+        ]
+    },
+    {
+        "model-name": "Employee",
+        "resource-file": "C:\\Users\\Yuris\\Projects\\crest\\resources\\laravel-code-generator\\sources\\employees.json",
+        "table-name": "Employees",
+        "migrations": [
+            {
+                "name": "2021_01_24_140214_create_employees_table",
+                "class-name": "CreateEmployeesTable",
+                "path": "C:\\Users\\Yuris\\Projects\\crest\\database\\migrations\\2021_01_24_140214_create_employees_table.php",
+                "is-create": true,
+                "is-virtual": true,
+                "is-organized": false,
+                "with-soft-delete": false,
+                "without-timestamps": false,
+                "resource": {
+                    "fields": [
+                        {
+                            "name": "Employee_ID",
+                            "labels": {
+                                "en": "Employee",
+                                "ru": "Employee",
+                                "lv": "Employee"
+                            },
+                            "html-type": "select",
+                            "css-class": "",
+                            "options": {},
+                            "html-value": null,
+                            "validation": "",
+                            "is-on-index": false,
+                            "is-on-show": false,
+                            "is-on-form": false,
+                            "data-type": "int",
+                            "data-type-params": [],
+                            "data-value": null,
+                            "is-index": true,
+                            "is-unique": false,
+                            "is-primary": true,
+                            "comment": null,
+                            "is-nullable": false,
+                            "is-header": false,
+                            "is-unsigned": true,
+                            "is-auto-increment": true,
+                            "is-inline-options": false,
+                            "is-date": false,
+                            "date-format": "",
+                            "cast-as": "",
+                            "placeholder": {
+                                "en": "Select employee",
+                                "ru": "Select employee",
+                                "lv": "Select employee"
+                            },
+                            "delimiter": "; ",
+                            "range": [],
+                            "foreign-relation": {
+                                "name": "employee",
+                                "type": "belongsTo",
+                                "params": [
+                                    "App\\Models\\Employee",
+                                    "Employee_ID"
+                                ],
+                                "field": "id"
+                            },
+                            "foreign-constraint": null,
+                            "on-store": null,
+                            "on-update": null,
+                            "api-key": "Employee_ID",
+                            "is-api-visible": true,
+                            "api-description": {
+                                "en": "The employee of the model.",
+                                "ru": "The employee of the model.",
+                                "lv": "The employee of the model."
+                            }
+                        },
+                        {
+                            "name": "Employee_Name",
+                            "labels": {
+                                "en": "Employee  Name",
+                                "ru": "Employee  Name",
+                                "lv": "Employee  Name"
+                            },
+                            "html-type": "text",
+                            "css-class": "",
+                            "options": {},
+                            "html-value": null,
+                            "validation": "required|string|min:1|max:255",
+                            "is-on-index": true,
+                            "is-on-show": true,
+                            "is-on-form": true,
+                            "data-type": "string",
+                            "data-type-params": [
+                                255
+                            ],
+                            "data-value": null,
+                            "is-index": false,
+                            "is-unique": false,
+                            "is-primary": false,
+                            "comment": null,
+                            "is-nullable": false,
+                            "is-header": false,
+                            "is-unsigned": false,
+                            "is-auto-increment": false,
+                            "is-inline-options": false,
+                            "is-date": false,
+                            "date-format": "",
+                            "cast-as": "",
+                            "placeholder": {
+                                "en": "Enter employee  name here...",
+                                "ru": "Enter employee  name here...",
+                                "lv": "Enter employee  name here..."
+                            },
+                            "delimiter": "; ",
+                            "range": [],
+                            "foreign-relation": null,
+                            "foreign-constraint": null,
+                            "on-store": null,
+                            "on-update": null,
+                            "api-key": "Employee_Name",
+                            "is-api-visible": true,
+                            "api-description": {
+                                "en": "The employee  name of the model.",
+                                "ru": "The employee  name of the model.",
+                                "lv": "The employee  name of the model."
+                            }
+                        },
+                        {
+                            "name": "Employee_Phone",
+                            "labels": {
+                                "en": "Employee  Phone",
+                                "ru": "Employee  Phone",
+                                "lv": "Employee  Phone"
+                            },
+                            "html-type": "text",
+                            "css-class": "",
+                            "options": {},
+                            "html-value": null,
+                            "validation": "required|string|min:1|max:50",
+                            "is-on-index": true,
+                            "is-on-show": true,
+                            "is-on-form": true,
+                            "data-type": "string",
+                            "data-type-params": [
+                                50
+                            ],
+                            "data-value": "",
+                            "is-index": false,
+                            "is-unique": false,
+                            "is-primary": false,
+                            "comment": null,
+                            "is-nullable": false,
+                            "is-header": false,
+                            "is-unsigned": false,
+                            "is-auto-increment": false,
+                            "is-inline-options": false,
+                            "is-date": false,
+                            "date-format": "",
+                            "cast-as": "",
+                            "placeholder": {
+                                "en": "Enter employee  phone here...",
+                                "ru": "Enter employee  phone here...",
+                                "lv": "Enter employee  phone here..."
+                            },
+                            "delimiter": "; ",
+                            "range": [],
+                            "foreign-relation": null,
+                            "foreign-constraint": null,
+                            "on-store": null,
+                            "on-update": null,
+                            "api-key": "Employee_Phone",
+                            "is-api-visible": true,
+                            "api-description": {
+                                "en": "The employee  phone of the model.",
+                                "ru": "The employee  phone of the model.",
+                                "lv": "The employee  phone of the model."
+                            }
+                        },
+                        {
+                            "name": "Organisation_ID",
+                            "labels": {
+                                "en": "Organisation",
+                                "ru": "Organisation",
+                                "lv": "Organisation"
+                            },
+                            "html-type": "select",
+                            "css-class": "",
+                            "options": {},
+                            "html-value": null,
+                            "validation": "nullable",
+                            "is-on-index": true,
+                            "is-on-show": true,
+                            "is-on-form": true,
+                            "data-type": "int",
+                            "data-type-params": [],
+                            "data-value": null,
+                            "is-index": true,
+                            "is-unique": false,
+                            "is-primary": false,
+                            "comment": null,
+                            "is-nullable": true,
+                            "is-header": false,
+                            "is-unsigned": true,
+                            "is-auto-increment": false,
+                            "is-inline-options": false,
+                            "is-date": false,
+                            "date-format": "",
+                            "cast-as": "",
+                            "placeholder": {
+                                "en": "Select organisation",
+                                "ru": "Select organisation",
+                                "lv": "Select organisation"
+                            },
+                            "delimiter": "; ",
+                            "range": [],
+                            "foreign-relation": {
+                                "name": "Organisation",
+                                "type": "belongsTo",
+                                "params": [
+                                    "App\\Models\\Organisation",
+                                    "Organisation_ID",
+                                    "Organisation_ID"
+                                ],
+                                "field": "Organisation_Name"
+                            },
+                            "foreign-constraint": {
+                                "field": "Organisation_ID",
+                                "references": "organisations",
+                                "on": "Organisation_ID",
+                                "on-delete": "set null",
+                                "on-update": "cascade",
+                                "references-model": "App\\Models\\Organisation",
+                                "is-self-reference": false
+                            },
+                            "on-store": null,
+                            "on-update": null,
+                            "api-key": "Organisation_ID",
+                            "is-api-visible": true,
+                            "api-description": {
+                                "en": "The organisation of the model.",
+                                "ru": "The organisation of the model.",
+                                "lv": "The organisation of the model."
+                            }
+                        },
+                        {
+                            "name": "Is_Active",
+                            "labels": {
+                                "en": "Is  Active",
+                                "ru": "Is  Active",
+                                "lv": "Is  Active"
+                            },
+                            "html-type": "checkbox",
+                            "css-class": "",
+                            "options": {
+                                "en": {
+                                    "0": "No",
+                                    "1": "Yes"
+                                },
+                                "ru": {
+                                    "0": "No",
+                                    "1": "Yes"
+                                },
+                                "lv": {
+                                    "0": "No",
+                                    "1": "Yes"
+                                }
+                            },
+                            "html-value": null,
+                            "validation": "boolean|nullable",
+                            "is-on-index": true,
+                            "is-on-show": true,
+                            "is-on-form": true,
+                            "data-type": "bool",
+                            "data-type-params": [],
+                            "data-value": "1",
+                            "is-index": false,
+                            "is-unique": false,
+                            "is-primary": false,
+                            "comment": null,
+                            "is-nullable": true,
+                            "is-header": false,
+                            "is-unsigned": false,
+                            "is-auto-increment": false,
+                            "is-inline-options": false,
+                            "is-date": false,
+                            "date-format": "",
+                            "cast-as": "",
+                            "placeholder": {},
+                            "delimiter": "; ",
+                            "range": [],
+                            "foreign-relation": null,
+                            "foreign-constraint": null,
+                            "on-store": null,
+                            "on-update": null,
+                            "api-key": "Is_Active",
+                            "is-api-visible": true,
+                            "api-description": {
+                                "en": "The is  active of the model.",
+                                "ru": "The is  active of the model.",
+                                "lv": "The is  active of the model."
+                            }
+                        },
+                        {
+                            "name": "Created_At",
+                            "labels": {
+                                "en": "Created  At",
+                                "ru": "Created  At",
+                                "lv": "Created  At"
+                            },
+                            "html-type": "text",
+                            "css-class": "",
+                            "options": {},
+                            "html-value": null,
+                            "validation": "",
+                            "is-on-index": false,
+                            "is-on-show": true,
+                            "is-on-form": false,
+                            "data-type": "timestamp",
+                            "data-type-params": [],
+                            "data-value": "CURRENT_TIMESTAMP",
+                            "is-index": false,
+                            "is-unique": false,
+                            "is-primary": false,
+                            "comment": null,
+                            "is-nullable": true,
+                            "is-header": false,
+                            "is-unsigned": false,
+                            "is-auto-increment": false,
+                            "is-inline-options": false,
+                            "is-date": false,
+                            "date-format": "j/n/Y g:i A",
+                            "cast-as": "",
+                            "placeholder": {
+                                "en": "Enter created  at here...",
+                                "ru": "Enter created  at here...",
+                                "lv": "Enter created  at here..."
+                            },
+                            "delimiter": "; ",
+                            "range": [],
+                            "foreign-relation": null,
+                            "foreign-constraint": null,
+                            "on-store": null,
+                            "on-update": null,
+                            "api-key": "Created_At",
+                            "is-api-visible": false,
+                            "api-description": {
+                                "en": "The created  at of the model.",
+                                "ru": "The created  at of the model.",
+                                "lv": "The created  at of the model."
+                            }
+                        },
+                        {
+                            "name": "Updated_At",
+                            "labels": {
+                                "en": "Updated  At",
+                                "ru": "Updated  At",
+                                "lv": "Updated  At"
+                            },
+                            "html-type": "text",
+                            "css-class": "",
+                            "options": {},
+                            "html-value": null,
+                            "validation": "",
+                            "is-on-index": false,
+                            "is-on-show": true,
+                            "is-on-form": false,
+                            "data-type": "timestamp",
+                            "data-type-params": [],
+                            "data-value": "CURRENT_TIMESTAMP",
+                            "is-index": false,
+                            "is-unique": false,
+                            "is-primary": false,
+                            "comment": null,
+                            "is-nullable": true,
+                            "is-header": false,
+                            "is-unsigned": false,
+                            "is-auto-increment": false,
+                            "is-inline-options": false,
+                            "is-date": false,
+                            "date-format": "j/n/Y g:i A",
+                            "cast-as": "",
+                            "placeholder": {
+                                "en": "Enter updated  at here...",
+                                "ru": "Enter updated  at here...",
+                                "lv": "Enter updated  at here..."
+                            },
+                            "delimiter": "; ",
+                            "range": [],
+                            "foreign-relation": null,
+                            "foreign-constraint": null,
+                            "on-store": null,
+                            "on-update": null,
+                            "api-key": "Updated_At",
+                            "is-api-visible": false,
+                            "api-description": {
+                                "en": "The updated  at of the model.",
+                                "ru": "The updated  at of the model.",
+                                "lv": "The updated  at of the model."
+                            }
+                        }
+                    ],
+                    "relations": [
+                        {
+                            "name": "key",
+                            "type": "hasOne",
+                            "params": [
+                                "App\\Models\\Key",
+                                "Employee_ID",
+                                "Employee_ID"
+                            ],
+                            "field": "id"
+                        }
+                    ],
+                    "indexes": [],
+                    "auto-manage-created-and-updated-at": true,
+                    "table-name": "Employees",
+                    "protection": {
+                        "is-model-protected": false,
+                        "is-controller-protected": false,
+                        "is-api-resource-protected": false,
+                        "is-api-resource-collection-protected": false,
+                        "is-api-documentation-protected": false,
+                        "is-api-documentation-controller-protected": false,
+                        "is-form-request-protected": false,
+                        "is-languages-protected": false,
+                        "is-form-view-protected": false,
+                        "is-index-view-protected": false,
+                        "is-create-view-protected": false,
+                        "is-edit-view-protected": false,
+                        "is-show-view-protected": false
+                    },
+                    "api-documentation": {
+                        "access_token_with_bearer": {
+                            "en": "The access token prefixed with the \"Bearer \" key word.",
+                            "ru": "The access token prefixed with the \"Bearer \" key word.",
+                            "lv": "The access token prefixed with the \"Bearer \" key word."
+                        },
+                        "index_route_description": {
+                            "en": "Retrieve existing employees.",
+                            "ru": "Retrieve existing employees.",
+                            "lv": "Retrieve existing employees."
+                        },
+                        "index_route_response_description": {
+                            "en": "The API's response will be JSON based data. The JSON object will be structured as follow",
+                            "ru": "The API's response will be JSON based data. The JSON object will be structured as follow",
+                            "lv": "The API's response will be JSON based data. The JSON object will be structured as follow"
+                        },
+                        "the_key_is_the_model_property_and_the_value_is_the_model_value": {
+                            "en": "The array's key is the employee property name where the value is the assigned value to the retrieved employee.",
+                            "ru": "The array's key is the employee property name where the value is the assigned value to the retrieved employee.",
+                            "lv": "The array's key is the employee property name where the value is the assigned value to the retrieved employee."
+                        },
+                        "link_to_retrieve_first_page": {
+                            "en": "Link to retrieve first page.",
+                            "ru": "Link to retrieve first page.",
+                            "lv": "Link to retrieve first page."
+                        },
+                        "link_to_retrieve_last_page": {
+                            "en": "Link to retrieve last page.",
+                            "ru": "Link to retrieve last page.",
+                            "lv": "Link to retrieve last page."
+                        },
+                        "link_to_retrieve_previous_page": {
+                            "en": "Link to retrieve previous page.",
+                            "ru": "Link to retrieve previous page.",
+                            "lv": "Link to retrieve previous page."
+                        },
+                        "link_to_retrieve_next_page": {
+                            "en": "Link to retrieve next page.",
+                            "ru": "Link to retrieve next page.",
+                            "lv": "Link to retrieve next page."
+                        },
+                        "the_number_of_current_page": {
+                            "en": "The number of current page.",
+                            "ru": "The number of current page.",
+                            "lv": "The number of current page."
+                        },
+                        "the_index_of_the_first_retrieved_item": {
+                            "en": "The index of first retrieved employee.",
+                            "ru": "The index of first retrieved employee.",
+                            "lv": "The index of first retrieved employee."
+                        },
+                        "the_number_of_the_last_page": {
+                            "en": "The number of the last page.",
+                            "ru": "The number of the last page.",
+                            "lv": "The number of the last page."
+                        },
+                        "the_base_link_to_the_resource": {
+                            "en": "The base link to the api resource.",
+                            "ru": "The base link to the api resource.",
+                            "lv": "The base link to the api resource."
+                        },
+                        "the_number_of_models_per_page": {
+                            "en": "The number of employees per page.",
+                            "ru": "The number of employees per page.",
+                            "lv": "The number of employees per page."
+                        },
+                        "the_index_of_the_last_retrieved_item": {
+                            "en": "The index of last retrieved employee.",
+                            "ru": "The index of last retrieved employee.",
+                            "lv": "The index of last retrieved employee."
+                        },
+                        "the_total_of_available_pages": {
+                            "en": "The total of the available pages.",
+                            "ru": "The total of the available pages.",
+                            "lv": "The total of the available pages."
+                        },
+                        "store_route_description": {
+                            "en": "Create new employee.",
+                            "ru": "Create new employee.",
+                            "lv": "Create new employee."
+                        },
+                        "store_route_response_description": {
+                            "en": "The API's response will be JSON based data. The JSON object will be structured as follow",
+                            "ru": "The API's response will be JSON based data. The JSON object will be structured as follow",
+                            "lv": "The API's response will be JSON based data. The JSON object will be structured as follow"
+                        },
+                        "update_route_description": {
+                            "en": "Update existsing employee.",
+                            "ru": "Update existsing employee.",
+                            "lv": "Update existsing employee."
+                        },
+                        "update_route_response_description": {
+                            "en": "The API's response will be JSON based data. The JSON object will be structured as follow",
+                            "ru": "The API's response will be JSON based data. The JSON object will be structured as follow",
+                            "lv": "The API's response will be JSON based data. The JSON object will be structured as follow"
+                        },
+                        "show_route_description": {
+                            "en": "Retrieve existsing employee.",
+                            "ru": "Retrieve existsing employee.",
+                            "lv": "Retrieve existsing employee."
+                        },
+                        "show_route_response_description": {
+                            "en": "The API's response will be JSON based data. The JSON object will be structured as follow",
+                            "ru": "The API's response will be JSON based data. The JSON object will be structured as follow",
+                            "lv": "The API's response will be JSON based data. The JSON object will be structured as follow"
+                        },
+                        "the_id_of_model_to_retrieve": {
+                            "en": "The unique id of the employee to retrieve",
+                            "ru": "The unique id of the employee to retrieve",
+                            "lv": "The unique id of the employee to retrieve"
+                        },
+                        "destroy_route_description": {
+                            "en": "Delete existsing employee.",
+                            "ru": "Delete existsing employee.",
+                            "lv": "Delete existsing employee."
+                        },
+                        "destroy_route_response_description": {
+                            "en": "The API's response will be JSON based data. The JSON object will be structured as follow",
+                            "ru": "The API's response will be JSON based data. The JSON object will be structured as follow",
+                            "lv": "The API's response will be JSON based data. The JSON object will be structured as follow"
+                        },
+                        "the_id_of_model_to_delete": {
+                            "en": "The id of the employee to delete.",
+                            "ru": "The id of the employee to delete.",
+                            "lv": "The id of the employee to delete."
+                        },
+                        "general_description": {
+                            "en": "Allows you to list, create, edit, show and delete employees.",
+                            "ru": "Allows you to list, create, edit, show and delete employees.",
+                            "lv": "Allows you to list, create, edit, show and delete employees."
+                        },
+                        "indicate_whether_the_request_was_successful_or_not": {
+                            "en": "Indicate whether the request was successful or not.",
+                            "ru": "Indicate whether the request was successful or not.",
+                            "lv": "Indicate whether the request was successful or not."
+                        },
+                        "the_id_of_the_model": {
+                            "en": "The id of the employee.",
+                            "ru": "The id of the employee.",
+                            "lv": "The id of the employee."
+                        },
+                        "this_parameter_must_be_present_in_the_request": {
+                            "en": "This parameter must be present in the request.",
+                            "ru": "This parameter must be present in the request.",
+                            "lv": "This parameter must be present in the request."
+                        },
+                        "the_request_failed_validation": {
+                            "en": "The request failed validation.",
+                            "ru": "The request failed validation.",
+                            "lv": "The request failed validation."
+                        },
+                        "list_of_the_invalid_errors": {
+                            "en": "List of the invalid errors.",
+                            "ru": "List of the invalid errors.",
+                            "lv": "List of the invalid errors."
+                        },
+                        "the_requested_model_does_not_exists": {
+                            "en": "The requested employee does not exists.",
+                            "ru": "The requested employee does not exists.",
+                            "lv": "The requested employee does not exists."
+                        },
+                        "the_user_does_not_have_permission_to_access_the_requested_resource": {
+                            "en": "User does not have permission to access the requested resource.",
+                            "ru": "User does not have permission to access the requested resource.",
+                            "lv": "User does not have permission to access the requested resource."
+                        }
+                    }
+                }
+            }
+        ]
+    },
+    {
+        "model-name": "Worksite",
+        "resource-file": "C:\\Users\\Yuris\\Projects\\crest\\resources\\laravel-code-generator\\sources\\worksites.json",
+        "table-name": "Worksites",
+        "migrations": [
+            {
+                "name": "2021_01_24_163716_create_worksites_table",
+                "class-name": "CreateWorksitesTable",
+                "path": "C:\\Users\\Yuris\\Projects\\crest\\database\\migrations\\2021_01_24_163716_create_worksites_table.php",
+                "is-create": true,
+                "is-virtual": true,
+                "is-organized": false,
+                "with-soft-delete": false,
+                "without-timestamps": false,
+                "resource": {
+                    "fields": [
+                        {
+                            "name": "Worksite_ID",
+                            "labels": {
+                                "en": "Worksite",
+                                "ru": "Worksite",
+                                "lv": "Worksite"
+                            },
+                            "html-type": "select",
+                            "css-class": "",
+                            "options": {},
+                            "html-value": null,
+                            "validation": "",
+                            "is-on-index": false,
+                            "is-on-show": false,
+                            "is-on-form": false,
+                            "data-type": "int",
+                            "data-type-params": [],
+                            "data-value": null,
+                            "is-index": true,
+                            "is-unique": false,
+                            "is-primary": true,
+                            "comment": null,
+                            "is-nullable": false,
+                            "is-header": false,
+                            "is-unsigned": true,
+                            "is-auto-increment": true,
+                            "is-inline-options": false,
+                            "is-date": false,
+                            "date-format": "",
+                            "cast-as": "",
+                            "placeholder": {
+                                "en": "Select worksite",
+                                "ru": "Select worksite",
+                                "lv": "Select worksite"
+                            },
+                            "delimiter": "; ",
+                            "range": [],
+                            "foreign-relation": {
+                                "name": "worksite",
+                                "type": "belongsTo",
+                                "params": [
+                                    "App\\Models\\Worksite",
+                                    "Worksite_ID"
+                                ],
+                                "field": "Worksite_Name"
+                            },
+                            "foreign-constraint": null,
+                            "on-store": null,
+                            "on-update": null,
+                            "api-key": "Worksite_ID",
+                            "is-api-visible": true,
+                            "api-description": {
+                                "en": "The worksite of the model.",
+                                "ru": "The worksite of the model.",
+                                "lv": "The worksite of the model."
+                            }
+                        },
+                        {
+                            "name": "Worksite_Name",
+                            "labels": {
+                                "en": "Worksite  Name",
+                                "ru": "Worksite  Name",
+                                "lv": "Worksite  Name"
+                            },
+                            "html-type": "text",
+                            "css-class": "",
+                            "options": {},
+                            "html-value": null,
+                            "validation": "required|string|min:1|max:64",
+                            "is-on-index": true,
+                            "is-on-show": true,
+                            "is-on-form": true,
+                            "data-type": "string",
+                            "data-type-params": [
+                                64
+                            ],
+                            "data-value": null,
+                            "is-index": false,
+                            "is-unique": false,
+                            "is-primary": false,
+                            "comment": null,
+                            "is-nullable": false,
+                            "is-header": false,
+                            "is-unsigned": false,
+                            "is-auto-increment": false,
+                            "is-inline-options": false,
+                            "is-date": false,
+                            "date-format": "",
+                            "cast-as": "",
+                            "placeholder": {
+                                "en": "Enter worksite  name here...",
+                                "ru": "Enter worksite  name here...",
+                                "lv": "Enter worksite  name here..."
+                            },
+                            "delimiter": "; ",
+                            "range": [],
+                            "foreign-relation": null,
+                            "foreign-constraint": null,
+                            "on-store": null,
+                            "on-update": null,
+                            "api-key": "Worksite_Name",
+                            "is-api-visible": true,
+                            "api-description": {
+                                "en": "The worksite  name of the model.",
+                                "ru": "The worksite  name of the model.",
+                                "lv": "The worksite  name of the model."
+                            }
+                        },
+                        {
+                            "name": "Worksite_Address",
+                            "labels": {
+                                "en": "Worksite  Address",
+                                "ru": "Worksite  Address",
+                                "lv": "Worksite  Address"
+                            },
+                            "html-type": "text",
+                            "css-class": "",
+                            "options": {},
+                            "html-value": null,
+                            "validation": "required|string|min:1|max:255",
+                            "is-on-index": true,
+                            "is-on-show": true,
+                            "is-on-form": true,
+                            "data-type": "string",
+                            "data-type-params": [
+                                255
+                            ],
+                            "data-value": null,
+                            "is-index": false,
+                            "is-unique": false,
+                            "is-primary": false,
+                            "comment": null,
+                            "is-nullable": false,
+                            "is-header": false,
+                            "is-unsigned": false,
+                            "is-auto-increment": false,
+                            "is-inline-options": false,
+                            "is-date": false,
+                            "date-format": "",
+                            "cast-as": "",
+                            "placeholder": {
+                                "en": "Enter worksite  address here...",
+                                "ru": "Enter worksite  address here...",
+                                "lv": "Enter worksite  address here..."
+                            },
+                            "delimiter": "; ",
+                            "range": [],
+                            "foreign-relation": null,
+                            "foreign-constraint": null,
+                            "on-store": null,
+                            "on-update": null,
+                            "api-key": "Worksite_Address",
+                            "is-api-visible": true,
+                            "api-description": {
+                                "en": "The worksite  address of the model.",
+                                "ru": "The worksite  address of the model.",
+                                "lv": "The worksite  address of the model."
+                            }
+                        },
+                        {
+                            "name": "Organisation_ID",
+                            "labels": {
+                                "en": "Organisation",
+                                "ru": "Organisation",
+                                "lv": "Organisation"
+                            },
+                            "html-type": "select",
+                            "css-class": "",
+                            "options": {},
+                            "html-value": null,
+                            "validation": "nullable",
+                            "is-on-index": true,
+                            "is-on-show": true,
+                            "is-on-form": true,
+                            "data-type": "int",
+                            "data-type-params": [],
+                            "data-value": null,
+                            "is-index": true,
+                            "is-unique": false,
+                            "is-primary": false,
+                            "comment": null,
+                            "is-nullable": true,
+                            "is-header": false,
+                            "is-unsigned": true,
+                            "is-auto-increment": false,
+                            "is-inline-options": false,
+                            "is-date": false,
+                            "date-format": "",
+                            "cast-as": "",
+                            "placeholder": {
+                                "en": "Select organisation",
+                                "ru": "Select organisation",
+                                "lv": "Select organisation"
+                            },
+                            "delimiter": "; ",
+                            "range": [],
+                            "foreign-relation": {
+                                "name": "Organisation",
+                                "type": "belongsTo",
+                                "params": [
+                                    "App\\Models\\Organisation",
+                                    "Organisation_ID",
+                                    "Organisation_ID"
+                                ],
+                                "field": "Organisation_Name"
+                            },
+                            "foreign-constraint": {
+                                "field": "Organisation_ID",
+                                "references": "organisations",
+                                "on": "Organisation_ID",
+                                "on-delete": "set null",
+                                "on-update": "cascade",
+                                "references-model": "App\\Models\\Organisation",
+                                "is-self-reference": false
+                            },
+                            "on-store": null,
+                            "on-update": null,
+                            "api-key": "Organisation_ID",
+                            "is-api-visible": true,
+                            "api-description": {
+                                "en": "The organisation of the model.",
+                                "ru": "The organisation of the model.",
+                                "lv": "The organisation of the model."
+                            }
+                        },
+                        {
+                            "name": "Is_Active",
+                            "labels": {
+                                "en": "Is  Active",
+                                "ru": "Is  Active",
+                                "lv": "Is  Active"
+                            },
+                            "html-type": "checkbox",
+                            "css-class": "",
+                            "options": {
+                                "en": {
+                                    "0": "No",
+                                    "1": "Yes"
+                                },
+                                "ru": {
+                                    "0": "No",
+                                    "1": "Yes"
+                                },
+                                "lv": {
+                                    "0": "No",
+                                    "1": "Yes"
+                                }
+                            },
+                            "html-value": null,
+                            "validation": "boolean|nullable",
+                            "is-on-index": true,
+                            "is-on-show": true,
+                            "is-on-form": true,
+                            "data-type": "bool",
+                            "data-type-params": [],
+                            "data-value": "1",
+                            "is-index": false,
+                            "is-unique": false,
+                            "is-primary": false,
+                            "comment": null,
+                            "is-nullable": true,
+                            "is-header": false,
+                            "is-unsigned": false,
+                            "is-auto-increment": false,
+                            "is-inline-options": false,
+                            "is-date": false,
+                            "date-format": "",
+                            "cast-as": "",
+                            "placeholder": {},
+                            "delimiter": "; ",
+                            "range": [],
+                            "foreign-relation": null,
+                            "foreign-constraint": null,
+                            "on-store": null,
+                            "on-update": null,
+                            "api-key": "Is_Active",
+                            "is-api-visible": true,
+                            "api-description": {
+                                "en": "The is  active of the model.",
+                                "ru": "The is  active of the model.",
+                                "lv": "The is  active of the model."
+                            }
+                        },
+                        {
+                            "name": "Date_From",
+                            "labels": {
+                                "en": "Date  From",
+                                "ru": "Date  From",
+                                "lv": "Date  From"
+                            },
+                            "html-type": "text",
+                            "css-class": "",
+                            "options": {},
+                            "html-value": null,
+                            "validation": "nullable|date_format:j/n/Y",
+                            "is-on-index": true,
+                            "is-on-show": true,
+                            "is-on-form": true,
+                            "data-type": "date",
+                            "data-type-params": [],
+                            "data-value": null,
+                            "is-index": false,
+                            "is-unique": false,
+                            "is-primary": false,
+                            "comment": null,
+                            "is-nullable": true,
+                            "is-header": false,
+                            "is-unsigned": false,
+                            "is-auto-increment": false,
+                            "is-inline-options": false,
+                            "is-date": false,
+                            "date-format": "j/n/Y",
+                            "cast-as": "",
+                            "placeholder": {
+                                "en": "Enter date  from here...",
+                                "ru": "Enter date  from here...",
+                                "lv": "Enter date  from here..."
+                            },
+                            "delimiter": "; ",
+                            "range": [],
+                            "foreign-relation": null,
+                            "foreign-constraint": null,
+                            "on-store": null,
+                            "on-update": null,
+                            "api-key": "Date_From",
+                            "is-api-visible": true,
+                            "api-description": {
+                                "en": "The date  from of the model.",
+                                "ru": "The date  from of the model.",
+                                "lv": "The date  from of the model."
+                            }
+                        },
+                        {
+                            "name": "Date_Till",
+                            "labels": {
+                                "en": "Date  Till",
+                                "ru": "Date  Till",
+                                "lv": "Date  Till"
+                            },
+                            "html-type": "text",
+                            "css-class": "",
+                            "options": {},
+                            "html-value": null,
+                            "validation": "nullable|date_format:j/n/Y",
+                            "is-on-index": true,
+                            "is-on-show": true,
+                            "is-on-form": true,
+                            "data-type": "date",
+                            "data-type-params": [],
+                            "data-value": null,
+                            "is-index": false,
+                            "is-unique": false,
+                            "is-primary": false,
+                            "comment": null,
+                            "is-nullable": true,
+                            "is-header": false,
+                            "is-unsigned": false,
+                            "is-auto-increment": false,
+                            "is-inline-options": false,
+                            "is-date": false,
+                            "date-format": "j/n/Y",
+                            "cast-as": "",
+                            "placeholder": {
+                                "en": "Enter date  till here...",
+                                "ru": "Enter date  till here...",
+                                "lv": "Enter date  till here..."
+                            },
+                            "delimiter": "; ",
+                            "range": [],
+                            "foreign-relation": null,
+                            "foreign-constraint": null,
+                            "on-store": null,
+                            "on-update": null,
+                            "api-key": "Date_Till",
+                            "is-api-visible": true,
+                            "api-description": {
+                                "en": "The date  till of the model.",
+                                "ru": "The date  till of the model.",
+                                "lv": "The date  till of the model."
+                            }
+                        },
+                        {
+                            "name": "Created_At",
+                            "labels": {
+                                "en": "Created  At",
+                                "ru": "Created  At",
+                                "lv": "Created  At"
+                            },
+                            "html-type": "text",
+                            "css-class": "",
+                            "options": {},
+                            "html-value": null,
+                            "validation": "",
+                            "is-on-index": false,
+                            "is-on-show": true,
+                            "is-on-form": false,
+                            "data-type": "timestamp",
+                            "data-type-params": [],
+                            "data-value": "CURRENT_TIMESTAMP",
+                            "is-index": false,
+                            "is-unique": false,
+                            "is-primary": false,
+                            "comment": null,
+                            "is-nullable": true,
+                            "is-header": false,
+                            "is-unsigned": false,
+                            "is-auto-increment": false,
+                            "is-inline-options": false,
+                            "is-date": false,
+                            "date-format": "j/n/Y g:i A",
+                            "cast-as": "",
+                            "placeholder": {
+                                "en": "Enter created  at here...",
+                                "ru": "Enter created  at here...",
+                                "lv": "Enter created  at here..."
+                            },
+                            "delimiter": "; ",
+                            "range": [],
+                            "foreign-relation": null,
+                            "foreign-constraint": null,
+                            "on-store": null,
+                            "on-update": null,
+                            "api-key": "Created_At",
+                            "is-api-visible": false,
+                            "api-description": {
+                                "en": "The created  at of the model.",
+                                "ru": "The created  at of the model.",
+                                "lv": "The created  at of the model."
+                            }
+                        },
+                        {
+                            "name": "Updated_At",
+                            "labels": {
+                                "en": "Updated  At",
+                                "ru": "Updated  At",
+                                "lv": "Updated  At"
+                            },
+                            "html-type": "text",
+                            "css-class": "",
+                            "options": {},
+                            "html-value": null,
+                            "validation": "",
+                            "is-on-index": false,
+                            "is-on-show": true,
+                            "is-on-form": false,
+                            "data-type": "timestamp",
+                            "data-type-params": [],
+                            "data-value": "CURRENT_TIMESTAMP",
+                            "is-index": false,
+                            "is-unique": false,
+                            "is-primary": false,
+                            "comment": null,
+                            "is-nullable": true,
+                            "is-header": false,
+                            "is-unsigned": false,
+                            "is-auto-increment": false,
+                            "is-inline-options": false,
+                            "is-date": false,
+                            "date-format": "j/n/Y g:i A",
+                            "cast-as": "",
+                            "placeholder": {
+                                "en": "Enter updated  at here...",
+                                "ru": "Enter updated  at here...",
+                                "lv": "Enter updated  at here..."
+                            },
+                            "delimiter": "; ",
+                            "range": [],
+                            "foreign-relation": null,
+                            "foreign-constraint": null,
+                            "on-store": null,
+                            "on-update": null,
+                            "api-key": "Updated_At",
+                            "is-api-visible": false,
+                            "api-description": {
+                                "en": "The updated  at of the model.",
+                                "ru": "The updated  at of the model.",
+                                "lv": "The updated  at of the model."
+                            }
+                        }
+                    ],
+                    "relations": [],
+                    "indexes": [],
+                    "auto-manage-created-and-updated-at": true,
+                    "table-name": "Worksites",
+                    "protection": {
+                        "is-model-protected": false,
+                        "is-controller-protected": false,
+                        "is-api-resource-protected": false,
+                        "is-api-resource-collection-protected": false,
+                        "is-api-documentation-protected": false,
+                        "is-api-documentation-controller-protected": false,
+                        "is-form-request-protected": false,
+                        "is-languages-protected": false,
+                        "is-form-view-protected": false,
+                        "is-index-view-protected": false,
+                        "is-create-view-protected": false,
+                        "is-edit-view-protected": false,
+                        "is-show-view-protected": false
+                    },
+                    "api-documentation": {
+                        "access_token_with_bearer": {
+                            "en": "The access token prefixed with the \"Bearer \" key word.",
+                            "ru": "The access token prefixed with the \"Bearer \" key word.",
+                            "lv": "The access token prefixed with the \"Bearer \" key word."
+                        },
+                        "index_route_description": {
+                            "en": "Retrieve existing worksites.",
+                            "ru": "Retrieve existing worksites.",
+                            "lv": "Retrieve existing worksites."
+                        },
+                        "index_route_response_description": {
+                            "en": "The API's response will be JSON based data. The JSON object will be structured as follow",
+                            "ru": "The API's response will be JSON based data. The JSON object will be structured as follow",
+                            "lv": "The API's response will be JSON based data. The JSON object will be structured as follow"
+                        },
+                        "the_key_is_the_model_property_and_the_value_is_the_model_value": {
+                            "en": "The array's key is the worksite property name where the value is the assigned value to the retrieved worksite.",
+                            "ru": "The array's key is the worksite property name where the value is the assigned value to the retrieved worksite.",
+                            "lv": "The array's key is the worksite property name where the value is the assigned value to the retrieved worksite."
+                        },
+                        "link_to_retrieve_first_page": {
+                            "en": "Link to retrieve first page.",
+                            "ru": "Link to retrieve first page.",
+                            "lv": "Link to retrieve first page."
+                        },
+                        "link_to_retrieve_last_page": {
+                            "en": "Link to retrieve last page.",
+                            "ru": "Link to retrieve last page.",
+                            "lv": "Link to retrieve last page."
+                        },
+                        "link_to_retrieve_previous_page": {
+                            "en": "Link to retrieve previous page.",
+                            "ru": "Link to retrieve previous page.",
+                            "lv": "Link to retrieve previous page."
+                        },
+                        "link_to_retrieve_next_page": {
+                            "en": "Link to retrieve next page.",
+                            "ru": "Link to retrieve next page.",
+                            "lv": "Link to retrieve next page."
+                        },
+                        "the_number_of_current_page": {
+                            "en": "The number of current page.",
+                            "ru": "The number of current page.",
+                            "lv": "The number of current page."
+                        },
+                        "the_index_of_the_first_retrieved_item": {
+                            "en": "The index of first retrieved worksite.",
+                            "ru": "The index of first retrieved worksite.",
+                            "lv": "The index of first retrieved worksite."
+                        },
+                        "the_number_of_the_last_page": {
+                            "en": "The number of the last page.",
+                            "ru": "The number of the last page.",
+                            "lv": "The number of the last page."
+                        },
+                        "the_base_link_to_the_resource": {
+                            "en": "The base link to the api resource.",
+                            "ru": "The base link to the api resource.",
+                            "lv": "The base link to the api resource."
+                        },
+                        "the_number_of_models_per_page": {
+                            "en": "The number of worksites per page.",
+                            "ru": "The number of worksites per page.",
+                            "lv": "The number of worksites per page."
+                        },
+                        "the_index_of_the_last_retrieved_item": {
+                            "en": "The index of last retrieved worksite.",
+                            "ru": "The index of last retrieved worksite.",
+                            "lv": "The index of last retrieved worksite."
+                        },
+                        "the_total_of_available_pages": {
+                            "en": "The total of the available pages.",
+                            "ru": "The total of the available pages.",
+                            "lv": "The total of the available pages."
+                        },
+                        "store_route_description": {
+                            "en": "Create new worksite.",
+                            "ru": "Create new worksite.",
+                            "lv": "Create new worksite."
+                        },
+                        "store_route_response_description": {
+                            "en": "The API's response will be JSON based data. The JSON object will be structured as follow",
+                            "ru": "The API's response will be JSON based data. The JSON object will be structured as follow",
+                            "lv": "The API's response will be JSON based data. The JSON object will be structured as follow"
+                        },
+                        "update_route_description": {
+                            "en": "Update existsing worksite.",
+                            "ru": "Update existsing worksite.",
+                            "lv": "Update existsing worksite."
+                        },
+                        "update_route_response_description": {
+                            "en": "The API's response will be JSON based data. The JSON object will be structured as follow",
+                            "ru": "The API's response will be JSON based data. The JSON object will be structured as follow",
+                            "lv": "The API's response will be JSON based data. The JSON object will be structured as follow"
+                        },
+                        "show_route_description": {
+                            "en": "Retrieve existsing worksite.",
+                            "ru": "Retrieve existsing worksite.",
+                            "lv": "Retrieve existsing worksite."
+                        },
+                        "show_route_response_description": {
+                            "en": "The API's response will be JSON based data. The JSON object will be structured as follow",
+                            "ru": "The API's response will be JSON based data. The JSON object will be structured as follow",
+                            "lv": "The API's response will be JSON based data. The JSON object will be structured as follow"
+                        },
+                        "the_id_of_model_to_retrieve": {
+                            "en": "The unique id of the worksite to retrieve",
+                            "ru": "The unique id of the worksite to retrieve",
+                            "lv": "The unique id of the worksite to retrieve"
+                        },
+                        "destroy_route_description": {
+                            "en": "Delete existsing worksite.",
+                            "ru": "Delete existsing worksite.",
+                            "lv": "Delete existsing worksite."
+                        },
+                        "destroy_route_response_description": {
+                            "en": "The API's response will be JSON based data. The JSON object will be structured as follow",
+                            "ru": "The API's response will be JSON based data. The JSON object will be structured as follow",
+                            "lv": "The API's response will be JSON based data. The JSON object will be structured as follow"
+                        },
+                        "the_id_of_model_to_delete": {
+                            "en": "The id of the worksite to delete.",
+                            "ru": "The id of the worksite to delete.",
+                            "lv": "The id of the worksite to delete."
+                        },
+                        "general_description": {
+                            "en": "Allows you to list, create, edit, show and delete worksites.",
+                            "ru": "Allows you to list, create, edit, show and delete worksites.",
+                            "lv": "Allows you to list, create, edit, show and delete worksites."
+                        },
+                        "indicate_whether_the_request_was_successful_or_not": {
+                            "en": "Indicate whether the request was successful or not.",
+                            "ru": "Indicate whether the request was successful or not.",
+                            "lv": "Indicate whether the request was successful or not."
+                        },
+                        "the_id_of_the_model": {
+                            "en": "The id of the worksite.",
+                            "ru": "The id of the worksite.",
+                            "lv": "The id of the worksite."
+                        },
+                        "this_parameter_must_be_present_in_the_request": {
+                            "en": "This parameter must be present in the request.",
+                            "ru": "This parameter must be present in the request.",
+                            "lv": "This parameter must be present in the request."
+                        },
+                        "the_request_failed_validation": {
+                            "en": "The request failed validation.",
+                            "ru": "The request failed validation.",
+                            "lv": "The request failed validation."
+                        },
+                        "list_of_the_invalid_errors": {
+                            "en": "List of the invalid errors.",
+                            "ru": "List of the invalid errors.",
+                            "lv": "List of the invalid errors."
+                        },
+                        "the_requested_model_does_not_exists": {
+                            "en": "The requested worksite does not exists.",
+                            "ru": "The requested worksite does not exists.",
+                            "lv": "The requested worksite does not exists."
+                        },
+                        "the_user_does_not_have_permission_to_access_the_requested_resource": {
+                            "en": "User does not have permission to access the requested resource.",
+                            "ru": "User does not have permission to access the requested resource.",
+                            "lv": "User does not have permission to access the requested resource."
+                        }
+                    }
+                }
+            }
+        ]
+    },
+    {
+        "model-name": "Key",
+        "resource-file": "C:\\Users\\Yuris\\Projects\\crest\\resources\\laravel-code-generator\\sources\\keys.json",
+        "table-name": "Keys",
+        "migrations": [
+            {
+                "name": "2021_01_24_170259_create_keys_table",
+                "class-name": "CreateKeysTable",
+                "path": "C:\\Users\\Yuris\\Projects\\crest\\database\\migrations\\2021_01_24_170259_create_keys_table.php",
+                "is-create": true,
+                "is-virtual": true,
+                "is-organized": false,
+                "with-soft-delete": false,
+                "without-timestamps": false,
+                "resource": {
+                    "fields": [
+                        {
+                            "name": "Key_ID",
+                            "labels": {
+                                "en": "Key",
+                                "ru": "Key",
+                                "lv": "Key"
+                            },
+                            "html-type": "select",
+                            "css-class": "",
+                            "options": {},
+                            "html-value": null,
+                            "validation": "",
+                            "is-on-index": false,
+                            "is-on-show": false,
+                            "is-on-form": false,
+                            "data-type": "int",
+                            "data-type-params": [],
+                            "data-value": null,
+                            "is-index": true,
+                            "is-unique": false,
+                            "is-primary": true,
+                            "comment": null,
+                            "is-nullable": false,
+                            "is-header": false,
+                            "is-unsigned": true,
+                            "is-auto-increment": true,
+                            "is-inline-options": false,
+                            "is-date": false,
+                            "date-format": "",
+                            "cast-as": "",
+                            "placeholder": {
+                                "en": "Select key",
+                                "ru": "Select key",
+                                "lv": "Select key"
+                            },
+                            "delimiter": "; ",
+                            "range": [],
+                            "foreign-relation": {
+                                "name": "key",
+                                "type": "belongsTo",
+                                "params": [
+                                    "App\\Models\\Key",
+                                    "Key_ID"
+                                ],
+                                "field": "Key_Name"
+                            },
+                            "foreign-constraint": null,
+                            "on-store": null,
+                            "on-update": null,
+                            "api-key": "Key_ID",
+                            "is-api-visible": true,
+                            "api-description": {
+                                "en": "The key of the model.",
+                                "ru": "The key of the model.",
+                                "lv": "The key of the model."
+                            }
+                        },
+                        {
+                            "name": "Key_Name",
+                            "labels": {
+                                "en": "Key  Name",
+                                "ru": "Key  Name",
+                                "lv": "Key  Name"
+                            },
+                            "html-type": "text",
+                            "css-class": "",
+                            "options": {},
+                            "html-value": null,
+                            "validation": "required|string|min:1|max:32",
+                            "is-on-index": true,
+                            "is-on-show": true,
+                            "is-on-form": true,
+                            "data-type": "string",
+                            "data-type-params": [
+                                32
+                            ],
+                            "data-value": null,
+                            "is-index": false,
+                            "is-unique": false,
+                            "is-primary": false,
+                            "comment": null,
+                            "is-nullable": false,
+                            "is-header": false,
+                            "is-unsigned": false,
+                            "is-auto-increment": false,
+                            "is-inline-options": false,
+                            "is-date": false,
+                            "date-format": "",
+                            "cast-as": "",
+                            "placeholder": {
+                                "en": "Enter key  name here...",
+                                "ru": "Enter key  name here...",
+                                "lv": "Enter key  name here..."
+                            },
+                            "delimiter": "; ",
+                            "range": [],
+                            "foreign-relation": null,
+                            "foreign-constraint": null,
+                            "on-store": null,
+                            "on-update": null,
+                            "api-key": "Key_Name",
+                            "is-api-visible": true,
+                            "api-description": {
+                                "en": "The key  name of the model.",
+                                "ru": "The key  name of the model.",
+                                "lv": "The key  name of the model."
+                            }
+                        },
+                        {
+                            "name": "Employee_ID",
+                            "labels": {
+                                "en": "Employee",
+                                "ru": "Employee",
+                                "lv": "Employee"
+                            },
+                            "html-type": "select",
+                            "css-class": "",
+                            "options": {},
+                            "html-value": null,
+                            "validation": "nullable",
+                            "is-on-index": true,
+                            "is-on-show": true,
+                            "is-on-form": true,
+                            "data-type": "int",
+                            "data-type-params": [],
+                            "data-value": null,
+                            "is-index": true,
+                            "is-unique": false,
+                            "is-primary": false,
+                            "comment": null,
+                            "is-nullable": true,
+                            "is-header": false,
+                            "is-unsigned": true,
+                            "is-auto-increment": false,
+                            "is-inline-options": false,
+                            "is-date": false,
+                            "date-format": "",
+                            "cast-as": "",
+                            "placeholder": {
+                                "en": "Select employee",
+                                "ru": "Select employee",
+                                "lv": "Select employee"
+                            },
+                            "delimiter": "; ",
+                            "range": [],
+                            "foreign-relation": {
+                                "name": "Employee",
+                                "type": "belongsTo",
+                                "params": [
+                                    "App\\Models\\Employee",
+                                    "Employee_ID",
+                                    "Employee_ID"
+                                ],
+                                "field": "Employee_Name"
+                            },
+                            "foreign-constraint": {
+                                "field": "Employee_ID",
+                                "references": "employees",
+                                "on": "Employee_ID",
+                                "on-delete": "set null",
+                                "on-update": "cascade",
+                                "references-model": "App\\Models\\Employee",
+                                "is-self-reference": false
+                            },
+                            "on-store": null,
+                            "on-update": null,
+                            "api-key": "Employee_ID",
+                            "is-api-visible": true,
+                            "api-description": {
+                                "en": "The employee of the model.",
+                                "ru": "The employee of the model.",
+                                "lv": "The employee of the model."
+                            }
+                        },
+                        {
+                            "name": "Is_Active",
+                            "labels": {
+                                "en": "Is  Active",
+                                "ru": "Is  Active",
+                                "lv": "Is  Active"
+                            },
+                            "html-type": "checkbox",
+                            "css-class": "",
+                            "options": {
+                                "en": {
+                                    "0": "No",
+                                    "1": "Yes"
+                                },
+                                "ru": {
+                                    "0": "No",
+                                    "1": "Yes"
+                                },
+                                "lv": {
+                                    "0": "No",
+                                    "1": "Yes"
+                                }
+                            },
+                            "html-value": null,
+                            "validation": "boolean|nullable",
+                            "is-on-index": true,
+                            "is-on-show": true,
+                            "is-on-form": true,
+                            "data-type": "bool",
+                            "data-type-params": [],
+                            "data-value": "1",
+                            "is-index": false,
+                            "is-unique": false,
+                            "is-primary": false,
+                            "comment": null,
+                            "is-nullable": true,
+                            "is-header": false,
+                            "is-unsigned": false,
+                            "is-auto-increment": false,
+                            "is-inline-options": false,
+                            "is-date": false,
+                            "date-format": "",
+                            "cast-as": "",
+                            "placeholder": {},
+                            "delimiter": "; ",
+                            "range": [],
+                            "foreign-relation": null,
+                            "foreign-constraint": null,
+                            "on-store": null,
+                            "on-update": null,
+                            "api-key": "Is_Active",
+                            "is-api-visible": true,
+                            "api-description": {
+                                "en": "The is  active of the model.",
+                                "ru": "The is  active of the model.",
+                                "lv": "The is  active of the model."
+                            }
+                        },
+                        {
+                            "name": "Date_From",
+                            "labels": {
+                                "en": "Date  From",
+                                "ru": "Date  From",
+                                "lv": "Date  From"
+                            },
+                            "html-type": "text",
+                            "css-class": "",
+                            "options": {},
+                            "html-value": null,
+                            "validation": "nullable|date_format:j/n/Y",
+                            "is-on-index": true,
+                            "is-on-show": true,
+                            "is-on-form": true,
+                            "data-type": "date",
+                            "data-type-params": [],
+                            "data-value": null,
+                            "is-index": false,
+                            "is-unique": false,
+                            "is-primary": false,
+                            "comment": null,
+                            "is-nullable": true,
+                            "is-header": false,
+                            "is-unsigned": false,
+                            "is-auto-increment": false,
+                            "is-inline-options": false,
+                            "is-date": false,
+                            "date-format": "j/n/Y",
+                            "cast-as": "",
+                            "placeholder": {
+                                "en": "Enter date  from here...",
+                                "ru": "Enter date  from here...",
+                                "lv": "Enter date  from here..."
+                            },
+                            "delimiter": "; ",
+                            "range": [],
+                            "foreign-relation": null,
+                            "foreign-constraint": null,
+                            "on-store": null,
+                            "on-update": null,
+                            "api-key": "Date_From",
+                            "is-api-visible": true,
+                            "api-description": {
+                                "en": "The date  from of the model.",
+                                "ru": "The date  from of the model.",
+                                "lv": "The date  from of the model."
+                            }
+                        },
+                        {
+                            "name": "Date_Till",
+                            "labels": {
+                                "en": "Date  Till",
+                                "ru": "Date  Till",
+                                "lv": "Date  Till"
+                            },
+                            "html-type": "text",
+                            "css-class": "",
+                            "options": {},
+                            "html-value": null,
+                            "validation": "nullable|date_format:j/n/Y",
+                            "is-on-index": true,
+                            "is-on-show": true,
+                            "is-on-form": true,
+                            "data-type": "date",
+                            "data-type-params": [],
+                            "data-value": null,
+                            "is-index": false,
+                            "is-unique": false,
+                            "is-primary": false,
+                            "comment": null,
+                            "is-nullable": true,
+                            "is-header": false,
+                            "is-unsigned": false,
+                            "is-auto-increment": false,
+                            "is-inline-options": false,
+                            "is-date": false,
+                            "date-format": "j/n/Y",
+                            "cast-as": "",
+                            "placeholder": {
+                                "en": "Enter date  till here...",
+                                "ru": "Enter date  till here...",
+                                "lv": "Enter date  till here..."
+                            },
+                            "delimiter": "; ",
+                            "range": [],
+                            "foreign-relation": null,
+                            "foreign-constraint": null,
+                            "on-store": null,
+                            "on-update": null,
+                            "api-key": "Date_Till",
+                            "is-api-visible": true,
+                            "api-description": {
+                                "en": "The date  till of the model.",
+                                "ru": "The date  till of the model.",
+                                "lv": "The date  till of the model."
+                            }
+                        },
+                        {
+                            "name": "Created_At",
+                            "labels": {
+                                "en": "Created  At",
+                                "ru": "Created  At",
+                                "lv": "Created  At"
+                            },
+                            "html-type": "text",
+                            "css-class": "",
+                            "options": {},
+                            "html-value": null,
+                            "validation": "",
+                            "is-on-index": false,
+                            "is-on-show": true,
+                            "is-on-form": false,
+                            "data-type": "timestamp",
+                            "data-type-params": [],
+                            "data-value": "CURRENT_TIMESTAMP",
+                            "is-index": false,
+                            "is-unique": false,
+                            "is-primary": false,
+                            "comment": null,
+                            "is-nullable": true,
+                            "is-header": false,
+                            "is-unsigned": false,
+                            "is-auto-increment": false,
+                            "is-inline-options": false,
+                            "is-date": false,
+                            "date-format": "j/n/Y g:i A",
+                            "cast-as": "",
+                            "placeholder": {
+                                "en": "Enter created  at here...",
+                                "ru": "Enter created  at here...",
+                                "lv": "Enter created  at here..."
+                            },
+                            "delimiter": "; ",
+                            "range": [],
+                            "foreign-relation": null,
+                            "foreign-constraint": null,
+                            "on-store": null,
+                            "on-update": null,
+                            "api-key": "Created_At",
+                            "is-api-visible": false,
+                            "api-description": {
+                                "en": "The created  at of the model.",
+                                "ru": "The created  at of the model.",
+                                "lv": "The created  at of the model."
+                            }
+                        },
+                        {
+                            "name": "Updated_At",
+                            "labels": {
+                                "en": "Updated  At",
+                                "ru": "Updated  At",
+                                "lv": "Updated  At"
+                            },
+                            "html-type": "text",
+                            "css-class": "",
+                            "options": {},
+                            "html-value": null,
+                            "validation": "",
+                            "is-on-index": false,
+                            "is-on-show": true,
+                            "is-on-form": false,
+                            "data-type": "timestamp",
+                            "data-type-params": [],
+                            "data-value": "CURRENT_TIMESTAMP",
+                            "is-index": false,
+                            "is-unique": false,
+                            "is-primary": false,
+                            "comment": null,
+                            "is-nullable": true,
+                            "is-header": false,
+                            "is-unsigned": false,
+                            "is-auto-increment": false,
+                            "is-inline-options": false,
+                            "is-date": false,
+                            "date-format": "j/n/Y g:i A",
+                            "cast-as": "",
+                            "placeholder": {
+                                "en": "Enter updated  at here...",
+                                "ru": "Enter updated  at here...",
+                                "lv": "Enter updated  at here..."
+                            },
+                            "delimiter": "; ",
+                            "range": [],
+                            "foreign-relation": null,
+                            "foreign-constraint": null,
+                            "on-store": null,
+                            "on-update": null,
+                            "api-key": "Updated_At",
+                            "is-api-visible": false,
+                            "api-description": {
+                                "en": "The updated  at of the model.",
+                                "ru": "The updated  at of the model.",
+                                "lv": "The updated  at of the model."
+                            }
+                        }
+                    ],
+                    "relations": [],
+                    "indexes": [],
+                    "auto-manage-created-and-updated-at": true,
+                    "table-name": "Keys",
+                    "protection": {
+                        "is-model-protected": false,
+                        "is-controller-protected": false,
+                        "is-api-resource-protected": false,
+                        "is-api-resource-collection-protected": false,
+                        "is-api-documentation-protected": false,
+                        "is-api-documentation-controller-protected": false,
+                        "is-form-request-protected": false,
+                        "is-languages-protected": false,
+                        "is-form-view-protected": false,
+                        "is-index-view-protected": false,
+                        "is-create-view-protected": false,
+                        "is-edit-view-protected": false,
+                        "is-show-view-protected": false
+                    },
+                    "api-documentation": {
+                        "access_token_with_bearer": {
+                            "en": "The access token prefixed with the \"Bearer \" key word.",
+                            "ru": "The access token prefixed with the \"Bearer \" key word.",
+                            "lv": "The access token prefixed with the \"Bearer \" key word."
+                        },
+                        "index_route_description": {
+                            "en": "Retrieve existing keys.",
+                            "ru": "Retrieve existing keys.",
+                            "lv": "Retrieve existing keys."
+                        },
+                        "index_route_response_description": {
+                            "en": "The API's response will be JSON based data. The JSON object will be structured as follow",
+                            "ru": "The API's response will be JSON based data. The JSON object will be structured as follow",
+                            "lv": "The API's response will be JSON based data. The JSON object will be structured as follow"
+                        },
+                        "the_key_is_the_model_property_and_the_value_is_the_model_value": {
+                            "en": "The array's key is the key property name where the value is the assigned value to the retrieved key.",
+                            "ru": "The array's key is the key property name where the value is the assigned value to the retrieved key.",
+                            "lv": "The array's key is the key property name where the value is the assigned value to the retrieved key."
+                        },
+                        "link_to_retrieve_first_page": {
+                            "en": "Link to retrieve first page.",
+                            "ru": "Link to retrieve first page.",
+                            "lv": "Link to retrieve first page."
+                        },
+                        "link_to_retrieve_last_page": {
+                            "en": "Link to retrieve last page.",
+                            "ru": "Link to retrieve last page.",
+                            "lv": "Link to retrieve last page."
+                        },
+                        "link_to_retrieve_previous_page": {
+                            "en": "Link to retrieve previous page.",
+                            "ru": "Link to retrieve previous page.",
+                            "lv": "Link to retrieve previous page."
+                        },
+                        "link_to_retrieve_next_page": {
+                            "en": "Link to retrieve next page.",
+                            "ru": "Link to retrieve next page.",
+                            "lv": "Link to retrieve next page."
+                        },
+                        "the_number_of_current_page": {
+                            "en": "The number of current page.",
+                            "ru": "The number of current page.",
+                            "lv": "The number of current page."
+                        },
+                        "the_index_of_the_first_retrieved_item": {
+                            "en": "The index of first retrieved key.",
+                            "ru": "The index of first retrieved key.",
+                            "lv": "The index of first retrieved key."
+                        },
+                        "the_number_of_the_last_page": {
+                            "en": "The number of the last page.",
+                            "ru": "The number of the last page.",
+                            "lv": "The number of the last page."
+                        },
+                        "the_base_link_to_the_resource": {
+                            "en": "The base link to the api resource.",
+                            "ru": "The base link to the api resource.",
+                            "lv": "The base link to the api resource."
+                        },
+                        "the_number_of_models_per_page": {
+                            "en": "The number of keys per page.",
+                            "ru": "The number of keys per page.",
+                            "lv": "The number of keys per page."
+                        },
+                        "the_index_of_the_last_retrieved_item": {
+                            "en": "The index of last retrieved key.",
+                            "ru": "The index of last retrieved key.",
+                            "lv": "The index of last retrieved key."
+                        },
+                        "the_total_of_available_pages": {
+                            "en": "The total of the available pages.",
+                            "ru": "The total of the available pages.",
+                            "lv": "The total of the available pages."
+                        },
+                        "store_route_description": {
+                            "en": "Create new key.",
+                            "ru": "Create new key.",
+                            "lv": "Create new key."
+                        },
+                        "store_route_response_description": {
+                            "en": "The API's response will be JSON based data. The JSON object will be structured as follow",
+                            "ru": "The API's response will be JSON based data. The JSON object will be structured as follow",
+                            "lv": "The API's response will be JSON based data. The JSON object will be structured as follow"
+                        },
+                        "update_route_description": {
+                            "en": "Update existsing key.",
+                            "ru": "Update existsing key.",
+                            "lv": "Update existsing key."
+                        },
+                        "update_route_response_description": {
+                            "en": "The API's response will be JSON based data. The JSON object will be structured as follow",
+                            "ru": "The API's response will be JSON based data. The JSON object will be structured as follow",
+                            "lv": "The API's response will be JSON based data. The JSON object will be structured as follow"
+                        },
+                        "show_route_description": {
+                            "en": "Retrieve existsing key.",
+                            "ru": "Retrieve existsing key.",
+                            "lv": "Retrieve existsing key."
+                        },
+                        "show_route_response_description": {
+                            "en": "The API's response will be JSON based data. The JSON object will be structured as follow",
+                            "ru": "The API's response will be JSON based data. The JSON object will be structured as follow",
+                            "lv": "The API's response will be JSON based data. The JSON object will be structured as follow"
+                        },
+                        "the_id_of_model_to_retrieve": {
+                            "en": "The unique id of the key to retrieve",
+                            "ru": "The unique id of the key to retrieve",
+                            "lv": "The unique id of the key to retrieve"
+                        },
+                        "destroy_route_description": {
+                            "en": "Delete existsing key.",
+                            "ru": "Delete existsing key.",
+                            "lv": "Delete existsing key."
+                        },
+                        "destroy_route_response_description": {
+                            "en": "The API's response will be JSON based data. The JSON object will be structured as follow",
+                            "ru": "The API's response will be JSON based data. The JSON object will be structured as follow",
+                            "lv": "The API's response will be JSON based data. The JSON object will be structured as follow"
+                        },
+                        "the_id_of_model_to_delete": {
+                            "en": "The id of the key to delete.",
+                            "ru": "The id of the key to delete.",
+                            "lv": "The id of the key to delete."
+                        },
+                        "general_description": {
+                            "en": "Allows you to list, create, edit, show and delete keys.",
+                            "ru": "Allows you to list, create, edit, show and delete keys.",
+                            "lv": "Allows you to list, create, edit, show and delete keys."
+                        },
+                        "indicate_whether_the_request_was_successful_or_not": {
+                            "en": "Indicate whether the request was successful or not.",
+                            "ru": "Indicate whether the request was successful or not.",
+                            "lv": "Indicate whether the request was successful or not."
+                        },
+                        "the_id_of_the_model": {
+                            "en": "The id of the key.",
+                            "ru": "The id of the key.",
+                            "lv": "The id of the key."
+                        },
+                        "this_parameter_must_be_present_in_the_request": {
+                            "en": "This parameter must be present in the request.",
+                            "ru": "This parameter must be present in the request.",
+                            "lv": "This parameter must be present in the request."
+                        },
+                        "the_request_failed_validation": {
+                            "en": "The request failed validation.",
+                            "ru": "The request failed validation.",
+                            "lv": "The request failed validation."
+                        },
+                        "list_of_the_invalid_errors": {
+                            "en": "List of the invalid errors.",
+                            "ru": "List of the invalid errors.",
+                            "lv": "List of the invalid errors."
+                        },
+                        "the_requested_model_does_not_exists": {
+                            "en": "The requested key does not exists.",
+                            "ru": "The requested key does not exists.",
+                            "lv": "The requested key does not exists."
+                        },
+                        "the_user_does_not_have_permission_to_access_the_requested_resource": {
+                            "en": "User does not have permission to access the requested resource.",
+                            "ru": "User does not have permission to access the requested resource.",
+                            "lv": "User does not have permission to access the requested resource."
+                        }
+                    }
+                }
+            }
+        ]
+    },
+    {
+        "model-name": "Registry",
+        "resource-file": "C:\\Users\\Yuris\\Projects\\crest\\resources\\laravel-code-generator\\sources\\registries.json",
+        "table-name": "Registry",
+        "migrations": [
+            {
+                "name": "2021_01_24_172642_create_registry_table",
+                "class-name": "CreateRegistriesTable",
+                "path": "C:\\Users\\Yuris\\Projects\\crest\\database\\migrations\\2021_01_24_172642_create_registry_table.php",
+                "is-create": true,
+                "is-virtual": true,
+                "is-organized": false,
+                "with-soft-delete": false,
+                "without-timestamps": true,
+                "resource": {
+                    "fields": [
+                        {
+                            "name": "Registry_ID",
+                            "labels": {
+                                "en": "Registry",
+                                "ru": "Registry",
+                                "lv": "Registry"
+                            },
+                            "html-type": "select",
+                            "css-class": "",
+                            "options": {},
+                            "html-value": null,
+                            "validation": "",
+                            "is-on-index": false,
+                            "is-on-show": false,
+                            "is-on-form": false,
+                            "data-type": "int",
+                            "data-type-params": [],
+                            "data-value": null,
+                            "is-index": true,
+                            "is-unique": false,
+                            "is-primary": true,
+                            "comment": null,
+                            "is-nullable": false,
+                            "is-header": false,
+                            "is-unsigned": true,
+                            "is-auto-increment": true,
+                            "is-inline-options": false,
+                            "is-date": false,
+                            "date-format": "",
+                            "cast-as": "",
+                            "placeholder": {
+                                "en": "Select registry",
+                                "ru": "Select registry",
+                                "lv": "Select registry"
+                            },
+                            "delimiter": "; ",
+                            "range": [],
+                            "foreign-relation": {
+                                "name": "registry",
+                                "type": "belongsTo",
+                                "params": [
+                                    "App\\Models\\Registry",
+                                    "Registry_ID"
+                                ],
+                                "field": "Key_Name"
+                            },
+                            "foreign-constraint": null,
+                            "on-store": null,
+                            "on-update": null,
+                            "api-key": "Registry_ID",
+                            "is-api-visible": true,
+                            "api-description": {
+                                "en": "The registry of the model.",
+                                "ru": "The registry of the model.",
+                                "lv": "The registry of the model."
+                            }
+                        },
+                        {
+                            "name": "Key_Name",
+                            "labels": {
+                                "en": "Key  Name",
+                                "ru": "Key  Name",
+                                "lv": "Key  Name"
+                            },
+                            "html-type": "text",
+                            "css-class": "",
+                            "options": {},
+                            "html-value": null,
+                            "validation": "required|string|min:1|max:32",
+                            "is-on-index": true,
+                            "is-on-show": true,
+                            "is-on-form": true,
+                            "data-type": "string",
+                            "data-type-params": [
+                                32
+                            ],
+                            "data-value": null,
+                            "is-index": false,
+                            "is-unique": false,
+                            "is-primary": false,
+                            "comment": null,
+                            "is-nullable": false,
+                            "is-header": false,
+                            "is-unsigned": false,
+                            "is-auto-increment": false,
+                            "is-inline-options": false,
+                            "is-date": false,
+                            "date-format": "",
+                            "cast-as": "",
+                            "placeholder": {
+                                "en": "Enter key  name here...",
+                                "ru": "Enter key  name here...",
+                                "lv": "Enter key  name here..."
+                            },
+                            "delimiter": "; ",
+                            "range": [],
+                            "foreign-relation": null,
+                            "foreign-constraint": null,
+                            "on-store": null,
+                            "on-update": null,
+                            "api-key": "Key_Name",
+                            "is-api-visible": true,
+                            "api-description": {
+                                "en": "The key  name of the model.",
+                                "ru": "The key  name of the model.",
+                                "lv": "The key  name of the model."
+                            }
+                        },
+                        {
+                            "name": "Action",
+                            "labels": {
+                                "en": "Action",
+                                "ru": "Action",
+                                "lv": "Action"
+                            },
+                            "html-type": "number",
+                            "css-class": "",
+                            "options": {},
+                            "html-value": null,
+                            "validation": "required",
+                            "is-on-index": true,
+                            "is-on-show": true,
+                            "is-on-form": true,
+                            "data-type": "int",
+                            "data-type-params": [],
+                            "data-value": null,
+                            "is-index": false,
+                            "is-unique": false,
+                            "is-primary": false,
+                            "comment": null,
+                            "is-nullable": false,
+                            "is-header": false,
+                            "is-unsigned": false,
+                            "is-auto-increment": false,
+                            "is-inline-options": false,
+                            "is-date": false,
+                            "date-format": "",
+                            "cast-as": "",
+                            "placeholder": {
+                                "en": "Enter action here...",
+                                "ru": "Enter action here...",
+                                "lv": "Enter action here..."
+                            },
+                            "delimiter": "; ",
+                            "range": [],
+                            "foreign-relation": null,
+                            "foreign-constraint": null,
+                            "on-store": null,
+                            "on-update": null,
+                            "api-key": "Action",
+                            "is-api-visible": true,
+                            "api-description": {
+                                "en": "The action of the model.",
+                                "ru": "The action of the model.",
+                                "lv": "The action of the model."
+                            }
+                        },
+                        {
+                            "name": "Action_Time",
+                            "labels": {
+                                "en": "Action  Time",
+                                "ru": "Action  Time",
+                                "lv": "Action  Time"
+                            },
+                            "html-type": "text",
+                            "css-class": "",
+                            "options": {},
+                            "html-value": null,
+                            "validation": "required|date_format:j/n/Y g:i A",
+                            "is-on-index": true,
+                            "is-on-show": true,
+                            "is-on-form": true,
+                            "data-type": "timestamp",
+                            "data-type-params": [],
+                            "data-value": "CURRENT_TIMESTAMP",
+                            "is-index": false,
+                            "is-unique": false,
+                            "is-primary": false,
+                            "comment": null,
+                            "is-nullable": false,
+                            "is-header": false,
+                            "is-unsigned": false,
+                            "is-auto-increment": false,
+                            "is-inline-options": false,
+                            "is-date": false,
+                            "date-format": "j/n/Y g:i A",
+                            "cast-as": "",
+                            "placeholder": {
+                                "en": "Enter action  time here...",
+                                "ru": "Enter action  time here...",
+                                "lv": "Enter action  time here..."
+                            },
+                            "delimiter": "; ",
+                            "range": [],
+                            "foreign-relation": null,
+                            "foreign-constraint": null,
+                            "on-store": null,
+                            "on-update": null,
+                            "api-key": "Action_Time",
+                            "is-api-visible": true,
+                            "api-description": {
+                                "en": "The action  time of the model.",
+                                "ru": "The action  time of the model.",
+                                "lv": "The action  time of the model."
+                            }
+                        },
+                        {
+                            "name": "Battery_State",
+                            "labels": {
+                                "en": "Battery  State",
+                                "ru": "Battery  State",
+                                "lv": "Battery  State"
+                            },
+                            "html-type": "number",
+                            "css-class": "",
+                            "options": {},
+                            "html-value": null,
+                            "validation": "required|numeric|min:-99999999.99|max:99999999.99",
+                            "is-on-index": true,
+                            "is-on-show": true,
+                            "is-on-form": true,
+                            "data-type": "decimal",
+                            "data-type-params": [
+                                10,
+                                2
+                            ],
+                            "data-value": null,
+                            "is-index": false,
+                            "is-unique": false,
+                            "is-primary": false,
+                            "comment": null,
+                            "is-nullable": false,
+                            "is-header": false,
+                            "is-unsigned": false,
+                            "is-auto-increment": false,
+                            "is-inline-options": false,
+                            "is-date": false,
+                            "date-format": "",
+                            "cast-as": "",
+                            "placeholder": {
+                                "en": "Enter battery  state here...",
+                                "ru": "Enter battery  state here...",
+                                "lv": "Enter battery  state here..."
+                            },
+                            "delimiter": "; ",
+                            "range": [],
+                            "foreign-relation": null,
+                            "foreign-constraint": null,
+                            "on-store": null,
+                            "on-update": null,
+                            "api-key": "Battery_State",
+                            "is-api-visible": true,
+                            "api-description": {
+                                "en": "The battery  state of the model.",
+                                "ru": "The battery  state of the model.",
+                                "lv": "The battery  state of the model."
+                            }
+                        }
+                    ],
+                    "relations": [],
+                    "indexes": [],
+                    "auto-manage-created-and-updated-at": false,
+                    "table-name": "Registry",
+                    "protection": {
+                        "is-model-protected": false,
+                        "is-controller-protected": false,
+                        "is-api-resource-protected": false,
+                        "is-api-resource-collection-protected": false,
+                        "is-api-documentation-protected": false,
+                        "is-api-documentation-controller-protected": false,
+                        "is-form-request-protected": false,
+                        "is-languages-protected": false,
+                        "is-form-view-protected": false,
+                        "is-index-view-protected": false,
+                        "is-create-view-protected": false,
+                        "is-edit-view-protected": false,
+                        "is-show-view-protected": false
+                    },
+                    "api-documentation": {
+                        "access_token_with_bearer": {
+                            "en": "The access token prefixed with the \"Bearer \" key word.",
+                            "ru": "The access token prefixed with the \"Bearer \" key word.",
+                            "lv": "The access token prefixed with the \"Bearer \" key word."
+                        },
+                        "index_route_description": {
+                            "en": "Retrieve existing registries.",
+                            "ru": "Retrieve existing registries.",
+                            "lv": "Retrieve existing registries."
+                        },
+                        "index_route_response_description": {
+                            "en": "The API's response will be JSON based data. The JSON object will be structured as follow",
+                            "ru": "The API's response will be JSON based data. The JSON object will be structured as follow",
+                            "lv": "The API's response will be JSON based data. The JSON object will be structured as follow"
+                        },
+                        "the_key_is_the_model_property_and_the_value_is_the_model_value": {
+                            "en": "The array's key is the registry property name where the value is the assigned value to the retrieved registry.",
+                            "ru": "The array's key is the registry property name where the value is the assigned value to the retrieved registry.",
+                            "lv": "The array's key is the registry property name where the value is the assigned value to the retrieved registry."
+                        },
+                        "link_to_retrieve_first_page": {
+                            "en": "Link to retrieve first page.",
+                            "ru": "Link to retrieve first page.",
+                            "lv": "Link to retrieve first page."
+                        },
+                        "link_to_retrieve_last_page": {
+                            "en": "Link to retrieve last page.",
+                            "ru": "Link to retrieve last page.",
+                            "lv": "Link to retrieve last page."
+                        },
+                        "link_to_retrieve_previous_page": {
+                            "en": "Link to retrieve previous page.",
+                            "ru": "Link to retrieve previous page.",
+                            "lv": "Link to retrieve previous page."
+                        },
+                        "link_to_retrieve_next_page": {
+                            "en": "Link to retrieve next page.",
+                            "ru": "Link to retrieve next page.",
+                            "lv": "Link to retrieve next page."
+                        },
+                        "the_number_of_current_page": {
+                            "en": "The number of current page.",
+                            "ru": "The number of current page.",
+                            "lv": "The number of current page."
+                        },
+                        "the_index_of_the_first_retrieved_item": {
+                            "en": "The index of first retrieved registry.",
+                            "ru": "The index of first retrieved registry.",
+                            "lv": "The index of first retrieved registry."
+                        },
+                        "the_number_of_the_last_page": {
+                            "en": "The number of the last page.",
+                            "ru": "The number of the last page.",
+                            "lv": "The number of the last page."
+                        },
+                        "the_base_link_to_the_resource": {
+                            "en": "The base link to the api resource.",
+                            "ru": "The base link to the api resource.",
+                            "lv": "The base link to the api resource."
+                        },
+                        "the_number_of_models_per_page": {
+                            "en": "The number of registries per page.",
+                            "ru": "The number of registries per page.",
+                            "lv": "The number of registries per page."
+                        },
+                        "the_index_of_the_last_retrieved_item": {
+                            "en": "The index of last retrieved registry.",
+                            "ru": "The index of last retrieved registry.",
+                            "lv": "The index of last retrieved registry."
+                        },
+                        "the_total_of_available_pages": {
+                            "en": "The total of the available pages.",
+                            "ru": "The total of the available pages.",
+                            "lv": "The total of the available pages."
+                        },
+                        "store_route_description": {
+                            "en": "Create new registry.",
+                            "ru": "Create new registry.",
+                            "lv": "Create new registry."
+                        },
+                        "store_route_response_description": {
+                            "en": "The API's response will be JSON based data. The JSON object will be structured as follow",
+                            "ru": "The API's response will be JSON based data. The JSON object will be structured as follow",
+                            "lv": "The API's response will be JSON based data. The JSON object will be structured as follow"
+                        },
+                        "update_route_description": {
+                            "en": "Update existsing registry.",
+                            "ru": "Update existsing registry.",
+                            "lv": "Update existsing registry."
+                        },
+                        "update_route_response_description": {
+                            "en": "The API's response will be JSON based data. The JSON object will be structured as follow",
+                            "ru": "The API's response will be JSON based data. The JSON object will be structured as follow",
+                            "lv": "The API's response will be JSON based data. The JSON object will be structured as follow"
+                        },
+                        "show_route_description": {
+                            "en": "Retrieve existsing registry.",
+                            "ru": "Retrieve existsing registry.",
+                            "lv": "Retrieve existsing registry."
+                        },
+                        "show_route_response_description": {
+                            "en": "The API's response will be JSON based data. The JSON object will be structured as follow",
+                            "ru": "The API's response will be JSON based data. The JSON object will be structured as follow",
+                            "lv": "The API's response will be JSON based data. The JSON object will be structured as follow"
+                        },
+                        "the_id_of_model_to_retrieve": {
+                            "en": "The unique id of the registry to retrieve",
+                            "ru": "The unique id of the registry to retrieve",
+                            "lv": "The unique id of the registry to retrieve"
+                        },
+                        "destroy_route_description": {
+                            "en": "Delete existsing registry.",
+                            "ru": "Delete existsing registry.",
+                            "lv": "Delete existsing registry."
+                        },
+                        "destroy_route_response_description": {
+                            "en": "The API's response will be JSON based data. The JSON object will be structured as follow",
+                            "ru": "The API's response will be JSON based data. The JSON object will be structured as follow",
+                            "lv": "The API's response will be JSON based data. The JSON object will be structured as follow"
+                        },
+                        "the_id_of_model_to_delete": {
+                            "en": "The id of the registry to delete.",
+                            "ru": "The id of the registry to delete.",
+                            "lv": "The id of the registry to delete."
+                        },
+                        "general_description": {
+                            "en": "Allows you to list, create, edit, show and delete registries.",
+                            "ru": "Allows you to list, create, edit, show and delete registries.",
+                            "lv": "Allows you to list, create, edit, show and delete registries."
+                        },
+                        "indicate_whether_the_request_was_successful_or_not": {
+                            "en": "Indicate whether the request was successful or not.",
+                            "ru": "Indicate whether the request was successful or not.",
+                            "lv": "Indicate whether the request was successful or not."
+                        },
+                        "the_id_of_the_model": {
+                            "en": "The id of the registry.",
+                            "ru": "The id of the registry.",
+                            "lv": "The id of the registry."
+                        },
+                        "this_parameter_must_be_present_in_the_request": {
+                            "en": "This parameter must be present in the request.",
+                            "ru": "This parameter must be present in the request.",
+                            "lv": "This parameter must be present in the request."
+                        },
+                        "the_request_failed_validation": {
+                            "en": "The request failed validation.",
+                            "ru": "The request failed validation.",
+                            "lv": "The request failed validation."
+                        },
+                        "list_of_the_invalid_errors": {
+                            "en": "List of the invalid errors.",
+                            "ru": "List of the invalid errors.",
+                            "lv": "List of the invalid errors."
+                        },
+                        "the_requested_model_does_not_exists": {
+                            "en": "The requested registry does not exists.",
+                            "ru": "The requested registry does not exists.",
+                            "lv": "The requested registry does not exists."
+                        },
+                        "the_user_does_not_have_permission_to_access_the_requested_resource": {
+                            "en": "User does not have permission to access the requested resource.",
+                            "ru": "User does not have permission to access the requested resource.",
+                            "lv": "User does not have permission to access the requested resource."
+                        }
+                    }
+                }
+            }
+        ]
+    }
+]

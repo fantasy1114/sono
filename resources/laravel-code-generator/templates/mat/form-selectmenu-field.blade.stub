@@ -1,0 +1,9 @@
+        <select class="" id="[% field_name %]" name="[% field_name %]"[% field_multiple %][% required_field %]>
+        	    [% placeholder %]
+        	@foreach ([% field_items %] as $kkkey => [% field_item %])
+			    <option value="{{ $kkkey }}"[% selected_value %]>
+			    	{{ [% field_item %] }}
+			    </option>
+			@endforeach
+        </select>
+        

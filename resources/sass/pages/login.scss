@@ -1,0 +1,24 @@
+/*----------------------------------------
+/*----------------------------------------
+    Login Page
+------------------------------------------*/
+
+@import 'variables.scss';
+
+.login-bg{
+	background-image: url("../../images/gallery/flat-bg.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+#login-page{
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+
+	.card-panel.border-radius-6.login-card{
+		margin-left: 0 !important;
+	}
+}
+

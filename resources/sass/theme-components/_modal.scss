@@ -1,0 +1,20 @@
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+	.modal{
+		position: -ms-page;
+		top: 10%;
+		&.bottom-sheet {
+			position: -ms-page;
+			top: 155%;
+			height: 100%;
+			+ .modal-overlay{
+				position: -ms-page;
+				top: 100%;
+			}
+		}
+	}
+	.modal-overlay{
+		position: -ms-page;
+		height: 100%;
+		top: 5%;
+	}
+}

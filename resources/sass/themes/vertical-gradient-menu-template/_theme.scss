@@ -1,0 +1,28 @@
+// Variables
+
+@import "variables"; //Materialize custom variable file
+@import "../../components/variables"; //Materialize variable file
+
+
+@import "../../theme-components/theme-variables"; //Theme variable file
+@import "theme-variables"; //Theme custom variable file
+
+// Typography
+// Google Fonts
+@import url(https://fonts.googleapis.com/css?family=Montserrat:300,300i,400,400i,500,600);
+// Font Variables
+$title: 'Montserrat', sans-serif;
+$font-stack: 'Muli', sans-serif;
+$content: 'Montserrat', sans-serif;
+
+
+//Theme custom scss
+.vertical-gradient-menu{
+  .navbar{
+    .header-search-wrapper-focus{
+      .search-list{
+        border: 1px solid color("grey","base");
+      }
+    }
+  }
+}

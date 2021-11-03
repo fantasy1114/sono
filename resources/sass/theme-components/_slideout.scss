@@ -1,0 +1,330 @@
+/*----------------------------------------
+    Slideout - Right side chat slide out
+------------------------------------------*/
+#right-search .input-field {
+   margin-top: 0;
+}
+#slide-out-right {
+   .tab {
+      a {
+         padding: 0 !important;
+      }
+   }
+
+   &.sidenav {
+      width: $right-sidenav-width;
+      top: 0px;
+      padding-bottom: 0px;
+      li {
+         a.active {
+            background: none;
+            box-shadow: none;
+         }
+      }
+      .slide-out-right-body {
+         // height: calc(100vh - 60px);
+         height: 100vh;
+         // overflow-y: hidden;
+         width: 100%;
+      }
+      #messages {
+         padding: 0.7rem;
+         height: calc(100vh - 54px);
+         position: relative;
+         .header-search-input {
+            border: none;
+            background-color: color("grey", "lighten-3");
+            width: 86%;
+            margin: 1rem;
+            border-radius: 2rem;
+            padding-left: 1rem;
+            height: 2.8rem;
+         }
+         .collection {
+            
+            
+            .collection-item {
+               border: none;
+            }
+            ul.collection {
+               border: none;
+               li {
+                  display: flex;
+                  cursor: pointer;
+                  padding-top: 1.2rem;
+                  .user-content {
+                     margin-left: 1rem;
+                     margin-top: 0.4em;
+                  }
+                  .secondary-content {
+                     color: color("indigo", "lighten-4");
+                     top: 1.6rem;
+                  }
+                  &:hover {
+                     background-color: color("grey", "lighten-4");
+                  }
+               }
+            }
+         }
+      }
+      #activity{
+         height: calc(100vh - 54px);
+         position: relative;
+      }
+      #settings{
+         height: calc(100vh - 54px);
+         position: relative;
+      }
+   }
+
+   top: $navbar-height;
+   overflow: hidden;
+
+   .fixed-line-height {
+      line-height: 24px;
+   }
+
+   #chatapp {
+      li {
+         line-height: 35px !important;
+         min-height: 70px !important;
+      }
+      .sidenav li {
+         line-height: 20px !important;
+      }
+   }
+}
+.chat-close-collapse {
+   padding: 5px 15px 0 0;
+}
+.icon-bg-color {
+   height: 35px;
+   width: 35px;
+   border-radius: 50%;
+   text-align: center;
+   padding-top: 8px;
+   font-size: 20px;
+}
+.border-bottom-1 {
+   border-bottom: 1px solid color("grey", "lighten-4");
+}
+#activity {
+
+   /* Timeline  */
+  /* -------- */
+   .widget-timeline {
+      padding-left: 40px !important;
+      margin:.5rem 5%;
+   li {
+     padding: 1.1rem 0;
+     list-style: none;
+     position: relative;
+
+     &.timeline-items {
+
+       // timeline icon positioning
+       &:before {
+         position: absolute;
+         content: "";
+         left: -37px;
+         top: 22px;
+         border: 3px solid #fff;
+         box-shadow: 1px 2px 6px 0 rgba(25, 42, 70, 0.3);
+         border-radius: 50%;
+         background: color("indigo", "base");
+         height: 13px;
+         width: 13px;
+         z-index: 2;
+       }
+
+       &.active:not(:last-child) {
+
+         // timeline line positioning
+         &:after {
+           position: absolute;
+           content: "";
+           width: 1px;
+           background: color("grey", "lighten-2");
+           left: -31px;
+           top: 22px;
+           height: 100%;
+           z-index: 1;
+         }
+       }
+
+       // timeline content visual
+       .timeline-content {
+         padding: 0.5rem 1rem;
+         background-color: color("grey", "lighten-5");
+         border-radius: 0.267rem;
+         display: flex;
+         align-items: center;
+         font-weight: 700;
+         font-size: 13px;
+         color: color("grey", "base");
+         line-height: 1;
+       }
+     }
+
+     // timeline time typograpgy
+     .timeline-time {
+       float: right;
+       font-size: 0.75rem;
+       line-height: 1.7;
+     }
+
+     // timeline title typograpgy
+     .timeline-title {
+        margin: 0;
+        color: $body-font-color;
+        line-height: 1;
+        font-size: 15px;
+        font-weight: 900;
+     }
+
+     // timeline text typograpgy
+     .timeline-text {
+       margin: 0;
+       font-size: 0.75rem;
+       color: color("grey", "base");
+       line-height: 2.2;
+      }
+      }
+   }
+}
+
+.slide-out-right-sidenav-chat {
+   width: $right-sidenav-width;
+   top: 0px;
+}
+
+#settings {
+   .setting-header{
+      font-size: 1.1rem;
+   }
+   ul.collection {
+      max-height: 100% !important;
+   }
+}
+
+@media #{$medium-and-down} {
+   #slide-out-right {
+      top: 0;
+      &.sidenav {
+         height: 100% !important;
+      }
+   }
+}
+
+// Slide Out Chat
+
+#slide-out-chat {
+   .chat-head,
+   .chat-footer {
+      // position: fixed;
+      z-index: 1;
+      background-color: color("blue-grey", "lighten-5");
+      width: 100%;
+   }
+   .chat-footer {
+      bottom: -0.6rem;
+      form{
+         background-color: color("blue-grey", "lighten-5");
+      }
+      input {
+         background-color: $white;
+         border: none;
+         border-radius: 3rem;
+         padding-left: 1rem;
+         width: 80%;
+         margin-left: -2rem;
+      }
+      label {
+         margin-top: -0.7rem;
+         margin-left: 2rem;
+      }
+      label:not(.label-icon).active {
+         display: none;
+      }
+      i {
+         cursor: pointer;
+      }
+      a {
+         background: transparent;
+         box-shadow: none;
+         width: 40px;
+         position: absolute;
+         line-height: 2rem;
+      }
+   }
+   .speech-bubble {
+      position: relative;
+      background: color("blue-grey", "lighten-5");
+      border-radius: 0.3rem;
+      margin-left: 1rem;
+   }
+   .speech-bubble:after {
+      content: "";
+      position: absolute;
+      left: -9px;
+      top: 50%;
+      width: 0;
+      height: 0;
+      border: 10px solid transparent;
+      border-right-color: color("blue-grey", "lighten-5");
+      border-left: 0;
+      margin-top: -20px;
+   }
+   .speech-bubble-right {
+      position: relative;
+      background-color: $primary-color;
+      border-radius: 0.3rem;
+      margin-left: 1rem;
+      color: $white;
+   }
+   .speech-bubble-right:after {
+      content: "";
+      position: absolute;
+      right: 0;
+      top: 50%;
+      width: 0;
+      height: 0;
+      border: 10px solid transparent;
+      border-left-color: $primary-color;
+      border-right: 0;
+      margin-top: -16px;
+      margin-right: -8px;
+   }
+
+   .chat-body{
+      ul.collection{
+         top: 0;
+         margin-bottom: 0;
+         margin-top: 0;
+      }
+   }
+
+   .collection {
+      height: calc(100vh - 129px);
+      top: 48px;
+      .collection-item {
+         min-height: auto;
+         border: none;
+         margin-bottom: 1rem;
+         .user-content {
+            padding: 1rem;
+         }
+      }
+   }
+}
+
+
+// To remove horizontal line in sm
+
+@media(max-width: 600px){
+    #slide-out-right{
+        &.sidenav{
+            box-shadow: none;
+        }
+    }
+}

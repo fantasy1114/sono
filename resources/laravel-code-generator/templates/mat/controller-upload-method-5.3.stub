@@ -1,0 +1,23 @@
+  
+    /**
+     * Moves the attached file to the server.
+     *
+     * @param Symfony\Component\HttpFoundation\File\UploadedFile $file
+     *
+     * @return string
+     */
+    protected function moveFile($file)
+    {
+        if (!$file->isValid()) {
+            return '';
+        }
+        
+<<<<<<< HEAD
+        $path = config('codegenerator.files_upload_path', 'uploads');
+=======
+        $path = config('laravel-code-generator.files_upload_path', 'uploads');
+>>>>>>> v2.3
+        $saved = $file->store('public/' . $path, config('filesystems.default'));
+
+        return substr($saved, 7);
+    }

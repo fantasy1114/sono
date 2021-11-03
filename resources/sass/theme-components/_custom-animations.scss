@@ -1,0 +1,79 @@
+/*
+* Custom Animations
+*/
+
+@keyframes fadeUp {
+    0% {
+        opacity: 0;
+        transform: translateY(30px)
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0px)
+    }
+  }
+  
+  .animate.fadeUp{
+    animation: fadeUp;
+    animation-duration: 1.5s;
+    animation-fill-mode: both;
+  }
+  
+  @keyframes fadeLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(-30px)
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0px)
+    }
+  }
+  
+  .animate.fadeLeft{
+    animation: fadeLeft;
+    animation-duration: 1.5s;
+    animation-fill-mode: both;
+  }
+  
+  @keyframes fadeRight {
+    0% {
+        opacity: 0;
+        transform: translateX(30px)
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0px)
+    }
+  }
+  
+  .animate.fadeRight{
+    animation: fadeRight;
+    animation-duration: 1.5s;
+    animation-fill-mode: both;
+  }
+
+  .animation-fast{
+      animation-delay: 0.1s;
+  }
+
+  
+  .animation-slow{
+    animation-delay: 2s;
+}
+
+    .delay-1{
+      animation-delay: 0.3s !important;
+    }
+    .delay-2{
+    animation-delay: 0.4s !important;
+    }
+    .delay-3{
+    animation-delay: 0.5s !important;
+    }
+    .delay-4{
+    animation-delay: 0.6s !important;
+    }
+    .delay-5{
+    animation-delay: 0.7s !important;
+    }

@@ -1,0 +1,427 @@
+{
+    "fields": [
+        {
+            "name": "Created_At",
+            "labels": {
+                "en": "Created  At",
+                "ru": "Created  At",
+                "lv": "Created  At"
+            },
+            "html-type": "text",
+            "css-class": "",
+            "options": {},
+            "html-value": null,
+            "validation": "",
+            "is-on-index": false,
+            "is-on-show": true,
+            "is-on-form": false,
+            "data-type": "timestamp",
+            "data-type-params": [],
+            "data-value": "CURRENT_TIMESTAMP",
+            "is-index": false,
+            "is-unique": false,
+            "is-primary": false,
+            "comment": null,
+            "is-nullable": true,
+            "is-header": false,
+            "is-unsigned": false,
+            "is-auto-increment": false,
+            "is-inline-options": false,
+            "is-date": false,
+            "date-format": "j/n/Y g:i A",
+            "cast-as": "",
+            "placeholder": {
+                "en": "Enter created  at here...",
+                "ru": "Enter created  at here...",
+                "lv": "Enter created  at here..."
+            },
+            "delimiter": "; ",
+            "range": [],
+            "foreign-relation": null,
+            "foreign-constraint": null,
+            "on-store": null,
+            "on-update": null,
+            "api-key": "Created_At",
+            "is-api-visible": false,
+            "api-description": {
+                "en": "The created  at of the model.",
+                "ru": "The created  at of the model.",
+                "lv": "The created  at of the model."
+            }
+        },
+        {
+            "name": "Organisation_ID",
+            "labels": {
+                "en": "Organisation",
+                "ru": "Organisation",
+                "lv": "Organisation"
+            },
+            "html-type": "select",
+            "css-class": "",
+            "options": {},
+            "html-value": null,
+            "validation": "",
+            "is-on-index": false,
+            "is-on-show": false,
+            "is-on-form": false,
+            "data-type": "int",
+            "data-type-params": [],
+            "data-value": null,
+            "is-index": true,
+            "is-unique": false,
+            "is-primary": true,
+            "comment": null,
+            "is-nullable": false,
+            "is-header": false,
+            "is-unsigned": true,
+            "is-auto-increment": true,
+            "is-inline-options": false,
+            "is-date": false,
+            "date-format": "",
+            "cast-as": "",
+            "placeholder": {
+                "en": "Select organisation",
+                "ru": "Select organisation",
+                "lv": "Select organisation"
+            },
+            "delimiter": "; ",
+            "range": [],
+            "foreign-relation": {
+                "name": "organisation",
+                "type": "belongsTo",
+                "params": [
+                    "App\\Models\\Organisation",
+                    "Organisation_ID"
+                ],
+                "field": "id"
+            },
+            "foreign-constraint": null,
+            "on-store": null,
+            "on-update": null,
+            "api-key": "Organisation_ID",
+            "is-api-visible": true,
+            "api-description": {
+                "en": "The organisation of the model.",
+                "ru": "The organisation of the model.",
+                "lv": "The organisation of the model."
+            }
+        },
+        {
+            "name": "Organisation_Name",
+            "labels": {
+                "en": "Organisation  Name",
+                "ru": "Organisation  Name",
+                "lv": "Organisation  Name"
+            },
+            "html-type": "text",
+            "css-class": "",
+            "options": {},
+            "html-value": null,
+            "validation": "required|string|min:1|max:64",
+            "is-on-index": true,
+            "is-on-show": true,
+            "is-on-form": true,
+            "data-type": "string",
+            "data-type-params": [
+                64
+            ],
+            "data-value": null,
+            "is-index": false,
+            "is-unique": false,
+            "is-primary": false,
+            "comment": null,
+            "is-nullable": false,
+            "is-header": false,
+            "is-unsigned": false,
+            "is-auto-increment": false,
+            "is-inline-options": false,
+            "is-date": false,
+            "date-format": "",
+            "cast-as": "",
+            "placeholder": {
+                "en": "Enter organisation  name here...",
+                "ru": "Enter organisation  name here...",
+                "lv": "Enter organisation  name here..."
+            },
+            "delimiter": "; ",
+            "range": [],
+            "foreign-relation": null,
+            "foreign-constraint": null,
+            "on-store": null,
+            "on-update": null,
+            "api-key": "Organisation_Name",
+            "is-api-visible": true,
+            "api-description": {
+                "en": "The organisation  name of the model.",
+                "ru": "The organisation  name of the model.",
+                "lv": "The organisation  name of the model."
+            }
+        },
+        {
+            "name": "Updated_At",
+            "labels": {
+                "en": "Updated  At",
+                "ru": "Updated  At",
+                "lv": "Updated  At"
+            },
+            "html-type": "text",
+            "css-class": "",
+            "options": {},
+            "html-value": null,
+            "validation": "",
+            "is-on-index": false,
+            "is-on-show": true,
+            "is-on-form": false,
+            "data-type": "timestamp",
+            "data-type-params": [],
+            "data-value": "CURRENT_TIMESTAMP",
+            "is-index": false,
+            "is-unique": false,
+            "is-primary": false,
+            "comment": null,
+            "is-nullable": true,
+            "is-header": false,
+            "is-unsigned": false,
+            "is-auto-increment": false,
+            "is-inline-options": false,
+            "is-date": false,
+            "date-format": "j/n/Y g:i A",
+            "cast-as": "",
+            "placeholder": {
+                "en": "Enter updated  at here...",
+                "ru": "Enter updated  at here...",
+                "lv": "Enter updated  at here..."
+            },
+            "delimiter": "; ",
+            "range": [],
+            "foreign-relation": null,
+            "foreign-constraint": null,
+            "on-store": null,
+            "on-update": null,
+            "api-key": "Updated_At",
+            "is-api-visible": false,
+            "api-description": {
+                "en": "The updated  at of the model.",
+                "ru": "The updated  at of the model.",
+                "lv": "The updated  at of the model."
+            }
+        }
+    ],
+    "relations": [
+        {
+            "name": "employees",
+            "type": "hasMany",
+            "params": [
+                "App\\Models\\Employee",
+                "Organisation_ID",
+                "Organisation_ID"
+            ],
+            "field": "id"
+        },
+        {
+            "name": "manager",
+            "type": "hasOne",
+            "params": [
+                "App\\Models\\Manager",
+                "Organisation_ID",
+                "Organisation_ID"
+            ],
+            "field": "id"
+        },
+        {
+            "name": "worksite",
+            "type": "hasOne",
+            "params": [
+                "App\\Models\\Worksite",
+                "Organisation_ID",
+                "Organisation_ID"
+            ],
+            "field": "id"
+        }
+    ],
+    "indexes": [],
+    "auto-manage-created-and-updated-at": true,
+    "table-name": "Organisations",
+    "protection": {
+        "is-model-protected": false,
+        "is-controller-protected": false,
+        "is-api-resource-protected": false,
+        "is-api-resource-collection-protected": false,
+        "is-api-documentation-protected": false,
+        "is-api-documentation-controller-protected": false,
+        "is-form-request-protected": false,
+        "is-languages-protected": false,
+        "is-form-view-protected": false,
+        "is-index-view-protected": false,
+        "is-create-view-protected": false,
+        "is-edit-view-protected": false,
+        "is-show-view-protected": false
+    },
+    "api-documentation": {
+        "access_token_with_bearer": {
+            "en": "The access token prefixed with the \"Bearer \" key word.",
+            "ru": "The access token prefixed with the \"Bearer \" key word.",
+            "lv": "The access token prefixed with the \"Bearer \" key word."
+        },
+        "index_route_description": {
+            "en": "Retrieve existing organisations.",
+            "ru": "Retrieve existing organisations.",
+            "lv": "Retrieve existing organisations."
+        },
+        "index_route_response_description": {
+            "en": "The API's response will be JSON based data. The JSON object will be structured as follow",
+            "ru": "The API's response will be JSON based data. The JSON object will be structured as follow",
+            "lv": "The API's response will be JSON based data. The JSON object will be structured as follow"
+        },
+        "the_key_is_the_model_property_and_the_value_is_the_model_value": {
+            "en": "The array's key is the organisation property name where the value is the assigned value to the retrieved organisation.",
+            "ru": "The array's key is the organisation property name where the value is the assigned value to the retrieved organisation.",
+            "lv": "The array's key is the organisation property name where the value is the assigned value to the retrieved organisation."
+        },
+        "link_to_retrieve_first_page": {
+            "en": "Link to retrieve first page.",
+            "ru": "Link to retrieve first page.",
+            "lv": "Link to retrieve first page."
+        },
+        "link_to_retrieve_last_page": {
+            "en": "Link to retrieve last page.",
+            "ru": "Link to retrieve last page.",
+            "lv": "Link to retrieve last page."
+        },
+        "link_to_retrieve_previous_page": {
+            "en": "Link to retrieve previous page.",
+            "ru": "Link to retrieve previous page.",
+            "lv": "Link to retrieve previous page."
+        },
+        "link_to_retrieve_next_page": {
+            "en": "Link to retrieve next page.",
+            "ru": "Link to retrieve next page.",
+            "lv": "Link to retrieve next page."
+        },
+        "the_number_of_current_page": {
+            "en": "The number of current page.",
+            "ru": "The number of current page.",
+            "lv": "The number of current page."
+        },
+        "the_index_of_the_first_retrieved_item": {
+            "en": "The index of first retrieved organisation.",
+            "ru": "The index of first retrieved organisation.",
+            "lv": "The index of first retrieved organisation."
+        },
+        "the_number_of_the_last_page": {
+            "en": "The number of the last page.",
+            "ru": "The number of the last page.",
+            "lv": "The number of the last page."
+        },
+        "the_base_link_to_the_resource": {
+            "en": "The base link to the api resource.",
+            "ru": "The base link to the api resource.",
+            "lv": "The base link to the api resource."
+        },
+        "the_number_of_models_per_page": {
+            "en": "The number of organisations per page.",
+            "ru": "The number of organisations per page.",
+            "lv": "The number of organisations per page."
+        },
+        "the_index_of_the_last_retrieved_item": {
+            "en": "The index of last retrieved organisation.",
+            "ru": "The index of last retrieved organisation.",
+            "lv": "The index of last retrieved organisation."
+        },
+        "the_total_of_available_pages": {
+            "en": "The total of the available pages.",
+            "ru": "The total of the available pages.",
+            "lv": "The total of the available pages."
+        },
+        "store_route_description": {
+            "en": "Create new organisation.",
+            "ru": "Create new organisation.",
+            "lv": "Create new organisation."
+        },
+        "store_route_response_description": {
+            "en": "The API's response will be JSON based data. The JSON object will be structured as follow",
+            "ru": "The API's response will be JSON based data. The JSON object will be structured as follow",
+            "lv": "The API's response will be JSON based data. The JSON object will be structured as follow"
+        },
+        "update_route_description": {
+            "en": "Update existsing organisation.",
+            "ru": "Update existsing organisation.",
+            "lv": "Update existsing organisation."
+        },
+        "update_route_response_description": {
+            "en": "The API's response will be JSON based data. The JSON object will be structured as follow",
+            "ru": "The API's response will be JSON based data. The JSON object will be structured as follow",
+            "lv": "The API's response will be JSON based data. The JSON object will be structured as follow"
+        },
+        "show_route_description": {
+            "en": "Retrieve existsing organisation.",
+            "ru": "Retrieve existsing organisation.",
+            "lv": "Retrieve existsing organisation."
+        },
+        "show_route_response_description": {
+            "en": "The API's response will be JSON based data. The JSON object will be structured as follow",
+            "ru": "The API's response will be JSON based data. The JSON object will be structured as follow",
+            "lv": "The API's response will be JSON based data. The JSON object will be structured as follow"
+        },
+        "the_id_of_model_to_retrieve": {
+            "en": "The unique id of the organisation to retrieve",
+            "ru": "The unique id of the organisation to retrieve",
+            "lv": "The unique id of the organisation to retrieve"
+        },
+        "destroy_route_description": {
+            "en": "Delete existsing organisation.",
+            "ru": "Delete existsing organisation.",
+            "lv": "Delete existsing organisation."
+        },
+        "destroy_route_response_description": {
+            "en": "The API's response will be JSON based data. The JSON object will be structured as follow",
+            "ru": "The API's response will be JSON based data. The JSON object will be structured as follow",
+            "lv": "The API's response will be JSON based data. The JSON object will be structured as follow"
+        },
+        "the_id_of_model_to_delete": {
+            "en": "The id of the organisation to delete.",
+            "ru": "The id of the organisation to delete.",
+            "lv": "The id of the organisation to delete."
+        },
+        "general_description": {
+            "en": "Allows you to list, create, edit, show and delete organisations.",
+            "ru": "Allows you to list, create, edit, show and delete organisations.",
+            "lv": "Allows you to list, create, edit, show and delete organisations."
+        },
+        "indicate_whether_the_request_was_successful_or_not": {
+            "en": "Indicate whether the request was successful or not.",
+            "ru": "Indicate whether the request was successful or not.",
+            "lv": "Indicate whether the request was successful or not."
+        },
+        "the_id_of_the_model": {
+            "en": "The id of the organisation.",
+            "ru": "The id of the organisation.",
+            "lv": "The id of the organisation."
+        },
+        "this_parameter_must_be_present_in_the_request": {
+            "en": "This parameter must be present in the request.",
+            "ru": "This parameter must be present in the request.",
+            "lv": "This parameter must be present in the request."
+        },
+        "the_request_failed_validation": {
+            "en": "The request failed validation.",
+            "ru": "The request failed validation.",
+            "lv": "The request failed validation."
+        },
+        "list_of_the_invalid_errors": {
+            "en": "List of the invalid errors.",
+            "ru": "List of the invalid errors.",
+            "lv": "List of the invalid errors."
+        },
+        "the_requested_model_does_not_exists": {
+            "en": "The requested organisation does not exists.",
+            "ru": "The requested organisation does not exists.",
+            "lv": "The requested organisation does not exists."
+        },
+        "the_user_does_not_have_permission_to_access_the_requested_resource": {
+            "en": "User does not have permission to access the requested resource.",
+            "ru": "User does not have permission to access the requested resource.",
+            "lv": "User does not have permission to access the requested resource."
+        }
+    }
+}

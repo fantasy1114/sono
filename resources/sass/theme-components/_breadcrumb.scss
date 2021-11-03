@@ -1,0 +1,121 @@
+/*----------------------------------------
+	Breadcrumb
+------------------------------------------*/
+
+#breadcrumbs-wrapper {
+   background: $breadcrumbs-bg;
+   padding: 20px 0;
+
+   .breadcrumbs-btn {
+      top: 24px;
+   }
+   h5.breadcrumbs-header {
+      font-size: 1.64rem;
+      line-height: 1.804rem;
+      margin: 1.5rem 0 0 0;
+   }
+   .breadcrumbs {
+      padding: 0;
+      margin: 15px 0;
+      list-style: none;
+      > li {
+         display: inline-block;
+         + li::before {
+            padding: 0 5px 0 4px;
+            color: color("grey", "lighten-1");
+            content: "keyboard_arrow_right";
+            font-family: "Material Icons";
+            position: relative;
+            top: 3px;
+         }
+      }
+      .active {
+         font-weight: normal;
+         color: color("grey", "base");
+      }
+   }
+   .breadcrumbs-title {
+      font-size: 1.4rem;
+      line-height: 1.4rem;
+   }
+   .breadcrumbs-nav {
+      margin: 8px 0 9px;
+   }
+   &.breadcrumbs-bg-image {
+      position: relative;
+      background-size: cover;
+      background-position: center center;
+      color: $white;
+      z-index: 1;
+      .breadcrumbs-title {
+         color: $white;
+      }
+      .breadcrumbs {
+         margin: 10px 0;
+         a {
+            color: rgba($white, 0.8);
+         }
+         .active {
+            color: rgba($white, 0.9);
+         }
+      }
+
+      &::before {
+         content: "";
+         position: absolute;
+         top: 0;
+         bottom: 0;
+         left: 0;
+         right: 0;
+         z-index: -1;
+         background-color: rgba(0, 0, 0, 0.07);
+      }
+   }
+   &.breadcrumbs-dark {
+      .breadcrumbs-title,
+      a {
+         color: rgba($white, 0.85);
+      }
+   }
+   &.breadcrumbs-inline {
+      .breadcrumbs-title,
+      .breadcrumbs {
+         display: inline;
+      }
+      .breadcrumbs-left {
+         top: 8px;
+         position: relative;
+      }
+      .breadcrumbs-title {
+         padding-right: 20px;
+         border-right: 1px solid color("grey", "lighten-1");
+      }
+      .breadcrumbs {
+         padding-left: 20px;
+      }
+      .breadcrumbs-btn {
+         top: 0;
+      }
+   }
+   .breadcrumbs-right{
+      .breadcrumbs{
+         float: right;
+         margin-top: 0;
+      }
+   }
+}
+
+// IE Specific CSS
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+   #breadcrumbs-wrapper {
+      .breadcrumbs {
+         > li {
+            + li::before {
+               content: "/";
+               top: 0;
+               width: 0;
+            }
+         }
+      }
+   }
+}

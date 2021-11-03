@@ -1,0 +1,569 @@
+/*----------------------------------------
+    SideNav - Main Menu
+------------------------------------------*/
+
+.sidenav-main {
+   position: fixed;
+   top: 0;
+   z-index: 999;
+   height: 100%;
+   width: $sidenav-width;
+   transition: 0.3s ease all;
+   span.badge.new {
+      line-height: 20px;
+      margin-top: 11px;
+   }
+}
+//Main SideNav brand/logo
+.brand-sidebar {
+   position: fixed;
+   left: 0;
+   height: $navbar-height;
+   top: 0px;
+   box-shadow: 0px 4px 7px 0px rgba(0, 0, 0, 0.2);
+   width: inherit;
+   backface-visibility: hidden;
+   background: $white;
+
+   .logo-wrapper {
+      font-size: 3rem;
+      white-space: nowrap;
+      margin: 0;
+      line-height: 17px !important;
+      a.brand-logo {
+         img {
+            height: 18px;
+         }
+      }
+      a.navbar-toggler {
+         position: absolute;
+         right: 23px;
+         top: 7px;
+         i {
+            color: $title-font-color;
+            font-size: 15px;
+            display: block;
+            height: 56px;
+            line-height: 56px;
+         }
+      }
+   }
+
+   span.logo-text {
+      font-size: 24px;
+      padding-left: 8px;
+      visibility: visible;
+      opacity: 1;
+      transition: opacity 0.2s linear;
+   }
+
+   // Logo
+   .brand-logo {
+      position: absolute;
+      color: $title-font-color;
+      display: inline-block;
+      font-size: $navbar-brand-font-size;
+      margin: 1px 0px;
+      padding: 22px 12px 22px 22px;
+      line-height: 0;
+      img {
+         height: 18px;
+      }
+      &.center {
+         left: 50%;
+         transform: translateX(-50%);
+      }
+
+      @media #{$medium-and-down} {
+         left: 50%;
+         transform: translateX(-50%);
+
+         &.left,
+         &.right {
+            padding: 0;
+            transform: none;
+         }
+
+         &.left {
+            left: 0.5rem;
+         }
+         &.right {
+            right: 0.5rem;
+            left: auto;
+         }
+      }
+
+      &.right {
+         right: 0.5rem;
+         padding: 0;
+      }
+
+      i,
+      [class^="mdi-"],
+      [class*="mdi-"],
+      i.material-icons {
+         float: left;
+         margin-right: 15px;
+      }
+   }
+}
+//Main SideNav menu
+.sidenav {
+   top: 64px;
+   overflow: hidden;
+   height: 100%;
+   border: none;
+   width: inherit;
+   backface-visibility: hidden;
+   box-shadow: 0px 4px 7px 0px rgba(0, 0, 0, 0.2);
+   transition: auto !important;
+   &.native-scroll {
+      overflow-y: scroll !important;
+   }
+   a {
+      line-height: 42px;
+      height: 42px;
+   }
+   .navigation-header {
+      padding: 0 23px;
+      text-transform: uppercase;
+      font-size: 0.85rem;
+      font-weight: 600;
+      margin-top: 10px;
+      .navigation-header-icon {
+         display: none;
+      }
+      .navigation-header-text {
+         padding: 0 !important;
+         margin: 0;
+         height: 30px;
+         color: #969696;
+         line-height: 30px;
+         font-size: 0.85rem;
+         font-weight: 600;
+         &:hover {
+            background-color: transparent !important;
+         }
+      }
+   }
+
+   li {
+      padding: 0;
+      line-height: 44px;
+      a {
+         color: $off-black;
+         margin-right: 1.5rem;
+         i {
+            line-height: inherit;
+            width: 2rem;
+            font-size: 1.4rem;
+            display: block;
+            float: left;
+            text-align: center;
+            margin-right: 1rem;
+         }
+      }
+   }
+   .collapsible-header {
+      font-weight: 400;
+      /* Sidebar nav open close icons*/
+      &:after {
+         font-family: "Material Icons";
+         content: "keyboard_arrow_right";
+         color: #afafaf;
+         font-size: 18px;
+         position: absolute;
+         right: 0;
+         transition: transform 0.3s ease-in-out, opacity 0.25s ease-in-out 0.1s, -webkit-transform 0.3s ease-in-out;
+      }
+      &.active:after {
+         content: "keyboard_arrow_down";
+      }
+   }
+   li .collapsible-body {
+      background: transparent;
+      a i {
+         font-size: 0.7rem;
+      }
+   }
+   li {
+      a.active {
+         background: $sidenav-active-bg;
+         box-shadow: $sidenav-active-box-shadow;
+         color: $sidenav-active-text-color;
+         margin: 0;
+         i {
+            color: $sidenav-active-text-color;
+         }
+      }
+      &:not(.active).open {
+         background-color: rgba(0, 0, 0, 0.035);
+      }
+      &.active {
+         background-color: transparent;
+         > .collapsible-header {
+            &:after {
+               transform: rotate(90deg);
+            }
+         }
+      }
+      &.open {
+         background: $sidenav-open-bg;
+      }
+   }
+
+   li {
+      > a,
+      a.collapsible-header {
+         padding: 0 16px !important;
+         height: 44px;
+         line-height: 44px;
+         font-weight: 400;
+         > i.material-icons {
+            margin: 0 20px 0 0;
+            height: 44px;
+            line-height: 44px;
+         }
+      }
+
+      > a:not(.active) {
+         &:hover {
+            background-color: rgba(0, 0, 0, 0.035) !important;
+         }
+      }
+   }
+   .collapsible-body > ul:not(.collapsible) > li.active,
+   &.sidenav-fixed .collapsible-body > ul:not(.collapsible) > li.active {
+      background-color: lighten($primary-color, 40%);
+      a,
+      i {
+         color: $primary-color;
+         background: none;
+      }
+   }
+}
+
+//SideNav expanded
+.nav-expanded {
+   .sidenav {
+      .menu-title {
+         visibility: visible;
+         opacity: 1;
+         transition: opacity 0.2s linear;
+      }
+   }
+   .navigation-header-text {
+      display: block;
+   }
+   .navigation-header-icon {
+      display: none;
+   }
+}
+
+//SideNav collapsed
+.nav-collapsed {
+   &.sidenav-main {
+      width: $sidenav-collapsed-width;
+   }
+   .brand-sidebar {
+      .navbar-toggler,
+      .brand-logo span {
+         visibility: hidden;
+         opacity: 0;
+         transition: visibility 0s 2s, opacity 0.05s linear;
+      }
+      .brand-logo{
+         padding: 22px 12px 22px 15px;
+      }
+   }
+   .navigation-header-text {
+      display: none;
+   }
+   .navigation-header-icon {
+      display: block !important;
+   }
+
+   .sidenav {
+      .user-options,
+      .menu-title,
+      .collapsible-body span,
+      // span.badge,
+      .collapsible-header:after {
+         display: none;
+      }
+      .menu-title {
+         visibility: visible;
+         opacity: 1;
+         transition: opacity 0.2s linear;
+      }
+   }
+}
+
+//SideNav expanded & lock
+.nav-lock {
+   .navigation-header-icon {
+      display: none;
+   }
+}
+//SideNav collapsible
+.nav-collapsible {
+   &.nav-collapsed {
+      span.badge {
+         &.pill {
+            visibility: hidden;
+            opacity: 0;
+            transition: visibility 0s 2s, opacity 0.05s linear;
+         }
+      }
+   }
+   span.badge {
+      color: $white;
+      &.pill {
+         float: none;
+         position: absolute;
+         right: 4px;
+         opacity: 1;
+         visibility: visible;
+         transition: opacity 0.2s linear;
+      }
+   }
+}
+
+//SideNav - Dark
+.sidenav-dark {
+   background: $sidenav-dark-bg;
+   .brand-sidebar {
+      box-shadow: 0px -4px 7px 1px rgba(0, 0, 0, 0.2);
+      background: $sidenav-dark-bg;
+   }
+   &.sidenav-main {
+      .sidenav {
+         background-color: transparent;
+         .collapsible-body > ul:not(.collapsible) > li.active,
+         &.fixed .collapsible-body > ul:not(.collapsible) > li.active {
+            background: $primary-color;
+         }
+         li {
+            .navigation-header-text {
+               color: color("blue-grey", "lighten-3");
+            }
+            > a,
+            .more-text {
+               color: $white;
+               > i {
+                  color: $white;
+               }
+            }
+            &.bold > a:not(.active):hover,
+            &:not(.active).open {
+               background-color: rgba(0, 0, 0, 0.1) !important;
+            }
+         }
+      }
+
+      .collapsible {
+         border: none;
+      }
+      .brand-sidebar .brand-logo,
+      .brand-sidebar .logo-wrapper a.navbar-toggler i {
+         color: $white;
+      }
+   }
+   &.sidenav-gradient {
+      .brand-sidebar {
+         background: transparent;
+      }
+      // .collapsible-body,
+      &.fixed .collapsible-body {
+         background: transparent;
+      }
+      &.sidenav-main .sidenav li .navigation-header-text {
+         color: #ececec;
+      }
+   }
+   .collapsible-header {
+      &:after {
+         color: #ececec;
+      }
+   }
+
+   // For Perfect Scrollbar
+
+   .ps__rail-y{
+      &:hover{
+         background: transparent;
+      }
+   }
+}
+
+// Navbar full style (vertical-menu-nav-dark-template)
+.navbar-full {
+   .brand-sidebar {
+      background:#a53394;
+      .brand-logo {
+         color: $white;
+      }
+      .logo-wrapper a.navbar-toggler i {
+         color: $white;
+      }
+   }
+}
+
+// Sidenav  active style mixin
+@mixin sidenav-active($radius) {
+   .sidenav {
+      li {
+         > a.active {
+            border-radius: $radius;
+            color: $sidenav-active-text-color;
+            margin-right: 1.15rem;
+            > i {
+               color: $sidenav-active-text-color;
+            }
+         }
+         &:not(.open) {
+            > a.active {
+               color: $sidenav-active-text-color;
+               > i {
+                  color: $sidenav-active-text-color;
+               }
+            }
+         }
+         > a, > li:not(.active) > a {
+            &:hover {
+               border-radius: $radius;
+            }
+         }
+         > a,
+         a.collapsible-header {
+            padding: 0 0px 0px 21px !important;
+            margin-right:1.15rem;
+            transition: none;
+         }
+      }
+      .collapsible-header:after {
+         right: 4px;
+      }
+   }
+   &.nav-collapsed {
+      li {
+        > a,
+         a.collapsible-header {
+            margin-right: 10px !important;
+         }
+         &.close {
+            background-color: rgba(0, 0, 0, 0.08);
+         }
+      }
+   }
+
+}
+
+
+
+// Sidenav rounded active style
+.sidenav-active-rounded {
+   @include sidenav-active(0 25px 25px 0);
+}
+// Sidenav square active style
+.sidenav-active-square {
+   @include sidenav-active(0 5px 5px 0);
+}
+
+// Main SideNav responsive css
+@media #{$medium-and-down} {
+   .sidenav-main {
+      width: auto;
+      height: 0;
+      .brand-sidebar {
+         box-shadow: none;
+         left: 80px;
+         background: transparent;
+         .navbar-toggler {
+            display: none;
+         }
+         .logo-wrapper {
+            padding: 0px !important;
+         }
+         .sidenav-trigger {
+            top: -48px;
+         }
+      }
+      .sidenav {
+         top: 0;
+         width: $sidenav-width;
+      }
+      .btn-sidenav-toggle {
+         position: relative;
+         top: 10px;
+         left: 10px;
+      }
+   }
+   .sidenav-dark {
+      &.sidenav-main {
+         .sidenav {
+            background: $sidenav-dark-bg;
+         }
+      }
+   }
+}
+@media #{$small-and-down} {
+   .sidenav-main {
+      .brand-sidebar {
+         .brand-logo {
+            padding: 16px 12px 20px 12px;
+         }
+      }
+
+      .btn-sidenav-toggle {
+         position: relative;
+         top: 6px;
+         left: 6px;
+      }
+   }
+}
+@media screen and (max-width:992px){
+   .sidenav{
+      padding-bottom: 0;
+   }
+}
+@mixin slideOutHeight {
+   ul#slide-out{
+      &.sidenav{
+         height: calc(100% - 64px) !important;
+      } 
+    }  
+}
+// IE Specific CSS
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+   @media screen and (min-width:993px){
+      @include slideOutHeight;
+   }
+
+   .sidenav {
+      .collapsible-header {
+         /* Sidebar nav open close icons*/
+         &:after {
+            content: "+";
+            width: 0px;
+         }
+      }
+      li.active > .collapsible-header:after{
+         content: "-";
+         width: 0px;
+         transform: rotate(180deg);
+         right: 0px;
+      }
+   }
+}
+// #slide-out sidenav height for mozila firefox 
+@-moz-document url-prefix() {
+   @media screen and (min-width:993px){
+      @include slideOutHeight;
+   }
+}
+@supports (-ms-ime-align: auto) {
+   @media screen and (min-width:993px){
+      @include slideOutHeight;
+   }
+}

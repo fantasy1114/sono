@@ -1,0 +1,921 @@
+{
+  "fields": [
+    {
+      "name": "name",
+      "labels": {
+        "en": "Name",
+        "lv": "Name",
+        "ru": "Name"
+      },
+      "html-type": "text",
+      "css-class": "",
+      "options": {},
+      "html-value": null,
+      "validation": "required|string|min:1|max:255",
+      "is-on-index": true,
+      "is-on-show": true,
+      "is-on-form": true,
+      "data-type": "string",
+      "data-type-params": [
+        255
+      ],
+      "data-value": null,
+      "is-index": false,
+      "is-unique": false,
+      "is-primary": false,
+      "comment": null,
+      "is-nullable": false,
+      "is-header": true,
+      "is-unsigned": false,
+      "is-auto-increment": false,
+      "is-inline-options": false,
+      "is-date": false,
+      "date-format": "",
+      "cast-as": "",
+      "placeholder": {
+        "en": "Enter name here...",
+        "lv": "Enter name here...",
+        "ru": "Enter name here..."
+      },
+      "delimiter": "; ",
+      "range": [],
+      "foreign-relation": null,
+      "foreign-constraint": null,
+      "on-store": null,
+      "on-update": null,
+      "api-key": "name",
+      "is-api-visible": true,
+      "api-description": {
+        "en": "The name of the model.",
+        "lv": "The name of the model.",
+        "ru": "The name of the model."
+      }
+    },
+    {
+      "name": "email",
+      "labels": {
+        "en": "Email",
+        "lv": "Email",
+        "ru": "Email"
+      },
+      "html-type": "email",
+      "css-class": "",
+      "options": {},
+      "html-value": null,
+      "validation": "required",
+      "is-on-index": true,
+      "is-on-show": true,
+      "is-on-form": true,
+      "data-type": "string",
+      "data-type-params": [
+        255
+      ],
+      "data-value": null,
+      "is-index": false,
+      "is-unique": true,
+      "is-primary": false,
+      "comment": null,
+      "is-nullable": false,
+      "is-header": false,
+      "is-unsigned": false,
+      "is-auto-increment": false,
+      "is-inline-options": false,
+      "is-date": false,
+      "date-format": "",
+      "cast-as": "",
+      "placeholder": {
+        "en": "Enter email here...",
+        "lv": "Enter email here...",
+        "ru": "Enter email here..."
+      },
+      "delimiter": "; ",
+      "range": [],
+      "foreign-relation": null,
+      "foreign-constraint": null,
+      "on-store": null,
+      "on-update": null,
+      "api-key": "email",
+      "is-api-visible": true,
+      "api-description": {
+        "en": "The email of the model.",
+        "lv": "The email of the model.",
+        "ru": "The email of the model."
+      }
+    },
+    {
+      "name": "organisation_id",
+      "labels": {
+        "en": "Organisation",
+        "lv": "Organisation",
+        "ru": "Organisation"
+      },
+      "html-type": "select",
+      "css-class": "",
+      "options": {},
+      "html-value": null,
+      "validation": "nullable",
+      "is-on-index": true,
+      "is-on-show": true,
+      "is-on-form": true,
+      "data-type": "int",
+      "data-type-params": [],
+      "data-value": null,
+      "is-index": true,
+      "is-unique": false,
+      "is-primary": false,
+      "comment": null,
+      "is-nullable": true,
+      "is-header": false,
+      "is-unsigned": true,
+      "is-auto-increment": false,
+      "is-inline-options": false,
+      "is-date": false,
+      "date-format": "",
+      "cast-as": "",
+      "placeholder": {
+        "en": "Select organisation",
+        "lv": "Select organisation",
+        "ru": "Select organisation"
+      },
+      "delimiter": "; ",
+      "range": [],
+      "foreign-relation": {
+        "name": "Organisation",
+        "type": "belongsTo",
+        "params": [
+          "App\\Models\\Organisation",
+          "organisation_id",
+          "Organisation_ID"
+        ],
+        "field": "Organisation_Name"
+      },
+      "foreign-constraint": {
+        "field": "organisation_id",
+        "references": "organisations",
+        "on": "Organisation_ID",
+        "on-delete": "set null",
+        "on-update": "cascade",
+        "references-model": "App\\Models\\Organisation",
+        "is-self-reference": false
+      },
+      "on-store": null,
+      "on-update": null,
+      "api-key": "organisation_id",
+      "is-api-visible": true,
+      "api-description": {
+        "en": "The organisation of the model.",
+        "lv": "The organisation of the model.",
+        "ru": "The organisation of the model."
+      }
+    },
+    {
+      "name": "password",
+      "labels": {
+        "en": "Password",
+        "lv": "Password",
+        "ru": "Password"
+      },
+      "html-type": "password",
+      "css-class": "",
+      "options": {},
+      "html-value": null,
+      "validation": "required",
+      "is-on-index": false,
+      "is-on-show": false,
+      "is-on-form": false,
+      "data-type": "string",
+      "data-type-params": [
+        255
+      ],
+      "data-value": null,
+      "is-index": false,
+      "is-unique": false,
+      "is-primary": false,
+      "comment": null,
+      "is-nullable": false,
+      "is-header": false,
+      "is-unsigned": false,
+      "is-auto-increment": false,
+      "is-inline-options": false,
+      "is-date": false,
+      "date-format": "",
+      "cast-as": "",
+      "placeholder": {
+        "en": "Enter password here...",
+        "lv": "Enter password here...",
+        "ru": "Enter password here..."
+      },
+      "delimiter": "; ",
+      "range": [],
+      "foreign-relation": null,
+      "foreign-constraint": null,
+      "on-store": null,
+      "on-update": null,
+      "api-key": "password",
+      "is-api-visible": true,
+      "api-description": {
+        "en": "The password of the model.",
+        "lv": "The password of the model.",
+        "ru": "The password of the model."
+      }
+    },
+    {
+      "name": "phone",
+      "labels": {
+        "en": "Phone",
+        "lv": "Phone",
+        "ru": "Phone"
+      },
+      "html-type": "text",
+      "css-class": "",
+      "options": {},
+      "html-value": null,
+      "validation": "nullable|string|min:0|max:255",
+      "is-on-index": false,
+      "is-on-show": true,
+      "is-on-form": true,
+      "data-type": "string",
+      "data-type-params": [
+        255
+      ],
+      "data-value": null,
+      "is-index": false,
+      "is-unique": false,
+      "is-primary": false,
+      "comment": null,
+      "is-nullable": true,
+      "is-header": false,
+      "is-unsigned": false,
+      "is-auto-increment": false,
+      "is-inline-options": false,
+      "is-date": false,
+      "date-format": "",
+      "cast-as": "",
+      "placeholder": {
+        "en": "Enter phone here...",
+        "lv": "Enter phone here...",
+        "ru": "Enter phone here..."
+      },
+      "delimiter": "; ",
+      "range": [],
+      "foreign-relation": null,
+      "foreign-constraint": null,
+      "on-store": null,
+      "on-update": null,
+      "api-key": "phone",
+      "is-api-visible": true,
+      "api-description": {
+        "en": "The phone of the model.",
+        "lv": "The phone of the model.",
+        "ru": "The phone of the model."
+      }
+    },
+    {
+      "name": "remember_token",
+      "labels": {
+        "en": "Remember Token",
+        "lv": "Remember Token",
+        "ru": "Remember Token"
+      },
+      "html-type": "text",
+      "css-class": "",
+      "options": {},
+      "html-value": null,
+      "validation": "nullable|string|min:0|max:100",
+      "is-on-index": false,
+      "is-on-show": false,
+      "is-on-form": false,
+      "data-type": "string",
+      "data-type-params": [
+        100
+      ],
+      "data-value": null,
+      "is-index": false,
+      "is-unique": false,
+      "is-primary": false,
+      "comment": null,
+      "is-nullable": true,
+      "is-header": false,
+      "is-unsigned": false,
+      "is-auto-increment": false,
+      "is-inline-options": false,
+      "is-date": false,
+      "date-format": "",
+      "cast-as": "",
+      "placeholder": {
+        "en": "Enter remember token here...",
+        "lv": "Enter remember token here...",
+        "ru": "Enter remember token here..."
+      },
+      "delimiter": "; ",
+      "range": [],
+      "foreign-relation": null,
+      "foreign-constraint": null,
+      "on-store": null,
+      "on-update": null,
+      "api-key": "remember_token",
+      "is-api-visible": true,
+      "api-description": {
+        "en": "The remember token of the model.",
+        "lv": "The remember token of the model.",
+        "ru": "The remember token of the model."
+      }
+    },
+    {
+      "name": "two_factor_recovery_codes",
+      "labels": {
+        "en": "Two Factor Recovery Codes",
+        "lv": "Two Factor Recovery Codes",
+        "ru": "Two Factor Recovery Codes"
+      },
+      "html-type": "textarea",
+      "css-class": "",
+      "options": {},
+      "html-value": null,
+      "validation": "nullable",
+      "is-on-index": false,
+      "is-on-show": false,
+      "is-on-form": false,
+      "data-type": "text",
+      "data-type-params": [],
+      "data-value": null,
+      "is-index": false,
+      "is-unique": false,
+      "is-primary": false,
+      "comment": null,
+      "is-nullable": true,
+      "is-header": false,
+      "is-unsigned": false,
+      "is-auto-increment": false,
+      "is-inline-options": false,
+      "is-date": false,
+      "date-format": "",
+      "cast-as": "",
+      "placeholder": {
+        "en": "Enter two factor recovery codes here...",
+        "lv": "Enter two factor recovery codes here...",
+        "ru": "Enter two factor recovery codes here..."
+      },
+      "delimiter": "; ",
+      "range": [],
+      "foreign-relation": null,
+      "foreign-constraint": null,
+      "on-store": null,
+      "on-update": null,
+      "api-key": "two_factor_recovery_codes",
+      "is-api-visible": true,
+      "api-description": {
+        "en": "The two factor recovery codes of the model.",
+        "lv": "The two factor recovery codes of the model.",
+        "ru": "The two factor recovery codes of the model."
+      }
+    },
+    {
+      "name": "two_factor_secret",
+      "labels": {
+        "en": "Two Factor Secret",
+        "lv": "Two Factor Secret",
+        "ru": "Two Factor Secret"
+      },
+      "html-type": "textarea",
+      "css-class": "",
+      "options": {},
+      "html-value": null,
+      "validation": "nullable",
+      "is-on-index": false,
+      "is-on-show": false,
+      "is-on-form": false,
+      "data-type": "text",
+      "data-type-params": [],
+      "data-value": null,
+      "is-index": false,
+      "is-unique": false,
+      "is-primary": false,
+      "comment": null,
+      "is-nullable": true,
+      "is-header": false,
+      "is-unsigned": false,
+      "is-auto-increment": false,
+      "is-inline-options": false,
+      "is-date": false,
+      "date-format": "",
+      "cast-as": "",
+      "placeholder": {
+        "en": "Enter two factor secret here...",
+        "lv": "Enter two factor secret here...",
+        "ru": "Enter two factor secret here..."
+      },
+      "delimiter": "; ",
+      "range": [],
+      "foreign-relation": null,
+      "foreign-constraint": null,
+      "on-store": null,
+      "on-update": null,
+      "api-key": "two_factor_secret",
+      "is-api-visible": true,
+      "api-description": {
+        "en": "The two factor secret of the model.",
+        "lv": "The two factor secret of the model.",
+        "ru": "The two factor secret of the model."
+      }
+    },
+    {
+      "name": "is_superuser",
+      "labels": {
+        "en": "Is Superuser",
+        "lv": "Is Superuser",
+        "ru": "Is Superuser"
+      },
+      "html-type": "checkbox",
+      "css-class": "",
+      "options": {
+        "en": {
+          "0": "No",
+          "1": "Yes"
+        },
+        "lv": {
+          "0": "No",
+          "1": "Yes"
+        },
+        "ru": {
+          "0": "No",
+          "1": "Yes"
+        }
+      },
+      "html-value": null,
+      "validation": "boolean",
+      "is-on-index": true,
+      "is-on-show": true,
+      "is-on-form": true,
+      "data-type": "bool",
+      "data-type-params": [],
+      "data-value": "0",
+      "is-index": false,
+      "is-unique": false,
+      "is-primary": false,
+      "comment": null,
+      "is-nullable": true,
+      "is-header": false,
+      "is-unsigned": false,
+      "is-auto-increment": false,
+      "is-inline-options": false,
+      "is-date": false,
+      "date-format": "",
+      "cast-as": "",
+      "placeholder": {},
+      "delimiter": "; ",
+      "range": [],
+      "foreign-relation": null,
+      "foreign-constraint": null,
+      "on-store": null,
+      "on-update": null,
+      "api-key": "is_superuser",
+      "is-api-visible": true,
+      "api-description": {
+        "en": "The is superuser of the model.",
+        "lv": "The is superuser of the model.",
+        "ru": "The is superuser of the model."
+      }
+    },
+    {
+      "name": "is_active",
+      "labels": {
+        "en": "Is Active",
+        "lv": "Is Active",
+        "ru": "Is Active"
+      },
+      "html-type": "checkbox",
+      "css-class": "",
+      "options": {
+        "en": {
+          "0": "No",
+          "1": "Yes"
+        },
+        "lv": {
+          "0": "No",
+          "1": "Yes"
+        },
+        "ru": {
+          "0": "No",
+          "1": "Yes"
+        }
+      },
+      "html-value": null,
+      "validation": "boolean",
+      "is-on-index": true,
+      "is-on-show": true,
+      "is-on-form": true,
+      "data-type": "bool",
+      "data-type-params": [],
+      "data-value": "1",
+      "is-index": false,
+      "is-unique": false,
+      "is-primary": false,
+      "comment": null,
+      "is-nullable": true,
+      "is-header": false,
+      "is-unsigned": false,
+      "is-auto-increment": false,
+      "is-inline-options": false,
+      "is-date": false,
+      "date-format": "",
+      "cast-as": "",
+      "placeholder": {},
+      "delimiter": "; ",
+      "range": [],
+      "foreign-relation": null,
+      "foreign-constraint": null,
+      "on-store": null,
+      "on-update": null,
+      "api-key": "is_active",
+      "is-api-visible": true,
+      "api-description": {
+        "en": "The is active of the model.",
+        "lv": "The is active of the model.",
+        "ru": "The is active of the model."
+      }
+    },
+    {
+      "name": "email_verified_at",
+      "labels": {
+        "en": "Email Verified At",
+        "lv": "Email Verified At",
+        "ru": "Email Verified At"
+      },
+      "html-type": "text",
+      "css-class": "",
+      "options": {},
+      "html-value": null,
+      "validation": "nullable|date_format:j/n/Y g:i A",
+      "is-on-index": false,
+      "is-on-show": false,
+      "is-on-form": false,
+      "data-type": "timestamp",
+      "data-type-params": [],
+      "data-value": null,
+      "is-index": false,
+      "is-unique": false,
+      "is-primary": false,
+      "comment": null,
+      "is-nullable": true,
+      "is-header": false,
+      "is-unsigned": false,
+      "is-auto-increment": false,
+      "is-inline-options": false,
+      "is-date": true,
+      "date-format": "j/n/Y g:i A",
+      "cast-as": "",
+      "placeholder": {
+        "en": "Enter email verified at here...",
+        "lv": "Enter email verified at here...",
+        "ru": "Enter email verified at here..."
+      },
+      "delimiter": "; ",
+      "range": [],
+      "foreign-relation": null,
+      "foreign-constraint": null,
+      "on-store": null,
+      "on-update": null,
+      "api-key": "email_verified_at",
+      "is-api-visible": true,
+      "api-description": {
+        "en": "The email verified at of the model.",
+        "lv": "The email verified at of the model.",
+        "ru": "The email verified at of the model."
+      }
+    },
+    {
+      "name": "id",
+      "labels": {
+        "en": "Id",
+        "lv": "Id",
+        "ru": "Id"
+      },
+      "html-type": "text",
+      "css-class": "",
+      "options": {},
+      "html-value": null,
+      "validation": "",
+      "is-on-index": false,
+      "is-on-show": false,
+      "is-on-form": false,
+      "data-type": "string",
+      "data-type-params": [],
+      "data-value": null,
+      "is-index": false,
+      "is-unique": false,
+      "is-primary": true,
+      "comment": null,
+      "is-nullable": false,
+      "is-header": false,
+      "is-unsigned": true,
+      "is-auto-increment": true,
+      "is-inline-options": false,
+      "is-date": false,
+      "date-format": "",
+      "cast-as": "",
+      "placeholder": {
+        "en": "Enter id here...",
+        "lv": "Enter id here...",
+        "ru": "Enter id here..."
+      },
+      "delimiter": "; ",
+      "range": [],
+      "foreign-relation": null,
+      "foreign-constraint": null,
+      "on-store": null,
+      "on-update": null,
+      "api-key": "id",
+      "is-api-visible": true,
+      "api-description": {
+        "en": "The id of the model.",
+        "lv": "The id of the model.",
+        "ru": "The id of the model."
+      }
+    },
+    {
+      "name": "created_at",
+      "labels": {
+        "en": "Created At",
+        "lv": "Created At",
+        "ru": "Created At"
+      },
+      "html-type": "text",
+      "css-class": "",
+      "options": {},
+      "html-value": null,
+      "validation": "",
+      "is-on-index": false,
+      "is-on-show": true,
+      "is-on-form": false,
+      "data-type": "timestamp",
+      "data-type-params": [],
+      "data-value": null,
+      "is-index": false,
+      "is-unique": false,
+      "is-primary": false,
+      "comment": null,
+      "is-nullable": true,
+      "is-header": false,
+      "is-unsigned": false,
+      "is-auto-increment": false,
+      "is-inline-options": false,
+      "is-date": false,
+      "date-format": "j/n/Y g:i A",
+      "cast-as": "",
+      "placeholder": {
+        "en": "Enter created at here...",
+        "lv": "Enter created at here...",
+        "ru": "Enter created at here..."
+      },
+      "delimiter": "; ",
+      "range": [],
+      "foreign-relation": null,
+      "foreign-constraint": null,
+      "on-store": null,
+      "on-update": null,
+      "api-key": "created_at",
+      "is-api-visible": false,
+      "api-description": {
+        "en": "The created at of the model.",
+        "lv": "The created at of the model.",
+        "ru": "The created at of the model."
+      }
+    },
+    {
+      "name": "updated_at",
+      "labels": {
+        "en": "Updated At",
+        "lv": "Updated At",
+        "ru": "Updated At"
+      },
+      "html-type": "text",
+      "css-class": "",
+      "options": {},
+      "html-value": null,
+      "validation": "",
+      "is-on-index": false,
+      "is-on-show": true,
+      "is-on-form": false,
+      "data-type": "timestamp",
+      "data-type-params": [],
+      "data-value": null,
+      "is-index": false,
+      "is-unique": false,
+      "is-primary": false,
+      "comment": null,
+      "is-nullable": true,
+      "is-header": false,
+      "is-unsigned": false,
+      "is-auto-increment": false,
+      "is-inline-options": false,
+      "is-date": false,
+      "date-format": "j/n/Y g:i A",
+      "cast-as": "",
+      "placeholder": {
+        "en": "Enter updated at here...",
+        "lv": "Enter updated at here...",
+        "ru": "Enter updated at here..."
+      },
+      "delimiter": "; ",
+      "range": [],
+      "foreign-relation": null,
+      "foreign-constraint": null,
+      "on-store": null,
+      "on-update": null,
+      "api-key": "updated_at",
+      "is-api-visible": false,
+      "api-description": {
+        "en": "The updated at of the model.",
+        "lv": "The updated at of the model.",
+        "ru": "The updated at of the model."
+      }
+    }
+  ],
+  "relations": [],
+  "indexes": [],
+  "auto-manage-created-and-updated-at": true,
+  "table-name": "users",
+  "protection": {
+    "is-model-protected": false,
+    "is-controller-protected": false,
+    "is-api-resource-protected": false,
+    "is-api-resource-collection-protected": false,
+    "is-api-documentation-protected": false,
+    "is-api-documentation-controller-protected": false,
+    "is-form-request-protected": false,
+    "is-languages-protected": false,
+    "is-form-view-protected": false,
+    "is-index-view-protected": false,
+    "is-create-view-protected": false,
+    "is-edit-view-protected": false,
+    "is-show-view-protected": false
+  },
+  "api-documentation": {
+    "access_token_with_bearer": {
+      "en": "The access token prefixed with the \"Bearer \" key word.",
+      "lv": "The access token prefixed with the \"Bearer \" key word.",
+      "ru": "The access token prefixed with the \"Bearer \" key word."
+    },
+    "index_route_description": {
+      "en": "Retrieve existing managers.",
+      "lv": "Retrieve existing managers.",
+      "ru": "Retrieve existing managers."
+    },
+    "index_route_response_description": {
+      "en": "The API's response will be JSON based data. The JSON object will be structured as follow",
+      "lv": "The API's response will be JSON based data. The JSON object will be structured as follow",
+      "ru": "The API's response will be JSON based data. The JSON object will be structured as follow"
+    },
+    "the_key_is_the_model_property_and_the_value_is_the_model_value": {
+      "en": "The array's key is the manager property name where the value is the assigned value to the retrieved manager.",
+      "lv": "The array's key is the manager property name where the value is the assigned value to the retrieved manager.",
+      "ru": "The array's key is the manager property name where the value is the assigned value to the retrieved manager."
+    },
+    "link_to_retrieve_first_page": {
+      "en": "Link to retrieve first page.",
+      "lv": "Link to retrieve first page.",
+      "ru": "Link to retrieve first page."
+    },
+    "link_to_retrieve_last_page": {
+      "en": "Link to retrieve last page.",
+      "lv": "Link to retrieve last page.",
+      "ru": "Link to retrieve last page."
+    },
+    "link_to_retrieve_previous_page": {
+      "en": "Link to retrieve previous page.",
+      "lv": "Link to retrieve previous page.",
+      "ru": "Link to retrieve previous page."
+    },
+    "link_to_retrieve_next_page": {
+      "en": "Link to retrieve next page.",
+      "lv": "Link to retrieve next page.",
+      "ru": "Link to retrieve next page."
+    },
+    "the_number_of_current_page": {
+      "en": "The number of current page.",
+      "lv": "The number of current page.",
+      "ru": "The number of current page."
+    },
+    "the_index_of_the_first_retrieved_item": {
+      "en": "The index of first retrieved manager.",
+      "lv": "The index of first retrieved manager.",
+      "ru": "The index of first retrieved manager."
+    },
+    "the_number_of_the_last_page": {
+      "en": "The number of the last page.",
+      "lv": "The number of the last page.",
+      "ru": "The number of the last page."
+    },
+    "the_base_link_to_the_resource": {
+      "en": "The base link to the api resource.",
+      "lv": "The base link to the api resource.",
+      "ru": "The base link to the api resource."
+    },
+    "the_number_of_models_per_page": {
+      "en": "The number of managers per page.",
+      "lv": "The number of managers per page.",
+      "ru": "The number of managers per page."
+    },
+    "the_index_of_the_last_retrieved_item": {
+      "en": "The index of last retrieved manager.",
+      "lv": "The index of last retrieved manager.",
+      "ru": "The index of last retrieved manager."
+    },
+    "the_total_of_available_pages": {
+      "en": "The total of the available pages.",
+      "lv": "The total of the available pages.",
+      "ru": "The total of the available pages."
+    },
+    "store_route_description": {
+      "en": "Create new manager.",
+      "lv": "Create new manager.",
+      "ru": "Create new manager."
+    },
+    "store_route_response_description": {
+      "en": "The API's response will be JSON based data. The JSON object will be structured as follow",
+      "lv": "The API's response will be JSON based data. The JSON object will be structured as follow",
+      "ru": "The API's response will be JSON based data. The JSON object will be structured as follow"
+    },
+    "update_route_description": {
+      "en": "Update existsing manager.",
+      "lv": "Update existsing manager.",
+      "ru": "Update existsing manager."
+    },
+    "update_route_response_description": {
+      "en": "The API's response will be JSON based data. The JSON object will be structured as follow",
+      "lv": "The API's response will be JSON based data. The JSON object will be structured as follow",
+      "ru": "The API's response will be JSON based data. The JSON object will be structured as follow"
+    },
+    "show_route_description": {
+      "en": "Retrieve existsing manager.",
+      "lv": "Retrieve existsing manager.",
+      "ru": "Retrieve existsing manager."
+    },
+    "show_route_response_description": {
+      "en": "The API's response will be JSON based data. The JSON object will be structured as follow",
+      "lv": "The API's response will be JSON based data. The JSON object will be structured as follow",
+      "ru": "The API's response will be JSON based data. The JSON object will be structured as follow"
+    },
+    "the_id_of_model_to_retrieve": {
+      "en": "The unique id of the manager to retrieve",
+      "lv": "The unique id of the manager to retrieve",
+      "ru": "The unique id of the manager to retrieve"
+    },
+    "destroy_route_description": {
+      "en": "Delete existsing manager.",
+      "lv": "Delete existsing manager.",
+      "ru": "Delete existsing manager."
+    },
+    "destroy_route_response_description": {
+      "en": "The API's response will be JSON based data. The JSON object will be structured as follow",
+      "lv": "The API's response will be JSON based data. The JSON object will be structured as follow",
+      "ru": "The API's response will be JSON based data. The JSON object will be structured as follow"
+    },
+    "the_id_of_model_to_delete": {
+      "en": "The id of the manager to delete.",
+      "lv": "The id of the manager to delete.",
+      "ru": "The id of the manager to delete."
+    },
+    "general_description": {
+      "en": "Allows you to list, create, edit, show and delete managers.",
+      "lv": "Allows you to list, create, edit, show and delete managers.",
+      "ru": "Allows you to list, create, edit, show and delete managers."
+    },
+    "indicate_whether_the_request_was_successful_or_not": {
+      "en": "Indicate whether the request was successful or not.",
+      "lv": "Indicate whether the request was successful or not.",
+      "ru": "Indicate whether the request was successful or not."
+    },
+    "the_id_of_the_model": {
+      "en": "The id of the manager.",
+      "lv": "The id of the manager.",
+      "ru": "The id of the manager."
+    },
+    "this_parameter_must_be_present_in_the_request": {
+      "en": "This parameter must be present in the request.",
+      "lv": "This parameter must be present in the request.",
+      "ru": "This parameter must be present in the request."
+    },
+    "the_request_failed_validation": {
+      "en": "The request failed validation.",
+      "lv": "The request failed validation.",
+      "ru": "The request failed validation."
+    },
+    "list_of_the_invalid_errors": {
+      "en": "List of the invalid errors.",
+      "lv": "List of the invalid errors.",
+      "ru": "List of the invalid errors."
+    },
+    "the_requested_model_does_not_exists": {
+      "en": "The requested manager does not exists.",
+      "lv": "The requested manager does not exists.",
+      "ru": "The requested manager does not exists."
+    },
+    "the_user_does_not_have_permission_to_access_the_requested_resource": {
+      "en": "User does not have permission to access the requested resource.",
+      "lv": "User does not have permission to access the requested resource.",
+      "ru": "User does not have permission to access the requested resource."
+    }
+  }
+}

@@ -1,0 +1,27 @@
+/*----------------------------------------
+	Dropdown
+------------------------------------------*/
+
+.dropdown-content {
+   li {
+      &:hover,
+      &.active {
+         background-color: $dropdown-hover-bg-color;
+      }
+
+      & > a,
+      & > span {
+        padding: (($dropdown-item-height - 22) / 2) 24px;
+         &:hover,
+         &.active {            
+            background-color: $dropdown-hover-bg-color;            
+         }
+      }
+
+      // Icon alignment override
+      & > a > i {
+         margin: 0 12px 0 0;
+         width: 24px;
+      }
+   }
+}

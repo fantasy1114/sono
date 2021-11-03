@@ -1,0 +1,5 @@
+-- Generate JSON file from DB Table (does NOT create anything else)
+php artisan resource-file:from-database Manager --table-name=users --translation-for=en,lv,ru --resource-filename=users.json
+
+-- Generate all artifacts using a JSON file, with custom template
+php artisan create:scaffold Manager --resource-file=users.json --with-auth --translation-for=en,lv,ru --template-name=mat

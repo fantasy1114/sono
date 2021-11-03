@@ -1,0 +1,148 @@
+/*----------------------------------------
+  General Layout Style
+------------------------------------------*/
+
+html,
+body {
+   height: 100%;
+}
+
+body {
+   background-color: $body-bg; // Style overrides for light layout
+}
+
+@media #{$small-and-down} {
+   .layout-semi-dark {
+      #header {
+         nav.navbar-color {
+            background: color("blue-grey", "darken-3");
+         }
+      }
+   }
+}
+
+// preload-transitions for remove transition during page load 
+.preload-transitions * {
+   transition: none !important;
+}
+
+#main {
+   // min-height: calc(100% - 100px);
+   min-height: calc(100% - 116px);
+   padding-left: 0;
+
+   &.main-full {
+      padding-left: 0;
+   }
+
+   transition: 0.3s ease all;
+   backface-visibility: hidden;
+
+   .content-wrapper-before {
+      position: absolute;
+      z-index: -1;
+      top: $navbar-height;
+      left: 0;
+      width: 100%;
+      height: 185px;
+      transition: 0.3s ease all;
+   }
+}
+
+footer {
+   padding:0 10px;
+
+   &.page-footer {
+      padding-top: 1px;
+   }
+}
+
+select {
+   background-color: transparent;
+   width: 100%;
+   padding: 5px;
+   border: none;
+   border-radius: 2px;
+   height: 3rem;
+   border-bottom: 1px solid color("grey", "lighten-1");
+}
+
+.container {
+   padding: 0 0.5rem;
+   margin: 0 auto;
+   max-width: 100% !important;
+   width: 100%;
+
+   .dropdown-settings i.right {
+      margin-left: 0;
+   }
+}
+
+@media only screen and(min-width: 601px) {
+   .container {
+      width: 100%;
+   }
+}
+
+@media only screen and(max-width: 600px) {
+   #main {
+      min-height: calc(100% - 107px);
+   }
+}
+
+@media only screen and(min-width: 993px) {
+   .container {
+      width: 100%;
+   }
+
+   .sidenav-overlay {
+      background-color: transparent;
+   }
+}
+
+@media #{$large-and-up} {
+   #main {
+      padding-left: $sidenav-width;
+
+      &.main-full {
+         padding-left: $sidenav-collapsed-width;
+      }
+   }
+   
+   .nav-lock ~ footer {
+      padding-left: $sidenav-width + 7px;
+   }
+   footer{
+      padding-left: 71px;
+   }
+}
+
+@media #{$small-and-down} {
+   #main .content-wrapper-before {
+      top: 56px;
+   }
+}
+
+.ps-scrollbar-x-rail {
+   z-index: 9999;
+}
+
+.ps-scrollbar-y-rail {
+   z-index: 9999;
+}
+
+.bg-opacity-8 {
+   background-color: rgba(255, 255, 255, 0.8);
+}
+
+.height-100vh {
+   height: 100vh;
+}
+
+button,
+html [type="button"],
+[type="reset"],
+[type="submit"] {
+   -webkit-appearance: none;
+   cursor: pointer;
+}

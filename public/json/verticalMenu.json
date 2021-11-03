@@ -1,0 +1,56 @@
+{
+  "menu": [
+    {
+      "navheader": "MENU",
+      "icon": "more_horiz"
+    },
+    {
+      "url": "/organisations",
+      "name": "Organisations",
+      "i18n": "Organisations",
+      "class": "waves-effect waves-cyan",
+      "icon": "domain",
+      "slug": "organisation"
+    },
+    {
+      "url": "/managers",
+      "name": "Managers",
+      "i18n": "Managers",
+      "class": "waves-effect waves-cyan",
+      "icon": "supervisor_account",
+      "slug": "manager"
+    },
+    {
+      "url": "/worksites",
+      "name": "Work sites",
+      "i18n": "Work sites",
+      "class": "waves-effect waves-cyan",
+      "icon": "place",
+      "slug": "worksite"
+    },
+    {
+      "url": "/employees",
+      "name": "Employees",
+      "i18n": "Employees",
+      "class": "waves-effect waves-cyan",
+      "icon": "people",
+      "slug": "employee"
+    },
+    {
+      "url": "/keys",
+      "name": "Keys",
+      "i18n": "Keys",
+      "class": "waves-effect waves-cyan",
+      "icon": "vpn_key",
+      "slug": "key"
+    },
+    {
+      "url": "/registries",
+      "name": "Registry",
+      "i18n": "Registry",
+      "class": "waves-effect waves-cyan",
+      "icon": "view_list",
+      "slug": "registry"
+    }
+  ]
+}

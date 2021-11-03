@@ -1,0 +1,1 @@
+<?php /**PATH D:\data\10.30\li\webde\resources\views/pages/sidebar/right-sidebar.blade.php ENDPATH**/ ?>

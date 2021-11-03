@@ -1,0 +1,108 @@
+{{-- layout --}}
+@extends('layouts.contentLayoutMaster')
+
+{{-- page title --}}
+@section('title','Users list')
+
+<!-- Changed by Yuris to support Materialize CSS -->
+
+{{-- vendors styles --}}
+@section('vendor-style')
+<link rel="stylesheet" type="text/css" href="{{asset('vendors/data-tables/css/jquery.dataTables.min.css')}}">
+<link rel="stylesheet" type="text/css"
+  href="{{asset('vendors/data-tables/extensions/responsive/css/responsive.dataTables.min.css')}}">
+@endsection
+
+{{-- page styles --}}
+@section('page-style')
+<link rel="stylesheet" type="text/css" href="{{asset('css/pages/page-users.css')}}">
+@endsection
+
+{{-- page content --}}
+@section('content')
+
+    <!-- Needs to be revised for Materialize CSS and add dismiss button -->
+    @if(Session::has('success_message'))
+        <div class="msg msg-info green white-text">
+            <i class="material-icons">check</i>
+            {!! session('success_message') !!}
+            <!--
+            <button type="button" class="close" data-dismiss="alert" aria-label="close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+            -->
+        </div>
+    @endif
+
+<!-- users list start -->
+<section class="users-list-wrapper section">
+    <!-- Header Starts -->
+    <div class="row valign-wrapper mb-1 mt-1">
+        <div class="col s9 m9 l9 left-align">
+            <h5 class="white-text">[% model_plural %]</h5>
+        </div>
+        <div class="col s3 m3 l3 right-align">
+            <a href="{{ route('[% create_route_name %]') }}" class="btn-floating btn waves-effect waves-light red">
+                <i class="material-icons" title="[% create_model %]">add</i>
+            </a>
+        </div>
+    </div>
+  <!-- TABLE -->
+  <div class="users-list-table">
+    <div class="card">
+      <div class="card-content">
+        @if(count($[% model_name_plural_variable %]) == 0)
+            <div class="panel-body text-center">
+                <h4>[% no_models_available %]</h4>
+            </div>
+        @else
+        <div class="panel-body panel-body-with-table">
+        <!-- datatable start -->
+        <div class="responsive-table">
+          <table id="users-list-datatable" class="table striped">
+            <thead>
+              <tr>
+                [% header_cells %]
+                <th></th>
+              </tr>
+            </thead>
+            <tbody>
+            @foreach($[% model_name_plural_variable %] as $[% model_name_singular_variable %])
+              <tr>
+                [% body_cells %]
+                <td class="right-align">
+                    <form method="POST" action="{!! route('[% destroy_route_name %]', $[% model_name_singular_variable %]->[% primary_key %]) !!}" accept-charset="UTF-8">
+                    <a class="btn-flat" href="{{ route('[% show_route_name %]', $[% model_name_singular_variable %]->[% primary_key %] ) }}"><i class="material-icons dark-blue-text">remove_red_eye</i></a>
+                    <a class="btn-flat" href="{{ route('[% edit_route_name %]', $[% model_name_singular_variable %]->[% primary_key %] ) }}"><i class="material-icons green-text">edit</i></a>
+                    <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                    <input name="_method" value="DELETE" type="hidden">
+                    <button type="submit" class="btn-flat" title="[% delete_model %]" onclick="return confirm(&quot;[% confirm_delete %]&quot;)">
+                        <i class="material-icons red-text">delete_forever</i>
+                    </button>
+                    <!-- <a href="" onclick="return confirm(&quot;[% confirm_delete %]&quot;)"><i class="material-icons red-text">delete_forever</i></a> -->
+                    </form>
+                </td>
+              </tr>
+            @endforeach
+            </tbody>
+          </table>
+        </div>
+        <!-- datatable ends -->
+        </div>
+        @endif
+    </div>
+  </div>
+</section>
+<!-- users list ends -->
+@endsection
+
+{{-- vendor scripts --}}
+@section('vendor-script')
+<script src="{{asset('vendors/data-tables/js/jquery.dataTables.min.js')}}"></script>
+<script src="{{asset('vendors/data-tables/extensions/responsive/js/dataTables.responsive.min.js')}}"></script>
+@endsection
+
+{{-- page script --}}
+@section('page-script')
+<script src="{{asset('js/scripts/page-users.js')}}"></script>
+@endsection

@@ -1,0 +1,26 @@
+// ==========================================================================
+// Materialize theme variables
+// ==========================================================================
+//
+// Table of Contents:
+//
+//  1. Colors
+//  2. Sidenav
+
+//Colors
+$white: #fff !default;
+$black: #000 !default;
+$body-bg: #f9f9f9 !default;
+$title-font-color: #333 !default;
+$body-font-color: #6B6F82 !default;
+$breadcrumbs-bg: #f3f3f3 !default;
+
+//Sidenav
+$sidenav-collapsed-width: 64px !default;
+$sidenav-dark-bg: #2c323f !default;
+$sidenav-hover-bg: rgba(0, 0, 0, 0.035) !default;
+$sidenav-open-bg: rgba(0, 0, 0, 0.035) !default;
+$sidenav-active-text-color: $title-font-color !default;
+$sidenav-active-bg: rgba(0, 0, 0, 0.04) !default;
+$sidenav-active-box-shadow: none !default;
+$right-sidenav-width: 340px !default; // Right SideNav

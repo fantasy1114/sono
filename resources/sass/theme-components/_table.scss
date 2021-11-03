@@ -1,0 +1,34 @@
+/*----------------------------------------
+    Tables
+------------------------------------------*/
+
+// DataTable
+table {
+   &.dataTable {
+      &.dtr-inline {
+         &.collapsed {
+            & > tbody {
+               & > tr[role="row"] {
+                  & > td,
+                  & > th {
+                     &:first-child {
+                        &:before {
+                           top: 19px;
+                           line-height: 15px;
+                           text-indent: -1px !important;
+                        }
+                     }
+                  }
+               }
+            }
+         }
+      }
+   }
+   &.bordered{
+      th, 
+      td{
+         border: 1px solid rgba(0, 0, 0, 0.12) !important;
+         padding: 15px !important;
+      }
+   }
+}

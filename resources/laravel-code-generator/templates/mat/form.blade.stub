@@ -1,0 +1,23 @@
+[% form_fields_html %]
+
+<script>
+    // Script Added by Yuris
+    // Adds listener to all defined forms that convert checkbox values from on/off to 1/0
+    var forms = document.forms;
+    //alert(forms.length);
+    for (var f = 0, form; form = forms[f++];) {
+        //if (form.name.length > 0) {
+            //alert(form.name);
+            form.addEventListener("submit", function() {
+                var elements = this.elements;
+                for (var i = 0, element; element = elements[i++];) {
+                    if (element.type === 'checkbox' ) {
+                        //alert(element.name);
+                        if (element.value == 'on') element.value = 1;
+                        if (element.value == 'off') element.value = 0;
+                    }
+                }
+            })
+        //}
+    };
+</script>
