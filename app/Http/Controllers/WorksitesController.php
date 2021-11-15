@@ -128,7 +128,7 @@ class WorksitesController extends Controller
         try {
             
             $data = $this->getData($request);
-            
+            // print_r($data);exit;
             $worksite = Worksite::findOrFail($id);
             $worksite->update($data);
 
@@ -184,7 +184,7 @@ class WorksitesController extends Controller
         $data = $request->validate($rules);
 
 
-        $data['Is_Active'] = $request->has('Is_Active');
+        // $data['Is_Active'] = $request->has('Is_Active');
 
 
         return $data;

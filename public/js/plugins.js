@@ -556,9 +556,9 @@ $(function () {
     $this.addClass("selected");
     var selectedFlag = $this.find(".flag-icon").attr("class");
     $(".translation-button .flag-icon").removeClass().addClass(selectedFlag);
-    console.log(selectedFlag);
+    
   }); // set language flag icon as 
-
+  
   var language = $('html')[0].lang;
   if (language !== null) {
     // get the selected flag class 

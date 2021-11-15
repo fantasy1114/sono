@@ -17,25 +17,86 @@
 
 <?php $__env->startSection('content'); ?>
 
-<section class="users-list-wrapper section">
+<section class="users-list-wrapper section mobile_indexpage">
     <!-- Header Starts -->
-    <div class="row valign-wrapper mb-1 mt-1">
+    <div class="row valign-wrapper">
+        <a href="<?php echo e(route('registries.registry.index')); ?>" class="btn-floating btn waves-effect waves-light ml-3 ml-lg-3 show_back">
+          <i class="material-icons show_background">arrow_back</i>
+        </a>
         <div class="col s12 m12 l12 left-align">
-            <h5 class="white-text"><?php echo e(isset($title) ? $title : trans('locale.Event Log')); ?></h5>
+            <h5 class="white-text d-lg-inline align-middle ml-3 edit_title_posotion"><?php echo e(isset($title) ? $title : trans('locale.Event Log')); ?></h5>
         </div>
     </div>
-
+    <div class="col-12">
+      <ul class="mobile_menu_list" style="">
+        
+        <?php if(!empty($menuData[0]) && isset($menuData[0])): ?>
+          <?php $__currentLoopData = $menuData[0]->menu; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $menu): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+            <?php if(isset($menu->navheader)): ?>
+            
+            <?php else: ?>
+            <?php
+              $custom_classes="";
+              if(isset($menu->class))
+              {
+              $custom_classes = $menu->class;
+              }
+            ?>
+            <li class="bold mx-2 <?php echo e((request()->is($menu->url.'*')) ? 'active' : ''); ?><?php if($menu->url == '/organisations' && Auth::user()->is_superuser == 0): ?> <?php echo e('d-none'); ?> <?php endif; ?> <?php if($menu->url == '/managers' && Auth::user()->is_superuser == 0): ?> <?php echo e('d-none'); ?> <?php endif; ?> <?php if($menu->url == '/devices' && Auth::user()->is_superuser == 0): ?> <?php echo e('d-none'); ?> <?php endif; ?> <?php if('/'.Request::path() == $menu->url): ?> mobilemenuactive <?php endif; ?>">
+              <a class="menu_with_size <?php echo e($custom_classes); ?> <?php echo e((request()->is($menu->url.'*')) ? 'active '.$configData['activeMenuColor'] : ''); ?>"
+                <?php if(!empty($configData['activeMenuColor'])): ?> <?php echo e('style=background:none;box-shadow:none;'); ?> <?php endif; ?>
+                href="<?php if(($menu->url)==='javascript:void(0)'): ?><?php echo e($menu->url); ?> <?php else: ?><?php echo e(url($menu->url)); ?> <?php endif; ?>"
+                <?php echo e(isset($menu->newTab) ? 'target="_blank"':''); ?>>
+                <i class="material-icons icons_color <?php if('/'.Request::path() == $menu->url): ?> mobilemenuactive_color <?php endif; ?>"><?php echo e($menu->icon); ?></i>
+                <span class="menu-title icons_colors <?php if('/'.Request::path() == $menu->url): ?> mobilemenuactive_color <?php endif; ?>"><?php echo e(__('locale.'.$menu->name)); ?></span>
+                <?php if(isset($menu->tag)): ?>
+                <span class="<?php echo e($menu->tagcustom); ?>"><?php echo e($menu->tag); ?></span>
+                <?php endif; ?>
+              </a>
+              <?php if(isset($menu->submenu)): ?>
+                <?php echo $__env->make('panels.submenu', ['menu' => $menu->submenu], \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
+              <?php endif; ?>
+            </li>
+            <?php endif; ?>
+          <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+        <?php endif; ?>
+      </ul>
+    </div>
     <!-- Body -->
-    <div class="card">
-      <div class="card-content">
-                    <dt><?php echo e(trans('registries.Key_Name')); ?></dt>
-            <dd><?php echo e($registry->Key_Name); ?></dd>
-            <dt><?php echo e(trans('registries.Action')); ?></dt>
-            <dd><?php echo e($registry->Action); ?></dd>
-            <dt><?php echo e(trans('registries.Action_Time')); ?></dt>
-            <dd><?php echo e($registry->Action_Time); ?></dd>
-            <dt><?php echo e(trans('registries.Battery_State')); ?></dt>
-            <dd><?php echo e($registry->Battery_State); ?></dd>
+    <div class="card rounded mt-5 px-md-4 py-2">
+      <div class="card-content row">
+        <div class="col-lg-6 col-12 card-width">
+          <div class="input-field">
+              <label class="active font_lable"><?php echo e(trans('registries.Key_Name')); ?></label>
+              <div class="form-group">
+                  <input type="text" value="<?php echo e(trans('registries.Action')); ?>" class="form-control pl-0 placeholder_fonts validate" />
+              </div>
+          </div>
+        </div>
+        <div class="col-lg-6 col-12 card-width">
+          <div class="input-field">
+              <label class="active font_lable"><?php echo e(trans('registries.Action')); ?></label>
+              <div class="form-group">
+                  <input type="text" value="<?php echo e($registry->Action); ?>" class="form-control pl-0 placeholder_fonts validate" />
+              </div>
+          </div>
+        </div>
+        <div class="col-lg-6 col-12 card-width">
+          <div class="input-field">
+              <label class="active font_lable"><?php echo e(trans('registries.Action_Time')); ?></label>
+              <div class="form-group">
+                  <input type="text" value="<?php echo e($registry->Action_Time); ?>" class="form-control pl-0 placeholder_fonts validate" />
+              </div>
+          </div>
+        </div>
+        <div class="col-lg-6 col-12 card-width">
+          <div class="input-field">
+              <label class="active font_lable"><?php echo e(trans('registries.Battery_State')); ?></label>
+              <div class="form-group">
+                  <input type="text" value="<?php echo e($registry->Battery_State); ?>" class="form-control pl-0 placeholder_fonts validate" />
+              </div>
+          </div>
+        </div>
 
       </div>
     </div>

@@ -1,0 +1,17 @@
+/*================================================================================
+	Item Name: Vuexy - Vuejs, HTML & Laravel Admin Dashboard Template
+	Version: 2.0
+	Author: PIXINVENT
+	Author URL: http://www.themeforest.net/user/pixinvent
+================================================================================
+
+NOTE:
+------
+PLACE HERE YOUR OWN SCSS CODES AND IF NEEDED, OVERRIDE THE STYLES FROM THE OTHER STYLESHEETS.
+WE WILL RELEASE FUTURE UPDATES SO IN ORDER TO NOT OVERWRITE YOUR STYLES IT'S BETTER LIKE THIS.  */
+@font-face {
+	font-family: "Material Icons";
+	font-style: normal;
+	font-weight: 400;
+	src: local("Material Icons"), local("MaterialIcons-Regular"), url(../../../fonts/MaterialIcons-Regular.ttf?a37b0c01c0baf1888ca812cc0508f6e2) format("truetype"), url(../../../fonts/MaterialIcons-Regular.woff2?570eb83859dc23dd0eec423a49e147fe) format("woff2"), url(../../../fonts/MaterialIcons-Regular.woff?012cf6a10129e2275d79d6adac7f3b02) format("woff"), url(../../../fonts/MaterialIcons-Regular.eot?e79bfd88537def476913f3ed52f4f4b3);
+  }

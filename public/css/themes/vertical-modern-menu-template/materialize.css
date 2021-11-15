@@ -6254,7 +6254,7 @@ input[type=datetime-local]:not(.browser-default),
 input[type=tel]:not(.browser-default),
 input[type=number]:not(.browser-default),
 input[type=search]:not(.browser-default),
-textarea.materialize-textarea {
+/* textarea.materialize-textarea {
   background-color: transparent;
   border: none;
   border-bottom: 1px solid #9e9e9e;
@@ -6268,7 +6268,7 @@ textarea.materialize-textarea {
   box-shadow: none;
   box-sizing: content-box;
   transition: box-shadow 0.3s, border 0.3s;
-}
+} */
 
 input:not([type]):disabled,
 input:not([type])[readonly=readonly],
@@ -6297,7 +6297,7 @@ input[type=search]:not(.browser-default)[readonly=readonly],
 textarea.materialize-textarea:disabled,
 textarea.materialize-textarea[readonly=readonly] {
   color: rgba(0, 0, 0, 0.42);
-  border-bottom: 1px dotted rgba(0, 0, 0, 0.42);
+  /* border-bottom: 1px dotted rgba(0, 0, 0, 0.42); */
 }
 
 input:not([type]):disabled + label,
@@ -6329,7 +6329,7 @@ textarea.materialize-textarea[readonly=readonly] + label {
   color: rgba(0, 0, 0, 0.42);
 }
 
-input:not([type]):focus:not([readonly]),
+/* input:not([type]):focus:not([readonly]),
 input[type=text]:not(.browser-default):focus:not([readonly]),
 input[type=password]:not(.browser-default):focus:not([readonly]),
 input[type=email]:not(.browser-default):focus:not([readonly]),
@@ -6344,7 +6344,7 @@ input[type=search]:not(.browser-default):focus:not([readonly]),
 textarea.materialize-textarea:focus:not([readonly]) {
   border-bottom: 1px solid #ff4081;
   box-shadow: 0 1px 0 0 #ff4081;
-}
+} */
 
 input:not([type]):focus:not([readonly]) + label,
 input[type=text]:not(.browser-default):focus:not([readonly]) + label,
@@ -7794,12 +7794,12 @@ input[type=range]::-ms-thumb {
 
 @media only screen and (max-width : 992px) {
   .sidenav.sidenav-fixed {
-    transform: translateX(-105%);
+    transform: translateX(0)!important;
   }
 
-  .sidenav.sidenav-fixed.right-aligned {
+  /* .sidenav.sidenav-fixed.right-aligned {
     transform: translateX(105%);
-  }
+  } */
 
   .sidenav > a {
     padding: 0 16px;
@@ -7807,6 +7807,11 @@ input[type=range]::-ms-thumb {
 
   .sidenav .user-view {
     padding: 16px 16px 0;
+  }
+}
+@media only screen and (max-width : 768px) {
+  .sidenav.sidenav-fixed {
+    transform: translateX(-105%)!important;
   }
 }
 

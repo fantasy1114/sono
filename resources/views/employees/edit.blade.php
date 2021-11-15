@@ -19,20 +19,54 @@
 {{-- page content --}}
 @section('content')
 
-<section class="users-list-wrapper section">
+<section class="users-list-wrapper section mobile_indexpage">
     <!-- Header Starts -->
-    <div class="row valign-wrapper mb-1 mt-1">
-        <div class="col s9 m9 l9 left-align">
+    <div class="col-12 valign-wrapper edit_title_posotion main_page_border pb-2">
+        <div class="left-align">
             <h5 class="white-text">{{ isset($title) ? $title : trans('employees.model_plural') }}</h5>
         </div>
         <!-- "Go Up" button -->
         <div class="col s3 m3 l3 right-align">
-            <a href="{{ route('employees.employee.index') }}" class="btn-floating btn waves-effect waves-light blue darken-2">
-                <i class="material-icons" title="{{ trans('employees.create') }}">arrow_upward</i>
+            <a href="{{ route('employees.employee.create') }}" class="btn waves-effect waves-light d-flex align-items-center float-right mr-2 create_new_product">
+                <div class="d-inline">add</div><i class="material-icons" title="{{ trans('employees.create') }}">add</i>
             </a>
         </div>
     </div>
-
+    <div class="col-12">
+        <ul class="mobile_menu_list" style="">
+            {{-- Foreach menu item starts --}}
+            @if(!empty($menuData[0]) && isset($menuData[0]))
+            @foreach ($menuData[0]->menu as $menu)
+                @if(isset($menu->navheader))
+                
+                @else
+                @php
+                $custom_classes="";
+                if(isset($menu->class))
+                {
+                $custom_classes = $menu->class;
+                }
+                @endphp
+                <li class="bold mx-2 {{(request()->is($menu->url.'*')) ? 'active' : '' }}@if($menu->url == '/organisations' && Auth::user()->is_superuser == 0) {{'d-none'}} @endif @if($menu->url == '/managers' && Auth::user()->is_superuser == 0) {{'d-none'}} @endif @if($menu->url == '/devices' && Auth::user()->is_superuser == 0) {{'d-none'}} @endif @if('/'.Request::path() == $menu->url) mobilemenuactive @endif">
+                <a class="menu_with_size {{$custom_classes}} {{ (request()->is($menu->url.'*')) ? 'active '.$configData['activeMenuColor'] : ''}}"
+                    @if(!empty($configData['activeMenuColor'])) {{'style=background:none;box-shadow:none;'}} @endif
+                    href="@if(($menu->url)==='javascript:void(0)'){{$menu->url}} @else{{url($menu->url)}} @endif"
+                    {{isset($menu->newTab) ? 'target="_blank"':''}}>
+                    <i class="material-icons icons_color @if('/'.Request::path() == $menu->url) mobilemenuactive_color @endif">{{$menu->icon}}</i>
+                    <span class="menu-title icons_colors @if('/'.Request::path() == $menu->url) mobilemenuactive_color @endif">{{ __('locale.'.$menu->name)}}</span>
+                    @if(isset($menu->tag))
+                    <span class="{{$menu->tagcustom}}">{{$menu->tag}}</span>
+                    @endif
+                </a>
+                @if(isset($menu->submenu))
+                    @include('panels.submenu', ['menu' => $menu->submenu])
+                @endif
+                </li>
+                @endif
+            @endforeach
+            @endif
+        </ul>
+    </div>
 
     <form method="POST" action="{{ route('employees.employee.update', $employee->Employee_ID) }}" 
         id="edit_employee_form" name="edit_employee_form" accept-charset="UTF-8" class="form-horizontal">
@@ -41,46 +75,58 @@
         <div class="col s8 m8 l8">
             <div class="card-panel mb-6">
 
-            <!-- Errors here, if present -->
-            @if ($errors->any())
-                <ul class="msg msg-alert">
-                    @foreach ($errors->all() as $error)
-                        <li>{{ $error }}</li>
-                    @endforeach
-                </ul>
-            @endif
+                <!-- Errors here, if present -->
+                @if ($errors->any())
+                    <ul class="msg msg-alert">
+                        @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                @endif
 
-            {{ csrf_field() }}
- 
-            <input name="_method" type="hidden" value="PUT">
+                {{ csrf_field() }}
+    
+                <input name="_method" type="hidden" value="PUT">
 
-            @include ('employees.form', [
-                'employee' => $employee,
-            ])
-
+                @include ('employees.form', [
+                    'employee' => $employee,
+                ])
+                <div class="row mt-5">
+                    <div class="col-sm-3">
+                        <input class="btn btn-primary btn_update px-lg-3 update_update" type="submit" value="{{ trans('employees.update') }}">
+                        </form>
+                    </div>
+                    <div class="col-sm-9 update_delete">
+                        <div class="float-left">
+                            <a href="{{ route('employees.employee.index') }}" class="btn waves-effect waves-light px-lg-3 darken-2 update_delete_cancel">{{ trans('locale.cancels') }}</a>
+                        </div>
+                        <div class="float-right update_delete_delete">
+                            <form method="POST" action="{!! route('employees.employee.destroy', $employee->Employee_ID) !!}" accept-charset="UTF-8">
+                                <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                                <input name="_method" value="DELETE" type="hidden">
+                                <input class="btn btn-primary px-lg-3 update_delete_delete_back" onclick="return confirm(&quot;{{ trans('employees.confirm_delete') }}&quot;)" type="submit" value="{{ trans('locale.deletes') }}">
+                            </form>
+                        </div>
+                    </div>
+                    
+                       
+                    {{-- <div class="col s2 m2 l2 right-align">
+                        <form method="POST" action="{!! route('employees.employee.destroy', $employee->Employee_ID) !!}" accept-charset="UTF-8">
+                            <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                            <input name="_method" value="DELETE" type="hidden">
+                            <input class="btn btn-primary red" onclick="return confirm(&quot;{{ trans('employees.confirm_delete') }}&quot;)" type="submit" value="{{ trans('locale.deletes') }}">
+                        </form>
+                    </div> --}}
+                    
+                </div>
+               
 
             </div>
         </div>
     </div>
 
     <!-- Body -->
-    <div class="row">
-        <div class="col s6 m6 l6 left-align">
-            <input class="btn btn-primary green" type="submit" value="{{ trans('employees.update') }}">
-            </form>
-            <a href="{{ route('employees.employee.index') }}" class="btn waves-effect waves-light blue darken-2">{{ trans('locale.cancels') }}</a>
-        </div>
-        
-        <div class="col s2 m2 l2 right-align">
-            <form method="POST" action="{!! route('employees.employee.destroy', $employee->Employee_ID) !!}" accept-charset="UTF-8">
-                <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                <input name="_method" value="DELETE" type="hidden">
-                <input class="btn btn-primary red" onclick="return confirm(&quot;{{ trans('employees.confirm_delete') }}&quot;)" type="submit" value="{{ trans('locale.deletes') }}">
-            </form>
-        </div>
-        
-    </div>
-   
+    
 </section>
 
 @endsection

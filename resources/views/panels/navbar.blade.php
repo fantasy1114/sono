@@ -1,21 +1,29 @@
 <!-- Customized by Yuris -->
-<div class="navbar navbar-fixed ">
+<script src="{{asset('js/vendors.min.js')}}"></script>
+<div class="navbar navbar-fixed pl-0">
   <nav
     class="navbar-main navbar-color nav-collapsible no-shadow nav-expanded sideNav-lock  navbar-dark gradient-45deg-indigo-purple ">
     <div class="nav-wrapper">
       
-      <ul class="navbar-list right">
+      <ul class="navbar-list right mr-2">
         <li class="dropdown-language">
-          <a class="waves-effect waves-block waves-light translation-button" href="javascript:void(0);"
-            data-target="translation-dropdown">
-            <span class="flag-icon flag-icon-gb"></span>
+          <a class="waves-effect waves-block waves-light russia_lang" href="{{url('lang/ru')}}" data-language="ru" style="color:#71FFDC; font-weight:600;">
+            RU
           </a>
         </li>
-        
-        <li>
-          <a class="waves-effect waves-block waves-light profile-button" href="javascript:void(0);"
-            data-target="profile-dropdown">
-            <span class="avatar-status avatar-online">
+        <li class="dropdown-language">
+          <a class="waves-effect waves-block waves-light english_lang" href="{{url('lang/en')}}" data-language="en" style="color:#71FFDC; font-weight:600;">
+            EN
+          </a>
+        </li>
+        <li class="dropdown-language">
+          <a class="waves-effect waves-block waves-light lvtian_lang" href="{{url('lang/lv')}}" data-language="lv" style="color:#71FFDC; font-weight:600;">
+            LV
+          </a>
+        </li>
+        <li class="dropdown-language">
+          <a class="waves-effect waves-block waves-light translation-button" href="javascript:void(0);" data-target="profile-dropdown">
+            <span class="avatar-status avatar-online" style="vertical-align: baseline;width:40px;" >
               @if(auth()->user()->is_superuser)
                 <img src="{{asset('images/avatar/avatar-admin.png')}}" alt="Super User"><i></i>
               @else
@@ -24,6 +32,7 @@
             </span>
           </a>
         </li>
+        
         
       </ul>
       <!-- translation-button-->
@@ -65,172 +74,18 @@
       </ul>
       
     </div>
-    <nav class="display-none search-sm">
-      <div class="nav-wrapper">
-        <form id="navbarForm">
-          <div class="input-field search-input-sm">
-            <input class="search-box-sm mb-0" type="search" required="" placeholder='Explore Materialize' id="search"
-              data-search="starter-kit-list">
-            <label class="label-icon" for="search">
-              <i class="material-icons search-sm-icon">search</i>
-            </label>
-            <i class="material-icons search-sm-close">close</i>
-            <ul class="search-list collection search-list-sm display-none"></ul>
-          </div>
-        </form>
-      </div>
-    </nav>
   </nav>
 </div>
+<script>
+  var language = $('html')[0].lang;
+  if(language == 'en'){
+    $('.english_lang').css('color','#fff')
+  }
+  else if(language == 'ru'){
+    $('.russia_lang').css('color','#fff')
+  }
+  else{
+    $('.lvtian_lang').css('color','#fff')
+  }
+</script>
 <!-- search ul  -->
-<ul class="display-none" id="default-search-main">
-  <li class="auto-suggestion-title">
-    <a class="collection-item" href="#">
-      <h6 class="search-title">FILES</h6>
-    </a>
-  </li>
-  <li class="auto-suggestion">
-    <a class="collection-item" href="#">
-      <div class="display-flex">
-        <div class="display-flex align-item-center flex-grow-1">
-          <div class="avatar">
-            <img src="{{asset('images/icon/pdf-image.png')}}" width="24" height="30" alt="sample image">
-          </div>
-          <div class="member-info display-flex flex-column">
-            <span class="black-text">
-              Two new item submitted</span>
-            <small class="grey-text">Marketing Manager</small>
-          </div>
-        </div>
-        <div class="status"><small class="grey-text">17kb</small></div>
-      </div>
-    </a>
-  </li>
-  <li class="auto-suggestion">
-    <a class="collection-item" href="#">
-      <div class="display-flex">
-        <div class="display-flex align-item-center flex-grow-1">
-          <div class="avatar">
-            <img src="{{asset('images/icon/doc-image.png')}}" width="24" height="30" alt="sample image">
-          </div>
-          <div class="member-info display-flex flex-column">
-            <span class="black-text">52 Doc file Generator</span>
-            <small class="grey-text">FontEnd Developer</small>
-          </div>
-        </div>
-        <div class="status"><small class="grey-text">550kb</small></div>
-      </div>
-    </a>
-  </li>
-  <li class="auto-suggestion">
-    <a class="collection-item" href="#">
-      <div class="display-flex">
-        <div class="display-flex align-item-center flex-grow-1">
-          <div class="avatar">
-            <img src="{{asset('images/icon/xls-image.png')}}" width="24" height="30" alt="sample image">
-          </div>
-          <div class="member-info display-flex flex-column">
-            <span class="black-text">25 Xls File Uploaded</span>
-            <small class="grey-text">Digital Marketing Manager</small>
-          </div>
-        </div>
-        <div class="status"><small class="grey-text">20kb</small></div>
-      </div>
-    </a>
-  </li>
-  <li class="auto-suggestion">
-    <a class="collection-item" href="#">
-      <div class="display-flex">
-        <div class="display-flex align-item-center flex-grow-1">
-          <div class="avatar">
-            <img src="{{asset('images/icon/jpg-image.png')}}" width="24" height="30" alt="sample image">
-          </div>
-          <div class="member-info display-flex flex-column">
-            <span class="black-text">Anna Strong</span>
-            <small class="grey-text">Web Designer</small>
-          </div>
-        </div>
-        <div class="status"><small class="grey-text">37kb</small></div>
-      </div>
-    </a>
-  </li>
-  <li class="auto-suggestion-title">
-    <a class="collection-item" href="#">
-      <h6 class="search-title">MEMBERS</h6>
-    </a>
-  </li>
-  <li class="auto-suggestion">
-    <a class="collection-item" href="#">
-      <div class="display-flex">
-        <div class="display-flex align-item-center flex-grow-1">
-          <div class="avatar">
-            <img class="circle" src="{{asset('images/avatar/avatar-7.png')}}" width="30" alt="sample image"></div>
-          <div class="member-info display-flex flex-column">
-            <span class="black-text">John Doe</span>
-            <small class="grey-text">UI designer</small>
-          </div>
-        </div>
-      </div>
-    </a>
-  </li>
-  <li class="auto-suggestion">
-    <a class="collection-item" href="#">
-      <div class="display-flex">
-        <div class="display-flex align-item-center flex-grow-1">
-          <div class="avatar">
-            <img class="circle" src="{{asset('images/avatar/avatar-8.png')}}" width="30" alt="sample image">
-          </div>
-          <div class="member-info display-flex flex-column">
-            <span class="black-text">Michal Clark</span>
-            <small class="grey-text">FontEnd Developer</small>
-          </div>
-        </div>
-      </div>
-    </a>
-  </li>
-  <li class="auto-suggestion">
-    <a class="collection-item" href="#">
-      <div class="display-flex">
-        <div class="display-flex align-item-center flex-grow-1">
-          <div class="avatar">
-            <img class="circle" src="{{asset('images/avatar/avatar-10.png')}}" width="30" alt="sample image">
-          </div>
-          <div class="member-info display-flex flex-column">
-            <span class="black-text">Milena Gibson</span>
-            <small class="grey-text">Digital Marketing</small>
-          </div>
-        </div>
-      </div>
-    </a>
-  </li>
-  <li class="auto-suggestion">
-    <a class="collection-item" href="#">
-      <div class="display-flex">
-        <div class="display-flex align-item-center flex-grow-1">
-          <div class="avatar">
-            <img class="circle" src="{{asset('images/avatar/avatar-12.png')}}" width="30" alt="sample image">
-          </div>
-          <div class="member-info display-flex flex-column">
-            <span class="black-text">Anna Strong</span>
-            <small class="grey-text">Web Designer</small>
-          </div>
-        </div>
-      </div>
-    </a>
-  </li>
-</ul>
-<ul class="display-none" id="page-search-title">
-  <li class="auto-suggestion-title">
-    <a class="collection-item" href="#">
-      <h6 class="search-title">PAGES</h6>
-    </a>
-  </li>
-</ul>
-<ul class="display-none" id="search-not-found">
-  <li class="auto-suggestion">
-    <a class="collection-item display-flex align-items-center" href="#">
-      <span class="material-icons">error_outline</span>
-      <span class="member-info">No results found.</span>
-    </a>
-  </li>
-</ul>

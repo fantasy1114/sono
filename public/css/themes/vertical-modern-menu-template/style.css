@@ -2183,7 +2183,7 @@ body {
   top: 64px;
   left: 0;
   width: 100%;
-  height: 185px;
+  height: 125px;
   transition: 0.3s ease all;
 }
 
@@ -2240,7 +2240,7 @@ select {
 
 @media only screen and (min-width : 993px) {
   #main {
-    padding-left: 260px;
+    padding-left: 230px;
   }
 
   #main.main-full {
@@ -2253,6 +2253,11 @@ select {
 
   footer {
     padding-left: 71px;
+  }
+}
+@media only screen and (min-width : 768px) {
+  #main {
+    padding-left: 230px;
   }
 }
 
@@ -5836,8 +5841,8 @@ li.home:before {
 }
 
 .gradient-45deg-indigo-purple {
-  background: #303f9f;
-  background: linear-gradient(45deg, #303f9f, #7b1fa2) !important;
+  background: #63D6BA;
+  background: linear-gradient(45deg, #63D6BA, #63D6BA) !important;
 }
 
 .gradient-45deg-indigo-purple.gradient-shadow {
@@ -7134,7 +7139,7 @@ nav.display-none.search-sm .nav-wrapper form .input-field i {
   top: 0;
   z-index: 999;
   height: 100%;
-  width: 260px;
+  width: 230px;
   transition: 0.3s ease all;
 }
 
@@ -7209,8 +7214,11 @@ nav.display-none.search-sm .nav-wrapper form .input-field i {
 
 @media only screen and (max-width : 992px) {
   .brand-sidebar .brand-logo {
-    left: 50%;
+    left: 15%;
     transform: translateX(-50%);
+  }
+  .sidenav-main{
+    background-color:#fff;
   }
 
   .brand-sidebar .brand-logo.left,
@@ -7226,6 +7234,11 @@ nav.display-none.search-sm .nav-wrapper form .input-field i {
   .brand-sidebar .brand-logo.right {
     right: 0.5rem;
     left: auto;
+  }
+}
+@media only screen and (max-width : 768px) {
+  .sidenav-main{
+    background-color:transparent;
   }
 }
 
@@ -7633,16 +7646,16 @@ nav.display-none.search-sm .nav-wrapper form .input-field i {
 }
 
 @media only screen and (max-width : 992px) {
-  .sidenav-main {
+  /* .sidenav-main {
     width: auto;
     height: 0;
-  }
+  } */
 
-  .sidenav-main .brand-sidebar {
+  /* .sidenav-main .brand-sidebar {
     box-shadow: none;
     left: 80px;
     background: transparent;
-  }
+  } */
 
   .sidenav-main .brand-sidebar .navbar-toggler {
     display: none;
@@ -7657,8 +7670,8 @@ nav.display-none.search-sm .nav-wrapper form .input-field i {
   }
 
   .sidenav-main .sidenav {
-    top: 0;
-    width: 260px;
+    top: 65px;
+    width: 230px;
   }
 
   .sidenav-main .btn-sidenav-toggle {
@@ -7671,7 +7684,13 @@ nav.display-none.search-sm .nav-wrapper form .input-field i {
     background: #2c323f;
   }
 }
-
+@media only screen and (max-width : 768px) {
+  .sidenav-main .brand-sidebar {
+    box-shadow: none;
+    left: 80px;
+    background: transparent;
+  }
+}
 @media only screen and (max-width : 600px) {
   .sidenav-main .brand-sidebar .brand-logo {
     padding: 16px 12px 20px 12px;

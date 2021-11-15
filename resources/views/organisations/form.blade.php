@@ -1,8 +1,11 @@
 <div class="input-field {{ $errors->has('Organisation_Name') ? 'has-error' : '' }}">
-    <label for="Organisation_Name" class="active">{{ trans('organisations.Organisation_Name') }}</label>
-        <input class="validate" name="Organisation_Name" type="text" id="Organisation_Name" value="{{ old('Organisation_Name', optional($organisation)->Organisation_Name) }}" minlength="1" maxlength="64" required="true" placeholder="{{ trans('organisations.Organisation_Name__placeholder') }}">
+    <label for="Organisation_Name" class="active font_lable">{{ trans('organisations.Organisation_Name') }}</label>
+    <div class="form-group">
+        <input type="text" style="" name="Organisation_Name" id="Organisation_Name"  value="{{ old('Organisation_Name', optional($organisation)->Organisation_Name) }}" minlength="1" maxlength="64" required="true" class="form-control pl-0 placeholder_font validate" placeholder="{{ trans('organisations.Organisation_Name__placeholder') }}" />
         <input name="Login_Token" type="hidden" id="Login_Token" value="{{ old('Login_Token', optional($organisation)->Login_Token) }}">
         {!! $errors->first('Organisation_Name', '<p class="help-block">:message</p>') !!}
+    </div>
+      
 </div>
 
 
@@ -26,4 +29,12 @@
             })
         }
     };
+    $('#customCheck1').on('click', function(e){
+        console.log('1');
+        $('#default_value').val('1');
+    });
+    $('#customCheck2').on('click', function(e){
+        $('#default_value').val('0');
+        console.log('0');
+    });
 </script>

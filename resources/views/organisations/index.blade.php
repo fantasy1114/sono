@@ -34,33 +34,67 @@
 @section('content')
 
 @if(Session::has('success_message'))
-    <a name="info_button" class="waves-effect waves-light btn green" onclick="this.parentNode.removeChild(this);">
+    <a name="info_button" class="waves-effect waves-light btn green" style="position:fixed;" onclick="this.parentNode.removeChild(this);">
       <i class="material-icons left">done</i>{!! session('success_message') !!}</a>
     @endif
 
 <!-- users list start -->
-<section class="users-list-wrapper section @if(Auth::user()->is_superuser == 0) {{'d-none'}} @endif">
+<section class="users-list-wrapper section pt-2 @if(Auth::user()->is_superuser == 0) {{'d-none'}} @endif">
     <!-- Header Starts -->
-    <div class="row valign-wrapper mb-1 mt-1">
-        <div class="col s9 m9 l9 left-align">
-            <h5 class="white-text">{{ trans('organisations.model_plural') }}</h5>
+    <div class="col-12 valign-wrapper edit_title_posotion main_page_border pb-2">
+        <div class="">
+            <h5 class="white-text main_index">{{ trans('organisations.model_plural') }}</h5>
         </div>
-        <div class="col s3 m3 l3 right-align">
-            <a href="{{ route('organisations.organisation.create') }}" class="btn-floating btn waves-effect waves-light red {{ auth()->user()->is_superuser ? '' : 'disabled' }} ">
-                <i class="material-icons" title="{{ trans('organisations.create') }}">add</i>
+        <div class="col m3 right-align">
+            <a href="{{ route('organisations.organisation.create') }}" class=" btn waves-effect waves-light d-flex align-items-center float-right mr-2 create_new_product {{ auth()->user()->is_superuser ? '' : 'disabled' }} ">
+              <div class="d-inline">add</div><i class="material-icons" title="{{ trans('organisations.create') }}">add</i>
             </a>
         </div>
     </div>
+    <div class="col-12">
+      <ul class="mobile_menu_list" style="">
+        {{-- Foreach menu item starts --}}
+        @if(!empty($menuData[0]) && isset($menuData[0]))
+          @foreach ($menuData[0]->menu as $menu)
+            @if(isset($menu->navheader))
+            
+            @else
+            @php
+              $custom_classes="";
+              if(isset($menu->class))
+              {
+              $custom_classes = $menu->class;
+              }
+            @endphp
+            <li class="bold px-2 {{(request()->is($menu->url.'*')) ? 'active' : '' }}@if($menu->url == '/organisations' && Auth::user()->is_superuser == 0) {{'d-none'}} @endif @if($menu->url == '/managers' && Auth::user()->is_superuser == 0) {{'d-none'}} @endif @if($menu->url == '/devices' && Auth::user()->is_superuser == 0) {{'d-none'}} @endif @if('/'.Request::path() == $menu->url) mobilemenuactive @endif">
+              <a class="menu_with_size {{$custom_classes}} {{ (request()->is($menu->url.'*')) ? 'active '.$configData['activeMenuColor'] : ''}}"
+                @if(!empty($configData['activeMenuColor'])) {{'style=background:none;box-shadow:none;'}} @endif
+                href="@if(($menu->url)==='javascript:void(0)'){{$menu->url}} @else{{url($menu->url)}} @endif"
+                {{isset($menu->newTab) ? 'target="_blank"':''}}>
+                <i class="material-icons icons_color @if('/'.Request::path() == $menu->url) mobilemenuactive_color @endif">{{$menu->icon}}</i>
+                <span class="menu-title icons_colors @if('/'.Request::path() == $menu->url) mobilemenuactive_color @endif">{{ __('locale.'.$menu->name)}}</span>
+                @if(isset($menu->tag))
+                <span class="{{$menu->tagcustom}}">{{$menu->tag}}</span>
+                @endif
+              </a>
+              @if(isset($menu->submenu))
+                @include('panels.submenu', ['menu' => $menu->submenu])
+              @endif
+            </li>
+            @endif
+          @endforeach
+        @endif
+      </ul>
+    </div>
   <!-- TABLE -->
   <div class="row">
-  
-    <div class="col s12">
+    
+    <div class="col s12 ">
       <div class="container">
-        <div class="section section-data-tables">
+        <div class="section section-data-tables pt-0">
           <!-- Page Length Options -->
-          <div class="row">
-          <div class="col s12">
-            <div class="card">
+          
+            <div class="card rounded mobile_indexpage">
               <div class="card-content">
               
                 <div class="row">
@@ -106,8 +140,7 @@
                 </div>
               </div>
             </div>
-          </div>
-          </div>
+          
         </div>
       </div>
     </div>
