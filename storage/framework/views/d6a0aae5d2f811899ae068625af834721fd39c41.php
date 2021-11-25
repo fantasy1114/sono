@@ -1,4 +1,4 @@
-<div class="row py-2">
+<div class="row edit__add__formpage">
     <div class="col-md-6 card-width">
         <div class="input-field <?php echo e($errors->has('Tracker_Code') ? 'has-error' : ''); ?>">
             <label for="Tracker_Code" class="active font_lable"><?php echo e(trans('devices.Tracker_Code')); ?></label>
@@ -48,7 +48,7 @@
 
         </div>
     </div>
-    
+  
 </div>
 
 <script>

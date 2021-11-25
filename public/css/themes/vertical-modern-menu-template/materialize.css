@@ -1,4 +1,4 @@
-@import url(https://fonts.googleapis.com/css?family=Muli:300,300i,400,400i,500,600);@charset "UTF-8";
+
 
 /*--------------------------------------------------------------
 	Materialize file contain extended material ui based on theme
@@ -2645,7 +2645,8 @@ input,
 optgroup,
 select,
 textarea {
-  font-family: "Muli", sans-serif;
+    font-family: 'Poppins';
+  
 }
 
 ul:not(.browser-default) {
@@ -4671,7 +4672,8 @@ a {
 
 html {
   line-height: 1.5;
-  font-family: "Muli", sans-serif;
+    font-family: 'Poppins';
+  
   font-weight: normal;
   color: rgba(0, 0, 0, 0.87);
 }

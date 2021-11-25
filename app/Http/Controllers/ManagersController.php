@@ -193,7 +193,7 @@ class ManagersController extends Controller
     protected function getData(Request $request)
     {
         $rules = [
-                'name' => 'required|string|min:1|max:255',
+            'name' => 'required|string|min:1|max:255',
             'email' => 'required',
             'organisation_id' => 'nullable',
             'password' => 'required',
@@ -206,8 +206,8 @@ class ManagersController extends Controller
         $data = $request->validate($rules);
 
 
-        $data['is_superuser'] = $request->has('is_superuser');
-        $data['is_active'] = $request->has('is_active');
+        // $data['is_superuser'] = $request->has('is_superuser');
+        // $data['is_active'] = $request->has('is_active');
 
 
         return $data;

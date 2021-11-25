@@ -157,6 +157,12 @@ return [
     'thdelete' => 'Delete',
     'footertext' => 'All rights reserved',
     'Arrived' => 'Arrived',
-    'Left' => 'Left'
+    'Left' => 'Left',
+    'action' => 'Action',
+    'add' => 'Add',
+    '10_Entries' => '10 Entries',
+    '25_Entries' => '25 Entries',
+    '50_Entries' => '50 Entries',
+    'all_Entries' => 'All',
 ];
 ?>

@@ -8,10 +8,13 @@
 <script src="<?php echo e(asset('js/plugins.js')); ?>"></script>
 <script src="<?php echo e(asset('js/search.js')); ?>"></script>
 <script src="<?php echo e(asset('js/custom/custom-script.js')); ?>"></script>
+
 <!--  Language -->
 
 
 <!--  Language -->
 <!-- END THEME  JS -->
 <!-- BEGIN PAGE LEVEL JS -->
-<?php echo $__env->yieldContent('page-script'); ?><?php /**PATH D:\data\10.30\li\webde\resources\views/panels/scripts.blade.php ENDPATH**/ ?>
+<?php echo $__env->yieldContent('page-script'); ?>
+
+<?php /**PATH D:\data\10.30\li\webde\resources\views/panels/scripts.blade.php ENDPATH**/ ?>

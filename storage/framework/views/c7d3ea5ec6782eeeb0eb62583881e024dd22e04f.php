@@ -1,10 +1,10 @@
 <!-- Customized by Yuris -->
-<div class="row py-2">
+<div class="row edit__add__formpage">
     <div class="col-md-6 card-width">
         <div class="input-field <?php echo e($errors->has('name') ? 'has-error' : ''); ?>">
             <label for="name" class="active font_lable"><?php echo e(trans('managers.name')); ?></label>
             <div class="form-group">
-                <input type="text" style="" name="name" id="name" value="<?php echo e(old('name', optional($manager)->name)); ?>" minlength="1" maxlength="255" required="true" class="form-control pl-0 placeholder_font validate" placeholder="<?php echo e(trans('managers.name__placeholder')); ?>" />
+                <input type="text" name="name" id="name" value="<?php echo e(old('name', optional($manager)->name)); ?>" minlength="1" maxlength="255" required="true" class="form-control pl-0 placeholder_font validate" placeholder="<?php echo e(trans('managers.name__placeholder')); ?>" />
                 <?php echo $errors->first('name', '<p class="help-block">:message</p>'); ?>
 
             </div>
@@ -14,7 +14,7 @@
         <div class="input-field <?php echo e($errors->has('email') ? 'has-error' : ''); ?>">
             <label for="email" class="active font_lable"><?php echo e(trans('managers.email')); ?></label>
             <div class="form-group">
-                <input type="email" style="" name="email" id="email" value="<?php echo e(old('email', optional($manager)->email)); ?>" minlength="1" maxlength="255" required="true" class="form-control pl-0 placeholder_font validate" placeholder="<?php echo e(trans('managers.email__placeholder')); ?>" />
+                <input type="email" name="email" id="email" value="<?php echo e(old('email', optional($manager)->email)); ?>" minlength="1" maxlength="255" required="true" class="form-control pl-0 placeholder_font validate" placeholder="<?php echo e(trans('managers.email__placeholder')); ?>" />
                 <?php echo $errors->first('email', '<p class="help-block">:message</p>'); ?>
 
             </div>
@@ -38,7 +38,6 @@
         </div>
     </div>
 
-    
     <div class="col-md-6 card-width">
         <div class="input-field <?php echo e($errors->has('password') ? 'has-error' : ''); ?>">
             <label for="password" class="active font_lable"><?php echo e(trans('managers.password')); ?></label>
@@ -93,7 +92,7 @@
                 <div class="custom-control custom-checkbox d-inline ml-5">
                     <input type="radio" <?php echo e(old('is_active', optional($manager)->is_active) != '1' ? 'checked' : ''); ?> value="0" class="custom-control-input" name="aaa" id="customCheck4" />
                     <label class="custom-control-label pt-1" for="customCheck4"><?php echo e(trans('locale.No')); ?></label>
-                    <input type="hidden" id="default_value" name="is_active" value="0">
+                    <input type="hidden" id="is_active_value" name="is_active" value="0">
                 </div>
             </div>
     
@@ -130,6 +129,14 @@
     });
     $('#customCheck2').on('click', function(e){
         $('#default_value').val('0');
+        console.log('0');
+    });
+    $('#customCheck3').on('click', function(e){
+        $('#is_active_value').val('1');
+        console.log('1');
+    });
+    $('#customCheck4').on('click', function(e){
+        $('#is_active_value').val('0');
         console.log('0');
     });
 </script>

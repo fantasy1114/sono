@@ -31,6 +31,9 @@
   th >a{
     color:#9D9BA6;
   }
+  .sorting, .sorting_asc, .sorting_desc {
+      background : none!important;
+  }
 </style>
 @endsection
 
@@ -44,21 +47,16 @@
 
 
 <!-- users list start -->
-<section class="users-list-wrapper section pt-0">
+<section class="users-list-wrapper section">
     <!-- Header Starts -->
-    <div class="col-12 valign-wrapper edit_title_posotion main_page_border">
+    <div class="col-12 valign-wrapper index__solid__border">
         <div class="col s9 m9 l9 left-align">
-            <h5 class="white-text">{{ trans('locale.Event Log') }}</h5>
-            <p>{!! auth()->user()->renderOrgName() !!}</p>
-        </div>
-        <div class="col s3 m3 l3 right-align">
-            <!--<a href="{{ route('registries.registry.create') }}" class="btn-floating btn waves-effect waves-light red disabled">
-                <i class="material-icons" title="{{ trans('registries.create') }}">add</i> 
-            </a>-->
+            <h5 class="white-text indexpage__title__size">{{ trans('locale.Event Log') }}</h5>
+            <p class="indexpage__user__explain">{!! auth()->user()->renderOrgName() !!}</p>
         </div>
     </div>
-    <div class="col-12 pt-2">
-      <ul class="mobile_menu_list" style="">
+    <div class="col-12 mobile_menu_page">
+      <ul class="mobile__menu__page__list">
         {{-- Foreach menu item starts --}}
         @if(!empty($menuData[0]) && isset($menuData[0]))
           @foreach ($menuData[0]->menu as $menu)
@@ -72,13 +70,13 @@
               $custom_classes = $menu->class;
               }
             @endphp
-            <li class="bold px-2 {{(request()->is($menu->url.'*')) ? 'active' : '' }}@if($menu->url == '/organisations' && Auth::user()->is_superuser == 0) {{'d-none'}} @endif @if($menu->url == '/managers' && Auth::user()->is_superuser == 0) {{'d-none'}} @endif @if($menu->url == '/devices' && Auth::user()->is_superuser == 0) {{'d-none'}} @endif @if('/'.Request::path() == $menu->url) mobilemenuactive @endif">
-              <a class="menu_with_size {{$custom_classes}} {{ (request()->is($menu->url.'*')) ? 'active '.$configData['activeMenuColor'] : ''}}"
+            <li class="bold mobile__menu__size {{(request()->is($menu->url.'*')) ? 'active' : '' }}@if($menu->url == '/organisations' && Auth::user()->is_superuser == 0) {{'d-none'}} @endif @if($menu->url == '/managers' && Auth::user()->is_superuser == 0) {{'d-none'}} @endif @if($menu->url == '/devices' && Auth::user()->is_superuser == 0) {{'d-none'}} @endif @if('/'.Request::path() == $menu->url) mobile__menu__active @endif">
+              <a class="menu__page__icon__links {{$custom_classes}} {{ (request()->is($menu->url.'*')) ? 'active '.$configData['activeMenuColor'] : ''}}"
                 @if(!empty($configData['activeMenuColor'])) {{'style=background:none;box-shadow:none;'}} @endif
                 href="@if(($menu->url)==='javascript:void(0)'){{$menu->url}} @else{{url($menu->url)}} @endif"
                 {{isset($menu->newTab) ? 'target="_blank"':''}}>
-                <i class="material-icons icons_color @if('/'.Request::path() == $menu->url) mobilemenuactive_color @endif">{{$menu->icon}}</i>
-                <span class="menu-title icons_colors @if('/'.Request::path() == $menu->url) mobilemenuactive_color @endif">{{ __('locale.'.$menu->name)}}</span>
+                <i class="material-icons mobile__icon__size @if('/'.Request::path() == $menu->url) @endif">{!! $menu->icon !!}</i>
+                <span class="menu-title @if('/'.Request::path() == $menu->url) @endif">{{ __('locale.'.$menu->name)}}</span>
                 @if(isset($menu->tag))
                 <span class="{{$menu->tagcustom}}">{{$menu->tag}}</span>
                 @endif
@@ -102,28 +100,25 @@
         <div class="section section-data-tables">
           <!-- Page Length Options -->
           <div class="row">
-          <div class="col s12">
-            <div class="card rounded mobile_indexpage" style="margin-top:-20px;">
-              <div class="card-content">
-              
-                <div class="row">
-                  <div class="col s12">
+          <div class="col s12 table__response__page">
+            <div class="card">
+              <div class="py-3">
                     <table id="page-length-option" class="display">
                       <thead>
                         <tr>
-                          <th>@sortablelink('Key_Name', trans('registries.Key'))</th>
-                          <th>@sortablelink('Employee_Name', trans('registries.Employee'))</th>
-                          <th>@sortablelink('Worksite_Name', trans('registries.Worksite'))</th>
-                          <th>@sortablelink('Action', trans('registries.Event'))</th>
-                          <th>@sortablelink('Action_Time', trans('registries.Event Time and Date'))</th>
-                          <th>@sortablelink('Battery_State', trans('registries.Battery, V'))</th>
-                          <th>@sortablelink('Signal_Level', trans('registries.Signal Strength'))</th>
+                          <th class="px-3">{{trans('registries.Key')}}</th>
+                          <th>{{trans('registries.Employee')}}</th>
+                          <th>{{trans('registries.Worksite')}}</th>
+                          <th>{{trans('registries.Event')}}</th>
+                          <th>{{trans('registries.Event Time and Date')}}</th>
+                          <th>{{trans('registries.Battery, V')}}</th>
+                          <th>{{trans('registries.Signal Strength')}}</th>
                         </tr>
                       </thead>
                       <tbody>
                         @foreach($registries as $registry)
                           <tr>
-                            <td><a class="" href="{{ route('registries.registry.show', $registry->Registry_ID ) }}">{{ $registry->Key_Name }}</a></td>
+                            <td class="px-3"><a class="" href="{{ route('registries.registry.show', $registry->Registry_ID ) }}">{{ $registry->Key_Name }}</a></td>
                             <td>{{ $registry->Employee_Name }}</td>
                             <td>{{ $registry->Worksite_Name }}</td>
                             <td>{{ $registry->Action == 0 ? trans('locale.Arrived') : trans('locale.Left')  }}</td>
@@ -138,8 +133,7 @@
                         
                       </tfoot>
                     </table>
-                  </div>
-                </div>
+                  
               </div>
             </div>
           </div>
@@ -165,5 +159,11 @@
 
 {{-- page script --}}
 @section('page-script')
-<script src="{{('table/js/scripts/data-tables.min.js')}}"></script>
+<script>
+  var length_one = "{{ trans('locale.10_Entries') }}";
+  var length_two = "{{ trans('locale.25_Entries') }}";
+  var length_three = "{{ trans('locale.50_Entries') }}";
+  var length_four = "{{ trans('locale.all_Entries') }}";
+</script>
+<script src="{{asset('table/js/scripts/data-tables.min.js')}}"></script>
 @endsection

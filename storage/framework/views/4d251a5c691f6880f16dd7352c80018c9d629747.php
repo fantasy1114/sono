@@ -1,4 +1,4 @@
-<div class="row py-2">
+<div class="row edit__add__formpage">
     <div class="col-md-6 card-width">
         <div class="input-field <?php echo e($errors->has('Employee_Name') ? 'has-error' : ''); ?>">
             <label for="Employee_Name" class="active font_lable"><?php echo e(trans('employees.Employee_Name')); ?></label>
@@ -60,9 +60,10 @@
             </div>
         </div>
     </div>
+    <?php endif; ?>
  
 </div>
-<?php endif; ?>
+
 
 <script>
     // Script Added by Yuris

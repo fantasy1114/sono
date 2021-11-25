@@ -1,4 +1,4 @@
-<div class="row py-2">
+<div class="row edit__add__formpage">
     <div class="col-md-6 card-width">
         <div class="input-field {{ $errors->has('Tracker_Code') ? 'has-error' : '' }}">
             <label for="Tracker_Code" class="active font_lable">{{ trans('devices.Tracker_Code') }}</label>
@@ -44,16 +44,7 @@
             {!! $errors->first('Is_Active', '<p class="help-block">:message</p>') !!}
         </div>
     </div>
-    {{-- <div class="input-field {{ $errors->has('Is_Active') ? 'has-error' : '' }}">
-        <label for="Is_Active" class="active">{{ trans('devices.Is_Active') }}</label>
-            <div class="mb-5 checkbox">
-                    <div class="switch">
-                        <label>{{ trans('locale.No') }}<input name="Is_Active" type="checkbox"  {{ old('Is_Active', optional($device)->Is_Active ?: '1') == '1' ? 'checked' : '' }}><span class = "lever"></span>{{ trans('locale.Yes') }}</label>
-                    </div>
-            </div>
-
-            {!! $errors->first('Is_Active', '<p class="help-block">:message</p>') !!}
-    </div> --}}
+  
 </div>
 
 <script>

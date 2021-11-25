@@ -62,7 +62,7 @@ class User extends Authenticatable implements MustVerifyEmail
     # will need to put it somewhere else later
     public function renderOrgName() {
         if ($this->is_superuser) {
-            return '<span class="red-text text-lighten-3">' . 'All Organisations' . '</span>';
+            return '<span class="">' . 'All Organisations' . '</span>';
         }
         elseif  (isset($this->organisation_id)) {
             return '<span class="grey-text text-lighten-2">' . $this->organisation->Organisation_Name . '</span>';

@@ -157,6 +157,12 @@ return [
     'thdelete' => 'Dzēst',
     'footertext' => 'Visas tiesības aizsargātas',
     'Arrived' => 'ieradās',
-    'Left' => 'aizgāja'
+    'Left' => 'aizgāja',
+    'action' => 'Darbība',
+    'add' => 'Pievienot',
+    '10_Entries' => '10 Ieraksti',
+    '25_Entries' => '25 Ieraksti',
+    '50_Entries' => '50 Ieraksti',
+    'all_Entries' => 'Visi',
 ];
 ?>

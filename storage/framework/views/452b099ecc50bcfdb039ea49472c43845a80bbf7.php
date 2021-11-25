@@ -4,7 +4,7 @@
   class="">
   <div class="footer-copyright">
     <div class="container text-center">
-      <span class="" style="color:#BBBCBC;line-height: 27px;">&copy; 2021 fabrica.IT SIA</a> <?php echo e(trans('locale.footertext')); ?>
+      <span class="" style="color:#BBBCBC;line-height: 27px;">&copy; 2021 fabrica IT SIA</a> <?php echo e(trans('locale.footertext')); ?>
 
       </span>
     </div>

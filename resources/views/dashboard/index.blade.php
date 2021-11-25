@@ -46,7 +46,7 @@
     <div class="row valign-wrapper mb-1 mt-1">
         <div class="col s12 m12 l12 left-align">
             <h5 class="white-text">{{ trans('Dashboard') }}</h5>
-            <p>{!! auth()->user()->renderOrgName() !!}</p>
+            <p class="username_page">{!! auth()->user()->renderOrgName() !!}</p>
         </div>
     </div>
 

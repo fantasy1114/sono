@@ -7,23 +7,23 @@
       
       <ul class="navbar-list right mr-2">
         <li class="dropdown-language">
-          <a class="waves-effect waves-block waves-light russia_lang" href="<?php echo e(url('lang/ru')); ?>" data-language="ru" style="color:#71FFDC; font-weight:600;">
+          <a class="waves-effect waves-block waves-light russia_lang language__font__size" href="<?php echo e(url('lang/ru')); ?>" data-language="ru" style="color:#71FFDC;">
             RU
           </a>
         </li>
         <li class="dropdown-language">
-          <a class="waves-effect waves-block waves-light english_lang" href="<?php echo e(url('lang/en')); ?>" data-language="en" style="color:#71FFDC; font-weight:600;">
+          <a class="waves-effect waves-block waves-light english_lang language__font__size" href="<?php echo e(url('lang/en')); ?>" data-language="en" style="color:#71FFDC;">
             EN
           </a>
         </li>
-        <li class="dropdown-language">
-          <a class="waves-effect waves-block waves-light lvtian_lang" href="<?php echo e(url('lang/lv')); ?>" data-language="lv" style="color:#71FFDC; font-weight:600;">
+        <li class="dropdown-language ">
+          <a class="waves-effect waves-block waves-light lvtian_lang language__font__size" href="<?php echo e(url('lang/lv')); ?>" data-language="lv" style="color:#71FFDC;">
             LV
           </a>
         </li>
         <li class="dropdown-language">
-          <a class="waves-effect waves-block waves-light translation-button" href="javascript:void(0);" data-target="profile-dropdown">
-            <span class="avatar-status avatar-online" style="vertical-align: baseline;width:40px;" >
+          <a class="waves-effect waves-block waves-light translation-button" href="javascript:void(0);" data-target="profile-dropdown" style="padding-left: 32px;">
+            <span class="avatar-status avatar__image__size avatar-online" >
               <?php if(auth()->user()->is_superuser): ?>
                 <img src="<?php echo e(asset('images/avatar/avatar-admin.png')); ?>" alt="Super User"><i></i>
               <?php else: ?>

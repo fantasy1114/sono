@@ -1,4 +1,4 @@
-<div class="row py-2">
+<div class="row edit__add__formpage">
     <div class="col-md-6 card-width">
         <div class="input-field <?php echo e($errors->has('Key_Name') ? 'has-error' : ''); ?>">
             <label for="Key_Name" class="active font_lable"><?php echo e(trans('keys.Key_Name')); ?></label>
@@ -10,8 +10,6 @@
             </div>
         </div>
     </div>
-
-    
 
     <?php if(Request::path() == 'keys/create' || Auth::user()->is_superuser == 1): ?>
     <div class="col-md-6 card-width">
@@ -34,19 +32,19 @@
             </div>
         </div>
     </div>
-    
+ 
     <?php endif; ?>
     <div class="col-md-6 card-width">
         <div class="input-field <?php echo e($errors->has('Is_Active') ? 'has-error' : ''); ?>">
-            <label for="Is_Active" class="active font_lable"><?php echo e(trans('keyss.Is_Active')); ?></label>
-            <div class="pt-4 border-bottom pb-2">
+            <label for="Is_Active" class="active font_lable"><?php echo e(trans('keys.Is_Active')); ?></label>
+            <div class="border-bottom">
                 <div class="custom-control custom-checkbox d-inline">
                     <input type="radio" <?php echo e(old('Is_Active', optional($key)->Is_Active) == '1' ? 'checked' : ''); ?> value="1" class="custom-control-input" name="bbbb" id="customCheck1" />
-                    <label class="custom-control-label pt-1" for="customCheck1"><?php echo e(trans('locale.Yes')); ?></label>
+                    <label class="custom-control-label" for="customCheck1"><?php echo e(trans('locale.Yes')); ?></label>
                 </div>
                 <div class="custom-control custom-checkbox d-inline ml-5">
                     <input type="radio" <?php echo e(old('Is_Active', optional($key)->Is_Active) != '1' ? 'checked' : ''); ?> value="0" class="custom-control-input" name="bbbb" id="customCheck2" />
-                    <label class="custom-control-label pt-1" for="customCheck2"><?php echo e(trans('locale.No')); ?></label>
+                    <label class="custom-control-label" for="customCheck2"><?php echo e(trans('locale.No')); ?></label>
                     <input type="hidden" id="default_value" name="Is_Active" value="0">
                 </div>
             </div>
@@ -54,7 +52,7 @@
 
         </div>
     </div>
-    
+   
 </div>
 
 <script>

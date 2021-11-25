@@ -30,7 +30,7 @@ class RegistriesController extends Controller
 
         if ($is_super) {
             # Show all keys
-            $registries = Registry::sortable(['Action_Time' => 'desc'])->paginate(50);
+            $registries = Registry::sortable(['Action_Time' => 'desc'])->paginate(10000);
             $org_role = ''; #Managing all Organisations
         }
         elseif ($org_id) {
@@ -39,7 +39,7 @@ class RegistriesController extends Controller
             #$keys = Key::whereIn('employee_id',$employees)->pluck('key_name');
             #$registries = Registry::whereIn('key_name', $keys)->sortable()->paginate(25);
             # Changed to adopt to the view instead of table
-            $registries = Registry::where('organisation_id',$org_id)->sortable(['Action_Time' => 'desc'])->paginate(25);
+            $registries = Registry::where('organisation_id',$org_id)->sortable(['Action_Time' => 'desc'])->paginate(10000);
             $org_role = auth()->user()->org_name();
         }
         else {
